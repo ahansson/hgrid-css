@@ -1,48 +1,65 @@
 # hgrid-css
 
-### TEST UPLOAD. THIS INFO IS NOT UP TO DATE
+## ⚠️ WORK IN PROGRESS
 
-### A lightweight desktop-first css utility kit.
+_Documentation may be incomplete or inaccurate_
 
-Import hgrid.scss at the top of your main.scss file in order to use hgrid in a custom project, or import the minified css file in your html (link below). Changes to hgrid must be pushed back to this repository by way of a pull request. Only improvements that are non-specific and can be reused in any project will be accepted.
+### **A Lightweight and Practical CSS Utility Kit.**
 
-## Demo
+### Zero Config. Flat Learning Curve
 
-[Demo page for reference](https://kubo.no/hgrid/demo/index.html)
+Hgrid is a starting point intended to make HTML work out of the box, with very little effort. Ideal for fast prototyping without having to deal with browser quirks and unstyled elements. It's not a UI framework.
 
-_May not be accurate at all times_
+## Documentation
 
+Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
-### v1.3.0
-
-Revisioned version
-
-### v1.2.x
-
-[Minified CSS](https://kubo.no/hgrid/dist/css/hgrid-1.2.min.css)
-
-[Minified FULL CSS](https://kubo.no/hgrid/dist/css/hgrid-full-1.2.min.css) (includes page loader and mobile menu/hamburger icon)
-
-*Changelog:*
-
-29.05.2020: Add utility class for flex-wrap
+**0.0.1**. New version forked from a deprecated version (1.2.0). There are extensive changes, so let's start fresh.
 
 
-### v1.1.
+## How to install
 
-[Minified CSS](https://kubo.no/hgrid/dist/css/hgrid.min.css)
+**As a packet:**
 
-[Minified FULL CSS](https://kubo.no/hgrid/dist/css/hgrid-full.min.css) (includes page loader and mobile menu/hamburger icon)
+```bash
+npm install hgrid-css --save-dev
+```
 
-## How to run
+```
+yarn add hgrid-css --dev
+```
 
-Point your terminal to the hgrid folder and start compiling the .scss files in the hgrid module with this command: `npm run compile:sass` (will call the corresponding script in package.json). Changes will compile to CSS automatically or on file save, depending on your setup. 
+**From local file or CDN:**
 
-Minify each regular CSS file and place the end result in the `dist/css` folder with the minify-scripts found in `package.json`. Or build everything at once with `npm run build:css`.
+```html
+<head>
+  <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
+  <-- more css below -->
+</head>
+```
+**@import into your stylesheet:**
+```css
+/* From node_modules */
+@import './../etc./node_modules/hgrid-css/dist/hgrid.min.css';
+```
+```css
+/* From CDN */
+@import 'https://cdn.domain.com/dist/hgrid.min.css';
+```
 
-Concatenate the modules you want into one minified file with variations of `npm run concat-full-dist`. Upload the relevant files to `kubo.no/hgrid/demo/` and `/dist/` (use versioning!).
+For detailed information on how to integrate **hgrid** in your frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+
+## Local development
+
+_Requires nodejs with npm installed on your system._
+
+Start compiling `.scss` files to `.css` with the terminal command `npm run watch` from the root of the hgrid folder. Any changes you make to files in the `/sass` folder will result in css and map files being updated in the `/dist` folder.
+
+To produce the minified **hgrid** file, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
+
+As always, see [hgrid.io](https://hgrid.io) for details on how to integrate **hgrid** as Sass or plain CSS in
 
 ## Author
 
