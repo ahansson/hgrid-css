@@ -1,0 +1,175 @@
+// Flex for parent containers
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-direction-row {
+  flex-direction: row;
+}
+
+.f-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.f-direction-column {
+  flex-direction: column;
+}
+
+.f-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.f-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.f-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-content-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-space-between {
+  align-content: space-between;
+}
+
+.align-content-space-around {
+  align-content: space-around;
+}
+
+.align-content-space-evenly {
+  align-content: space-evenly;
+}
+
+$justification: auto, start, end, center, stretch;
+
+@each $val in $justification {
+  .justify-items-#{$val} {
+    align-items: $val; 
+  }
+}
+
+$aligns: center, flex-start, flex-end, baseline, stretch;
+
+@each $val in $aligns {
+  .align-items-#{$val} {
+    align-items: $val; 
+  }
+}
+
+// Flex for child elements
+.f-grow-1 {
+  flex-grow: 1;
+}
+
+.f-grow-0 {
+  flex-grow: 0;
+}
+
+.f-shrink-1 {
+  flex-shrink: 1;
+}
+
+.f-shrink-0 {
+  flex-shrink: 0;
+}
+
+.align-self-auto {
+  align-self: auto;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+@for $i from 1 through 10 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+
+// Flex shorthand class
+// Pattern: 'flex: [integer];'
+// Shorthand for 'flex-grow', 'flex-shrink' and 'flex-basis'.
+// Initial (default) is '0 1 auto'
+// When set with a single digit, it equals 1 0.
+// Used to set internal element proportions. 
+// .f-2 is always twice the size of .f-1 (etc.)
+@for $i from 1 through 24 {
+  .f-#{$i} {
+    flex: $i;
+  }
+}
+
+.f-auto {
+  flex: auto;
+}
+
+.f-initial {
+  flex: initial;
+}
+
+.f-none {
+  flex: none;
+}

@@ -1,0 +1,98 @@
+// Containers
+$container-max-width: 1440px !default;
+$column-gutter-width: 1.6% !default;
+$group-margin-bottom: 0 0 6rem 0 !default;
+
+// Breakpoints
+
+// Styles apply to any viewport by default.
+// The benchmark is desktop
+// For larger screens we use min-width.
+$phone: 600px !default;
+$phone-landscape: 768px !default;
+$tablet-portrait: 900px !default;
+$tablet-landscape: 1024px !default;
+$desktop: 1280px !default;
+$desktop-large: 1680px !default; // 1281 -> 1680px
+$desktop-xl: 1681px !default; // 1681 -> ∞
+$breakpoints: desktop-xl, desktop-large, desktop, tablet-landscape, tablet-portrait, phone-landscape, phone;
+
+// Stack columns on viewports less or equal to:
+$stack-point: $phone-landscape !default;
+$custom-stack-point: $phone !default; // used to override $stack-point
+
+// Misc
+$border-radius: 6px !default;
+
+// Colors
+$color-light: #fff !default;
+$color-dark: #000 !default;
+$color-red: red !default;
+$color-green: green !default;
+$color-blue: blue !default;
+$color-orange: orangered !default;
+$color-gray-lighter: #eee !default;
+$color-gray-light: #ccc !default;
+$color-gray: #888 !default;
+$color-gray-dark: #555 !default;
+$color-gray-darker: #333 !default;
+
+// Text color
+$text-highlight-color: #ffe4c9 !default;
+$inline-code-color: #620042 !default;
+$inline-code-bg: #ffe4c9 !default;
+$pre-code-color: #fff !default;
+$pre-code-bg: #361c43 !default;
+
+// Background color
+$body-bg: #fff !default;
+$bg-light: $color-light !default;
+$bg-dark: $color-dark !default;
+$bg-gray-light: $color-gray-light !default;
+$bg-gray-lighter: $color-gray-lighter !default;
+$bg-gray: $color-gray !default;
+$bg-gray-dark: $color-gray-dark !default;
+$bg-gray-darker: $color-gray-darker !default;
+
+// Link colors
+$link-color: #66008d !default;
+$link-color-hover: #9139b4 !default;
+$link-underline-color: #c19ad1 !default;
+
+// Link settings
+$turn-off-link-decoration: false !default;
+$use-global-link-underlines: false !default;
+$use-article-link-underlines: false !default;
+
+// Typography
+$font-base: 62.5% !default; // Sets scale for 1rem = 10px
+$font-size: 1.6rem !default;
+$small-font-size: 83% !default;
+$inline-code-size: 83% !default;
+$pre-code-size: 83% !default;
+$paragraph-margin-bottom: 2rem !default;
+$headline-weight: 600 !default;
+$font-strong: bold !default;
+$font-family:
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  'Noto Sans',
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji',
+  'Segoe UI Emoji' !default;
+
+$font-family-mono:
+  ui-monospace,
+  SFMono-Regular,
+  Consolas,
+  'Liberation Mono',
+  Menlo,
+  monospace !default;

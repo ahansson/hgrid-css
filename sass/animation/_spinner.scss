@@ -1,0 +1,21 @@
+// Usage: 
+// <span class="donut-spinner"></span>
+
+.donut-spinner {
+  display: inline-block;
+  border: 0.4rem solid #0000001a;
+  border-left-color: #a172b5;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

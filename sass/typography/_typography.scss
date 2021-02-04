@@ -1,0 +1,453 @@
+body {
+  @include viewport(phone) {
+    font-size: ($font-size * 1.1);
+    line-height: ($font-size * 1.6);
+  }
+  font-size: ($font-size * 1.175);
+  line-height: ($font-size * 1.8);
+}
+
+$title-attributes: (
+  h1: 2.75 2.9 1.25 4.14 5 1.75,
+  h2: 2.25 2.375 1 3.125 3.5625 1.4,
+  h3: 1.875 1.9 .75 2.4 2.85 1,
+  h4: 1.8 2.15 .7 1.87 2.15 .8125,
+  h5: 1.45 1.82 .7 1.45 1.82 .7,
+  h6: 1.25 1.8 .66 1.2 1.8 .66
+// values: tablet-font-size, tablet-line-height, tablet-margin-btm, font-size, line-height, margin-btm
+);
+
+@each $title, $attr in $title-attributes {
+  #{$title},
+  .#{$title} {
+    @include title(nth($attr, 1), nth($attr, 2), nth($attr, 3), nth($attr, 4), nth($attr, 5), nth($attr, 6));
+  }
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  font-weight: $headline-weight;
+}
+
+p {
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+article ul,
+article ol,
+section ul,
+section ol {
+  @include viewport(phone) {
+    padding-left: 10%;
+  }
+  list-style-type: square;
+  padding-left: 5%;
+  margin: 2rem 0;
+
+  & li {
+    margin: 1.4rem 0;
+  }
+}
+
+article ol,
+section ol {
+  list-style-type: decimal;
+}
+
+p > code,
+em > code,
+i > code,
+span > code,
+small > code,
+strong > code,
+li > code,
+div > code,
+dd > code,
+figcaption > code,
+td > code
+th > code {
+  background: $inline-code-bg;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  color: $inline-code-color;
+  display: inline;
+  font-size: $inline-code-size;
+  letter-spacing: -0.4px;
+  padding: 0.1rem 0.6rem;
+  position: relative;
+  top: -1px;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+pre {
+  margin: 0 0 2rem;
+
+  & > code {
+    background: $pre-code-bg;
+    border-radius: 4px;
+    color: $pre-code-color;
+    font-size: $pre-code-size;
+    display: block;
+    letter-spacing: -0.6px;
+    line-height: 2.4rem;
+    padding: 2rem 2.6rem;
+    white-space: pre;
+    overflow-x: auto;
+  }
+}
+
+a,
+p a,
+ul li a,
+ol li a,
+span a {
+  color: $link-color;
+  position: relative;
+  display: inline-block;
+  @if $turn-off-link-decoration {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Are nicer underlines turned on?
+@if $use-global-link-underlines {
+  a:not([class*=button]):before,
+  ul li a:not([class*=button]):before,
+  ol li a:not([class*=button]):before,
+  span a:not([class*=button]):before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $link-underline-color;
+    position: absolute;
+    bottom: 3px;
+
+    &:hover:before {
+      height: 0;
+    }
+  }
+}
+
+// Use nicer underlines for links only in <article> and 
+// containers using the class '.text-content'?
+// '$use-global-link-underlines' must be set to 'false'
+@else if $use-article-link-underlines {
+  article a:not([class*=button]):before,
+  article ul li a:not([class*=button]):before,
+  article ol li a:not([class*=button]):before,
+  article span a:not([class*=button]):before,
+  .text-content a:not([class*=button]):before,
+  .text-content ul li a:not([class*=button]):before,
+  .text-content ol li a:not([class*=button]):before,
+  .text-content a:not([class*=button]):before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $link-underline-color;
+    position: absolute;
+    bottom: 3px;
+
+    &:hover:before {
+      height: 0;
+    }
+  }
+}
+
+blockquote {
+  border-left: 3px solid $color-gray-light;
+  font-size: ($font-size * 1.5);
+  margin-bottom: 2.2rem;
+  padding-left: 1.2rem;
+  line-height: 3.4rem;
+}
+
+// Text utilities
+
+i,
+em {
+  font-style: italic;
+}
+
+small,
+.small {
+  font-size: $small-font-size;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.no-transform {
+  text-transform: none;
+}
+
+u,
+.underline {
+  text-decoration: underline;
+}
+
+s,
+del,
+.strike {
+  text-decoration: line-through;
+}
+
+.no-underline,
+.no-decoration,
+.no-strike {
+  text-decoration: none;
+}
+
+mark,
+.highlight {
+  background: $text-highlight-color;
+  padding: 0 .4rem;
+}
+
+.shorten {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+}
+
+.clip {
+  text-overflow: clip;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.normal {
+  font-style: normal;
+}
+
+.word-break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
+// Selection
+
+$user-select-values: none, text, all, auto;
+
+@each $val in $user-select-values {
+  .user-select-#{$val} {
+    user-select: $val;
+  }
+}
+
+// Cursor
+
+$cursors: not-allowed, move, wait, text, pointer, default, auto;
+
+@each $cursor in $cursors {
+  .cursor-#{cursor} {
+    cursor: $cursor;
+  }
+}
+
+.pointer { // Backwards compatibility
+  cursor: pointer;
+}
+
+.wait { // Backwards compatibility
+  cursor: wait;
+}
+
+// Text columns
+
+.two-columns {
+  @include col-format(2);
+  @include viewport(phone) {
+    column-count: initial;
+  }
+}
+
+.three-columns {
+  @include col-format(3);
+  @include viewport(phone-landscape) {
+    column-count: initial;
+  }
+}
+
+.four-columns {
+  @include col-format(4);
+  @include viewport(tablet-portrait) {
+    column-count: initial;
+  }
+}
+
+// Text positioning
+
+$text-align-values: center, left, right, justify, inherit, initial, unset, start, end;
+
+@each $val in $text-align-values {
+  .text-#{$val} {
+    text-align: $val;
+  }
+}
+
+// Font weight
+
+$weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+@each $weight in $weights {
+  .font-weight-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+strong,
+b,
+.bold,
+p strong,
+a strong,
+span strong,
+strong a,
+strong span {
+  font-weight: $font-strong;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+// Letter spacing
+
+.spacing-neg-1,
+.tracking-neg-1 {
+  letter-spacing: -0.008rem;
+}
+
+.spacing-neg-2,
+.tracking-neg-2 {
+  letter-spacing: -0.03rem;
+}
+
+.spacing-neg-3,
+.tracking-neg-3 {
+  letter-spacing: -0.1rem;
+}
+
+.spacing-neg-4,
+.tracking-neg-4 {
+  letter-spacing: -0.3rem;
+}
+
+.spacing-0,
+.tracking-0 {
+  letter-spacing: 0;
+}
+
+.spacing-1,
+.tracking-1 {
+  letter-spacing: 0.008rem;
+}
+
+.spacing-2,
+.tracking-2 {
+  letter-spacing: 0.03rem;
+}
+
+.spacing-3,
+.tracking-3 {
+  letter-spacing: 0.1rem;
+}
+
+.letter-spacing-4,
+.tracking-4 {
+  letter-spacing: 0.3rem;
+}
+
+// Text color
+
+.text-light {
+  color: $color-light;
+}
+
+.text-dark {
+  color: $color-dark;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-red {
+  color: $color-red;
+}
+
+.text-green {
+  color: $color-green;
+}
+
+.text-blue {
+  color: $color-blue;
+}
+
+.text-orange {
+  color: $color-orange;
+}
+
+.text-gray-lighter {
+  color: $color-gray-lighter;
+}
+
+.text-gray-light {
+  color: $color-gray-light;
+}
+
+.text-gray {
+  color: $color-gray;
+}
+
+.text-gray-dark {
+  color: $color-gray-dark;
+}
+
+.text-gray-darker {
+  color: $color-gray-darker;
+}
+
+// Text antialiasing 
+
+.subpixel-antialiased { 
+// Default setting on macOS, gives a stronger type
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.antialiased { 
+// hgrid default setting 
+// (_base.scss)
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

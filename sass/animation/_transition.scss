@@ -1,0 +1,26 @@
+// Usage:
+// <span class="transition vanish"></span>
+// Remove '.vanish' when page loads, 
+// reapply '.vanish' when loading is completed
+
+.transition {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+}
+
+.transition.vanish{
+  animation: vanish 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes vanish{
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}

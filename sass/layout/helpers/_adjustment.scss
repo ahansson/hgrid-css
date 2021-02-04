@@ -1,0 +1,147 @@
+// Pixel Perfect Push & Pull Positioning
+
+// Push Down
+@for $px from 1 through 40 {
+  .push#{$px}v {
+    margin-top: $px/10 + rem;
+  }
+}
+
+// Push Left to Right (horizontally)
+@for $px from 1 through 40 {
+  .push#{$px}h {
+    margin-left: $px/10 + rem;
+  }
+}
+
+// Pull Up (vertically)
+@for $px from 1 through 40 {
+  .pull#{$px}v {
+    margin-top: -$px/10 + rem;
+  }
+}
+
+// Pull Right to Left (horizontally)
+@for $px from 1 through 40 {
+  .pull#{$px}h {
+    margin-left: -$px/10 + rem;
+  }
+}
+
+// Pixel Perfect Push & Pull Without Affecting Siblings
+
+// Move Downwwards
+@for $px from 1 through 40 {
+  .translate-push#{$px}v {
+    transform: translate(0, ($px/10 + rem));
+  }
+}
+
+// Move Upwards
+@for $px from 1 through 40 {
+  .translate-pull#{$px}v {
+    transform: translate(0, (-$px/10 + rem));
+  }
+}
+
+// Left to Right
+@for $px from 1 through 40 {
+  .translate-push#{$px}h {
+    transform: translate($px/10 + rem);
+  }
+}
+
+// Right to Left
+@for $px from 1 through 40 {
+  .translate-pull#{$px}h {
+    transform: translate(-$px/10 + rem);
+  }
+}
+
+// Positioning
+$positions: static, absolute, fixed, relative, sticky;
+
+@each $pos in $positions {
+  .#{$pos} {
+    position: $pos;
+  }
+}
+
+.position-initial {
+  position: initial;
+}
+
+.position-inherit {
+  position: inherit;
+}
+
+.absolute-center {
+  @include absolute-center;
+}
+
+// Align Positioned Elements
+.pos-spread {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.pos-fill-v {
+  top: 0;
+  bottom: 0;
+}
+
+.pos-fill-h {
+  left: 0;
+  right: 0;
+}
+
+.pos-top-0 {
+  top: 0;
+}
+
+.pos-bottom-0 {
+  bottom: 0;
+}
+
+.pos-left-0 {
+  left: 0;
+}
+
+.pos-right-0 {
+  right: 0;
+}
+
+// Floats and Clears
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.fn {
+  float: none;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: right;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.clear-none {
+  clear: none;
+}

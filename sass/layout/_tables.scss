@@ -1,0 +1,75 @@
+// Scroll table (vertical)
+// Set a height for table to scroll
+.scrollable-x {
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+// Scroll table (horizontal)
+// Requires the table to have a width, min-width 
+// or otherwise enough content to make it overflow
+.scrollable-y {
+  overflow: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+table {
+  font-size: 90%;
+  margin-bottom: 0.8rem;
+  color: $color-gray-dark;
+
+  thead tr {
+  text-align: left;
+  border-bottom: 2px solid #e2c5a9;
+  }
+
+  thead tr th,
+  tbody tr td {
+  border-bottom: 1px solid $bg-gray-light;;
+  padding: 0.6rem 1rem;
+  }
+
+  thead tr th {
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  }
+
+  tfoot tr td {
+    font-size: 80%;
+    background: $bg-gray-light;;
+    line-height: 1.6rem;
+    padding: 0.2rem 1rem;
+  }
+  
+  &-auto {
+    table-layout: auto;
+  }
+
+  &-fixed {
+    table-layout: fixed;
+  }
+
+  &.striped {
+    tbody tr td {
+      border: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: $bg-gray-lighter;
+      border-bottom: 1px dotted $bg-gray-light;
+      transition: background 0.4s ease
+    }
+
+    tbody tr:nth-child(even):hover {
+      background: #e1dae5;
+      cursor: pointer;
+    }
+
+    tbody tr:nth-child(odd):hover {
+      background: #f5f0e3;
+      cursor: pointer;
+      border-bottom: 1px dotted $bg-gray-light;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+// Background attachment
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-local {
+  background-attachment: local;
+}
+
+.bg-scroll {
+  background-attachment: scroll;
+}
+
+// Background position
+.bg-pos-top {
+  background-position: top;
+}
+
+.bg-pos-bottom {
+  background-position: bottom;
+}
+
+.bg-pos-right {
+  background-position: right;
+}
+
+.bg-pos-left {
+  background-position: left;
+}
+
+.bg-pos-center {
+  background-position: center;
+}
+
+// Background repeat
+.bg-repeat-x {
+ background-repeat: repeat-x;
+}
+
+.bg-repeat-y {
+ background-repeat: repeat-y;
+}
+
+.bg-repeat-space {
+ background-repeat: space;
+}
+
+.bg-repeat-round {
+ background-repeat: round;
+}
+
+.bg-repeat-none {
+ background-repeat: no-repeat;
+}
+
+// Background size
+.bg-size-cover {
+  background-size: cover;
+}
+
+.bg-size-contain {
+  background-size: contain;
+}
+
+// Background color
+.bg-light {
+  background-color: $bg-light;
+}
+
+.bg-dark {
+  background-color: $bg-dark;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-gray-lighter {
+  background-color: $bg-gray-lighter;
+}
+
+.bg-gray-light {
+  background-color: $bg-gray-light;
+}
+
+.bg-gray {
+  background-color: $bg-gray;
+}
+
+.bg-gray-dark {
+  background-color: $bg-gray-dark;
+}
+
+.bg-gray-darker {
+  background-color: $bg-gray-darker;
+}

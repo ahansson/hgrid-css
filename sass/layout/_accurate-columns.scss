@@ -1,0 +1,35 @@
+// Accurate columns
+// '.column-1' to '.column-24'
+// for fractional layout organization
+@for $fraction from 1 through 24 {
+  .column-#{$fraction} {
+    width: (100% / $fraction) - $column-gutter-width;
+  }
+}
+
+[class*='column-'] {
+  @include column-padding;
+  @include viewport(phone-landscape) {
+    margin-bottom: $column-gutter-width;
+    width: (100% - $column-gutter-width);
+  }
+  min-width: 0;
+}
+
+// Fills up space left by
+// other columns on the same row
+.column-fill {
+  flex-grow: 1;
+}
+
+// Responsive wrapping columns
+// Use in <div class="row f-wrap">
+@each $breakpoint in $breakpoints {
+  @include viewport($breakpoint) {
+    @for $fraction from 1 through 24 {
+      .#{$breakpoint}-#{$fraction} {
+        flex: 0 1 ((100% / $fraction) - $column-gutter-width);
+      }
+    }
+  }
+}

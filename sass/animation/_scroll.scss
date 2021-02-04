@@ -1,0 +1,17 @@
+// Scroll behavior
+
+.scroll-auto { // initial css value
+  scroll-behavior: auto;
+}
+
+.scroll-inherit {
+  scroll-behavior: inherit;
+}
+
+.scroll-unset {
+  scroll-behavior: unset;
+}
+
+.scroll-smooth { // hgrid default (_base.scss)
+  scroll-behavior: smooth;
+}

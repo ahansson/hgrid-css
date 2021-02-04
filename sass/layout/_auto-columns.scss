@@ -1,0 +1,14 @@
+// Automatic content columns
+// Always use inside '.row'
+.column {
+  @include column-padding;
+  @include viewport($stack-point) {
+    margin-bottom: $column-gutter-width;
+  }
+  -ms-flex-preferred-size: 0;
+  -ms-flex-positive: 1;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  min-width: 0;
+}

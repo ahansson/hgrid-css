@@ -1,0 +1,337 @@
+// Shapes 
+.circle {
+  border-radius: 100%;
+}
+
+.rounded {
+  border-radius: 100rem;
+}
+
+.radius {
+  border-radius: $border-radius;
+}
+
+@for $radius from 2 through 20 {
+  @if $radius % 2 == 0 {
+    .radius-#{$radius} {
+      border-radius: $radius + px;
+    }
+    .radius-top-#{$radius} {
+      border-top-left-radius: $radius + px;
+      border-top-right-radius: $radius + px;
+    }
+    .radius-bottom-#{$radius} {
+      border-bottom-left-radius: $radius + px;
+      border-bottom-right-radius: $radius + px;
+    }
+    .radius-left-#{$radius} {
+      border-top-left-radius: $radius + px;
+      border-bottom-left-radius: $radius + px;
+    }
+    .radius-right-#{$radius} {
+      border-top-right-radius: $radius + px;
+      border-bottom-right-radius: $radius + px;
+    }
+  }
+}
+
+.no-radius {
+  border-radius: 0;
+}
+
+// Box-shadow
+.embossed {
+  box-shadow: 0px 0px 2px 0px #00000099;
+}
+
+.embossed-left {
+  box-shadow: -1px 1px 0px 0px #0000003b;
+}
+
+.embossed-right {
+  box-shadow: 1px 1px 0px 0px #0000003b;
+}
+
+.box-shadow-1 {
+ box-shadow: 0px 1px 3px 0px #00000040;
+}
+
+.box-shadow-2 {
+ box-shadow: 0px 0px 5px 0px #0000004a;
+}
+
+.box-shadow-3 {
+ box-shadow: 0px 0px 10px 0px #00000036;
+}
+
+.box-shadow-4 {
+ box-shadow: 0px 3px 16px 1px #00000061;
+}
+
+.box-shadow-5 { 
+ box-shadow: 0px 3px 24px 0px #00000036;
+}
+
+.box-shadow-6 {
+ box-shadow: 0px 0px 64px 0px #00000036;
+}
+
+// Z-index
+@for $i from 1 through 20 {
+  .z-index-#{$i} {
+    z-index: $i;
+  }
+}
+
+.z-index-999 {
+  z-index: 999;
+}
+
+$z-values: auto, inherit, initial, unset;
+
+@each $z in $z-values {
+  .z-index-#{$z} {
+    z-index: $z;
+  }
+}
+
+// Object fit
+
+// Specifies how the content should be fitted 
+// within the parent element
+$values: fill, contain, cover, scale-down;
+
+@each $val in $values {
+  .#{$val} {
+    object-fit: $val;
+  }
+}
+
+.object-fit-none {
+  object-fit: none;
+}
+
+// Alignment for 'inline', 'inline-block' 
+// and 'table-cell' elements
+$vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
+// default = baseline (_base.scss)
+
+@each $val in $vertical-align-values {
+  .align-#{$val} {
+    vertical-align: $val;
+  }
+}
+
+// Widths and heights
+.full-width {
+  width: 100%;
+}
+
+.full-width-vw {
+  width: 100vw;
+}
+
+@for $pct from 10 through 90 {
+  @if $pct % 10 == 0 {
+    .width-#{$pct}pct {
+      width: $pct * 1% ;
+    }
+  }
+}
+
+.width-33pct {
+  width: 33.3333333%;
+}
+
+.min-width-0 {
+  min-width: 0rem;
+}
+
+.min-width-100 {
+  min-width: 100%;
+}
+
+.min-content {
+  min-width: min-content;
+}
+
+.max-content {
+  min-width: max-content;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-height-vh {
+  height: 100vh;
+}
+
+.height-auto {
+  height: auto;
+}
+
+.min-height-0 {
+  min-height: 0rem;
+}
+
+.min-height-100 {
+  min-height: 100%;
+}
+
+.min-height-100-vh {
+  min-height: 100vh;
+}
+
+// Display and visibility
+
+.hide,
+.display-none {
+  display: none;
+}
+
+.show,
+.block,
+.display-block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flow-root {
+  display: flow-root;
+}
+
+.contents {
+  display: contents;
+}
+
+.invisible,
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+@each $breakpoint in $breakpoints {
+  @include viewport($breakpoint) {
+
+    // Hide element from a certain breakpoint and above (desktop-large and desktop-xl) /
+    // Hide element from a certain breakpoint and below (desktop, tablet, phone)
+    .hide-#{$breakpoint} {
+      display: none;
+    }
+    .invisible-#{$breakpoint} {
+      visibility: hidden;
+    }
+    .visible-#{$breakpoint} {
+      visibility: visible;
+    }
+
+    // Show element from a certain breakpoint and above (desktop-large and desktop-xl) /
+    // Show element from a certain breakpoint and below (desktop, tablet, phone)
+
+    // Use with block elements
+    .show-#{$breakpoint} {
+      display: block;
+    }
+
+    // Use with flex containers (like '.row')
+    // on non-stacking viewports, if they
+    // have been hidden with 'display:none';
+    .flex-show-#{$breakpoint} {
+      display: flex;
+    }
+  }
+}
+
+// Hide or show _only_ on a certain viewport
+$singleViewports: phone-landscape, tablet-portrait, tablet-landscape, desktop, desktop-large;
+
+@each $viewport in $singleViewports {
+  @include onlyViewport($viewport) { 
+    .hide-#{$viewport}-only {
+      display: none;
+    }
+    .invisible-#{$viewport}-only {
+      visibility: hidden;
+    }
+    .visible-#{$viewport}-only {
+      visibility: visible;
+    }
+
+    // Use with block elements
+    .show-#{$viewport}-only {
+      display: block;
+    }
+
+    // Use with flex containers (like '.row')
+    // on non-stacking viewports, if they
+    // have been hidden with 'display:none';
+    .flex-show-#{$viewport}-only {
+      display: flex;
+    }
+  }
+}
+
+// Opacity
+// (.opacity-5 = 5%, .opacity-10 = 10% etc.)
+@for $alpha from 0 through 20 {
+  .opacity-#{($alpha * 10) / 2} {
+    opacity: ($alpha / 10) / 2;
+  }
+}
+
+// Overflow 
+// default: 'visible'
+.overflow-hidden { // no scrollbars
+  overflow: hidden;
+}
+
+.overflow-scroll { // always scrollbars, both directions
+  overflow: scroll;
+}
+
+.overflow-auto { // scrollbars if needed, both directions
+  overflow: auto;
+}
+
+.overflow-hidden-visible { // only vertical scrollbar
+  overflow: hidden visible; // clip horizontal content right side
+}
+
+.overflow-visible-hidden { // only horizontal scrollbar
+  overflow: visible hidden; // clip vertical content at bottom
+}
+
+.overflow-x-hidden { // clip horizontal content
+  overflow-x: hidden;
+}
+
+.overflow-x-scroll { // horizontal scrollbar
+  overflow-x: scroll;
+}
+
+.overflow-x-auto { // horizontal scrollbar if parent is too narrow for content
+  overflow-x: auto;
+}
+
+.overflow-y-hidden { // clip vertical content
+  overflow-y: hidden;
+}
+
+.overflow-y-scroll { // vertical scrollbar
+  overflow-y: scroll;
+}
+
+.overflow-y-auto { // vertical scroll if parent is too short for content
+  overflow-y: auto;
+}

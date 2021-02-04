@@ -1,0 +1,14 @@
+.flash {
+  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
+}
+
+.flash-once {
+  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
+}
+
+@keyframes flash {
+  80%, 100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}

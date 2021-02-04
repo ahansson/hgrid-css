@@ -1,0 +1,136 @@
+// Layout 
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Content Grid Mixins
+
+@mixin column-gutters {
+  margin-left: ($column-gutter-width / 2);
+  margin-right: ($column-gutter-width / 2);
+}
+
+@mixin margin-right-left-0 {
+  margin-left: 0;
+  margin-right: 0;
+  }
+
+@mixin column-padding {
+  @include column-gutters;
+  min-height: 1px;
+}
+
+@mixin row-margins {
+  margin-left: -($column-gutter-width / 2);
+  margin-right: -($column-gutter-width / 2);
+}
+
+@mixin row-block-padding {
+  @include margin-right-left-0;
+}
+
+// Headlines
+
+@mixin title(
+  $small-size, 
+  $small-line, 
+  $small-mb,
+  $size, 
+  $line, 
+  $margin-bottom
+) {
+  @include viewport(tablet-portrait) {
+    font-size: ($font-size * $small-size);
+    line-height: ($font-size * $small-line);
+    margin-bottom: ($font-size * $small-mb);
+  }
+  font-size: ($font-size * $size);
+  line-height: ($font-size * $line);
+  margin-bottom: ($font-size * $margin-bottom);
+}
+
+// Text Columns
+
+@mixin col-format($cols) {
+  hyphens: auto;
+  column-count: $cols;
+  column-gap: 4%;
+}
+
+// Media Queries / Viewports
+// ---------------------------
+// 0 - 600px        Phone
+// 601 - 768px      Phone (landscape)
+// 769 - 900px      Tablet
+// 901 - 1024px     Tablet (landscape)
+// 1025 - 1280px    Desktop
+// 1281 - 1680px    Large Desktop
+// 1681 - ∞         XL Desktop
+
+// Hgrid follows the desktop first paradigm. 
+// Styles apply by default to all viewport sizes.
+// We override styles for smaller screens where needed.
+
+@mixin viewport($breakpoint) { 
+  @if $breakpoint == phone {
+    @media (max-width: $phone) { @content };
+  }
+  @if $breakpoint == phone-landscape {
+    @media (max-width: $phone-landscape) { @content };
+  }
+  @if $breakpoint == tablet-portrait {
+    @media (max-width: $tablet-portrait) { @content };
+  }
+  @if $breakpoint == tablet-landscape {
+    @media (max-width: $tablet-landscape) { @content };
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: $desktop) { @content };
+  }
+  @if $breakpoint == desktop-large {
+    @media (min-width: $desktop-large) { @content };
+  }
+  @if $breakpoint == desktop-xl {
+    @media (min-width: $desktop-xl) { @content };
+  }
+  // Default Breakpoint for Stacking Content
+  @if $breakpoint == $stack-point {
+    @media (max-width: $stack-point) { @content };
+  }
+  // Custom Override for $stack-point
+  @if $breakpoint == $custom-stack-point {
+    @media (max-width: $custom-stack-point) { @content };
+  }
+}
+
+// Allow specific styles for each viewport 
+// phone and desktop-xl are already specific
+@mixin onlyViewport($viewport) { 
+  @if $viewport == phone-landscape {
+    @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };
+  }
+  @if $viewport == tablet-portrait {
+    @media (min-width: $phone-landscape + 1px) and (max-width: $tablet-portrait) { @content };
+  }
+  @if $viewport == tablet-landscape {
+    @media (min-width: $tablet-portrait + 1px) and (max-width: $tablet-landscape) { @content };
+  }
+  @if $viewport == desktop {
+    @media (min-width: $tablet-landscape + 1px) and (max-width: $desktop) { @content };
+  }
+  @if $viewport == desktop-large {
+    @media (min-width: $desktop + 1px) and (max-width: $desktop-xl) { @content };
+  }
+}

@@ -1,0 +1,90 @@
+// Containers
+
+.container,
+.container-max {
+  @include viewport(tablet-portrait) {
+    padding-left: ($column-gutter-width * 2);
+    padding-right: ($column-gutter-width * 2);
+  }
+  @include viewport(phone) {
+    padding-left: ($column-gutter-width * 2.2);
+    padding-right: ($column-gutter-width * 2.2);
+  }
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $column-gutter-width;
+  padding-right: $column-gutter-width;
+}
+
+// Full width
+.container {
+  width: 100%;
+}
+
+// Limited width
+.container-max {
+  max-width: $container-max-width;
+}
+
+// Separates rows/content sections
+.group {
+  margin: $group-margin-bottom;
+}
+
+// Rows
+
+// Required wrapper for '.column' and '.column-*'
+// Stacks columns on portable devices
+.row,
+.row-block {
+  @include row-margins;
+  @include viewport($stack-point) {
+    display: block;
+  }
+  display: flex;
+  margin-bottom: $column-gutter-width;
+}
+
+// Row without columns
+// For full width text etc.
+.row-block {
+  @include row-block-padding;
+  display: block;
+}
+
+// Adjustment for flex-wrap rows
+.row.f-wrap {
+  [class*='column-'] {
+    margin-top: $column-gutter-width;
+    @include viewport($stack-point) {
+      &:first-child {
+      margin-top: 4.4%;
+      }
+    }
+  }
+}
+
+// Override default stacking at custom breakpoint
+.row.custom-stack {
+  @include viewport($custom-stack-point) {
+    display: block;
+
+    & .column,
+    [class^='column-'] {
+      margin-bottom: $column-gutter-width;
+      width: (100% - $column-gutter-width);
+    }
+  }
+}
+
+// Prevent stacking
+.row.no-stack {
+  @include viewport($stack-point) {
+    display: flex;
+    @for $fraction from 1 through 24 {
+      & .column-#{$fraction} {
+        width: (100% / $fraction) - $column-gutter-width;
+      }
+    }
+  }
+}

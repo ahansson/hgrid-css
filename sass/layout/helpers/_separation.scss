@@ -1,0 +1,420 @@
+// Lines and borders
+
+hr {
+  border: 1px solid $color-gray-light;
+  margin-bottom: 3rem;
+}
+
+.hairline {
+  border-top: 0.5px solid $color-gray-light;
+  margin-bottom: 3rem;
+}
+
+.hairline-darker {
+  border-top: .5px solid $color-gray;
+  margin-bottom: 3rem;
+}
+
+.border-lighter {
+  border: 1px solid $color-gray-lighter;
+}
+
+.border-light {
+  border: 1px solid $color-gray-light;
+}
+
+.border-gray {
+  border: 1px solid $color-gray;
+}
+
+.border-gray-dark {
+  border: 1px solid $color-gray-dark;
+}
+
+.border-gray-darker {
+  border: 1px solid $color-gray-darker;
+}
+
+.border-transparent {
+  border: 1px solid transparent;
+}
+
+.border-none {
+  border: none;
+}
+
+// Individual borders
+.border-top-lighter {
+  border-top: 1px solid $color-gray-lighter;
+}
+
+.border-top-lighter-dotted {
+  border-top: 1px dotted $color-gray-lighter;
+}
+
+.border-top-light {
+  border-top: 1px solid $color-gray-light;
+}
+
+.border-top-light-dotted {
+  border-top: 1px dotted $color-gray-light;
+}
+
+.border-top-gray {
+  border-top: 1px dotted $color-gray;
+}
+
+.border-top-gray-dotted {
+  border-top: 1px dotted $color-gray;
+}
+
+.border-top-dark {
+  border-top: 1px solid $color-gray-dark;
+}
+
+.border-top-dark-dotted {
+  border-top: 1px dotted $color-gray-dark;
+}
+
+.border-top-darker {
+  border-top: 1px solid $color-gray-darker;
+}
+
+.border-top-darker-dotted {
+  border-top: 1px dotted $color-gray-darker;
+}
+
+.border-top-none {
+  border-top: 0;
+}
+
+.border-bottom-lighter {
+  border-bottom: 1px solid $color-gray-lighter;
+}
+
+.border-bottom-lighter-dotted {
+  border-bottom: 1px dotted $color-gray-lighter;
+}
+
+.border-bottom-light {
+  border-bottom: 1px solid $color-gray-light;
+}
+
+.border-bottom-light-dotted {
+  border-bottom: 1px dotted $color-gray-light;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid $color-gray;
+}
+
+.border-bottom-gray-dotted {
+  border-bottom: 1px dotted $color-gray-light;
+}
+
+.border-bottom-dark {
+  border-bottom: 1px solid $color-gray-dark;
+}
+
+.border-bottom-dark-dotted {
+  border-bottom: 1px dotted $color-gray-dark;
+}
+
+.border-bottom-darker {
+  border-bottom: 1px solid $color-gray-darker;
+}
+
+.border-bottom-darker-dotted {
+  border-bottom: 1px dotted $color-gray-darker;
+}
+
+.border-bottom-none {
+  border-bottom: 0;
+}
+
+.border-right-lighter {
+  border-right: 1px solid $color-gray-lighter;
+}
+
+.border-right-lighter-dotted {
+  border-right: 1px dotted $color-gray-lighter;
+}
+.border-right-light {
+  border-right: 1px solid $color-gray-light;
+}
+
+.border-right-light-dotted {
+  border-right: 1px dotted $color-gray-light;
+}
+
+.border-right-gray {
+  border-right: 1px dotted $color-gray;
+}
+
+.border-right-gray-dotted {
+  border-right: 1px dotted $color-gray;
+}
+
+.border-right-dark {
+  border-right: 1px solid $color-gray-dark;
+}
+
+.border-right-dark-dotted {
+  border-right: 1px dotted $color-gray-dark;
+}
+
+.border-right-darker {
+  border-right: 1px solid $color-gray-darker;
+}
+
+.border-right-darker-dotted {
+  border-right: 1px dotted $color-gray-darker;
+}
+
+.border-right-none {
+  border-top: 0;
+}
+
+.border-left-lighter {
+  border-left: 1px solid $color-gray-lighter;
+}
+
+.border-left-lighter-dotted {
+  border-left: 1px dotted $color-gray-lighter;
+}
+.border-left-light {
+  border-left: 1px solid $color-gray-light;
+}
+
+.border-left-light-dotted {
+  border-left: 1px dotted $color-gray-light;
+}
+
+.border-left-gray {
+  border-left: 1px dotted $color-gray;
+}
+
+.border-left-gray-dotted {
+  border-left: 1px dotted $color-gray;
+}
+
+.border-left-dark {
+  border-left: 1px solid $color-gray-dark;
+}
+
+.border-left-dark-dotted {
+  border-left: 1px dotted $color-gray-dark;
+}
+
+.border-left-darker {
+  border-left: 1px solid $color-gray-darker;
+}
+
+.border-left-darker-dotted {
+  border-left: 1px dotted $color-gray-darker;
+}
+
+.border-left-none {
+  border-left: 0;
+}
+
+// Border styles
+.border-dotted {
+  border-style: dotted;
+}
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-double {
+  border-style: double;
+}
+
+.border-groove {
+  border-style: groove;
+}
+
+.border-ridge {
+  border-style: ridge;
+}
+
+.border-inset {
+  border-style: inset;
+}
+
+.border-outset {
+  border-style: outset;
+}
+
+// Border width
+.border-thin {
+  border-width: thin;
+}
+
+.border-medium {
+  border-width: medium;
+}
+
+.border-thick {
+  border-width: thick;
+}
+
+.border-2px {
+  border-width: 2px;
+}
+
+.border-3px {
+  border-width: 3px;
+}
+
+.border-4px {
+  border-width: 4px;
+}
+
+.border-5px {
+  border-width: 5px;
+}
+
+.border-6px {
+  border-width: 6px;
+}
+
+.border-10px {
+  border-width: 10px;
+}
+
+// Text column separator
+.col-rule-light {
+  column-rule: 1px solid $color-light;
+}
+
+.col-rule-dark {
+  column-rule: 1px solid $color-dark;
+}
+
+.col-rule-gray-lighter {
+  column-rule: 1px solid $color-gray-lighter;
+}
+
+.col-rule-gray-light {
+  column-rule: 1px solid $color-gray-light;
+}
+
+.col-rule-gray {
+  column-rule: 1px solid $color-gray;
+}
+
+.col-rule-gray-dark {
+  column-rule: 1px solid $color-gray-dark;
+}
+
+.col-rule-gray-darker {
+  column-rule: 1px solid $color-gray-darker;
+}
+
+// Padding (general)
+@for $p from 0 through 15 {
+  .padding-#{$p * 10} {
+    // Adjust visual diff top/bottom/sides.
+    padding: ($p*.8)+rem $p+rem;
+  }
+}
+
+.padding-5 {
+  padding: 0.44rem 0.5rem;
+}
+
+// Padding (top) 
+@for $p from 0 through 15 {
+  .pt-#{$p * 10},
+  .padding-top-#{$p * 10} {
+    padding-top: $p + rem;
+  }
+}
+
+// Padding (right side)
+@for $p from 0 through 15 {
+  .pr-#{$p * 10},
+  .padding-right-#{$p * 10} {
+    padding-right: $p + rem;
+  }
+}
+
+// Padding (left side)
+@for $p from 0 through 15 {
+  .pl-#{$p * 10},
+  .padding-left-#{$p * 10} {
+    padding-left: $p + rem;
+  }
+}
+
+// Padding (bottom) 
+@for $p from 0 through 15 {
+  .pb-#{$p * 10},
+  .padding-bottom-#{$p * 10} {
+    padding-bottom: $p + rem;
+  }
+}
+
+// Margin (general)
+.margin-5 {
+  margin: .5rem;
+}
+
+@for $margin from 0 through 15 {
+  .margin-#{$margin * 10} {
+    margin: $margin + rem;
+  }
+}
+
+// Margin top
+.mt-5,
+.margin-top-5 {
+  margin-top: .5rem;
+}
+
+@for $margin from 0 through 15 {
+  .mt-#{$margin * 10},
+  .margin-top-#{$margin * 10} {
+    margin-top: $margin + rem;
+  }
+}
+
+// Margin right
+.mr-5,
+.margin-right-5 {
+  margin-right: .5rem;
+}
+
+@for $margin from 0 through 15 {
+  .mr-#{$margin * 10},
+  .margin-right-#{$margin * 10} {
+    margin-right: $margin + rem;
+  }
+}
+
+// Margin bottom
+.mb-5,
+.margin-bottom-5 {
+  margin-bottom: .5rem;
+}
+
+@for $margin from 0 through 15 {
+  .mb-#{$margin * 10},
+  .margin-bottom-#{$margin * 10} {
+    margin-bottom: $margin + rem;
+  }
+}
+
+// Margin left
+.ml-5,
+.margin-left-5 {
+  margin-left: .5rem;
+}
+
+@for $margin from 0 through 15 {
+  .ml-#{$margin * 10},
+  .margin-left-#{$margin * 10} {
+    margin-left: $margin + rem;
+  }
+}

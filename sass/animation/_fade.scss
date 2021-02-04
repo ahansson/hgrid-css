@@ -1,0 +1,32 @@
+.fade {
+  transition: ease 0.3s;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadingIn ease 1.6s forwards;
+}
+
+@keyframes fadingIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadingOut ease 0.6s forwards;
+}
+
+@keyframes fadingOut {
+  from {
+    opacity: 1;
+  }
+  to {
+	  opacity:0;
+    visibility: hidden;
+    display: none;
+  }
+}
