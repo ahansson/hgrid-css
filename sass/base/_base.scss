@@ -36,6 +36,7 @@ h6 {
   https://github.com/sindresorhus/modern-normalize (MIT)
   https://github.com/suitcss/
   https://github.com/tailwindlabs/tailwindcss (MIT)
+  https://www.zachleat.com/web/fluid-images
 !*/
 
 /*
@@ -209,11 +210,22 @@ object {
 Constrain images and videos to the parent width and preserve their instrinsic aspect ratio.
 */
 
-img,
 video {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+img {
+  max-width: 100%;
+
+  &[width] {
+    width: auto; /* Defer to max-width */
+  }
+
+  &[width][height] {
+  height: auto; /* Preserve aspect ratio */
+  }
 }
 
 /* 

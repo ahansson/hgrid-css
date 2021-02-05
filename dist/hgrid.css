@@ -38,6 +38,7 @@ h6 {
   https://github.com/sindresorhus/modern-normalize (MIT)
   https://github.com/suitcss/
   https://github.com/tailwindlabs/tailwindcss (MIT)
+  https://www.zachleat.com/web/fluid-images
 !*/
 /*
   Set a sensible line height in all browsers (1)
@@ -60,6 +61,7 @@ body {
   background-color: #fff;
   display: block;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Segoe UI Emoji";
+  font-display: optional;
   font-size: 1.6rem;
   height: 100vh;
   width: 100%;
@@ -213,11 +215,22 @@ object {
 /* 
 Constrain images and videos to the parent width and preserve their instrinsic aspect ratio.
 */
-img,
 video {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto;
+  /* Defer to max-width */
+}
+img[width][height] {
+  height: auto;
+  /* Preserve aspect ratio */
 }
 
 /* 
