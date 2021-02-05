@@ -119,17 +119,19 @@ span a {
 
 // Are nicer underlines turned on?
 @if $use-global-link-underlines {
-  a:not([class*=button]):before,
-  ul li a:not([class*=button]):before,
-  ol li a:not([class*=button]):before,
-  span a:not([class*=button]):before {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: $link-underline-color;
-    position: absolute;
-    bottom: 3px;
+  a:not([class*=button]),
+  ul li a:not([class*=button]),
+  ol li a:not([class*=button]),
+  span a:not([class*=button]) {
 
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $link-underline-color;
+      position: absolute;
+      bottom: 3px;
+    }
     &:hover:before {
       height: 0;
     }
@@ -140,20 +142,23 @@ span a {
 // containers using the class '.text-content'?
 // '$use-global-link-underlines' must be set to 'false'
 @else if $use-article-link-underlines {
-  article a:not([class*=button]):before,
-  article ul li a:not([class*=button]):before,
-  article ol li a:not([class*=button]):before,
-  article span a:not([class*=button]):before,
-  .text-content a:not([class*=button]):before,
-  .text-content ul li a:not([class*=button]):before,
-  .text-content ol li a:not([class*=button]):before,
-  .text-content a:not([class*=button]):before {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: $link-underline-color;
-    position: absolute;
-    bottom: 3px;
+  article a:not([class*=button]),
+  article ul li a:not([class*=button]),
+  article ol li a:not([class*=button]),
+  article span a:not([class*=button]),
+  .text-content a:not([class*=button]),
+  .text-content ul li a:not([class*=button]),
+  .text-content ol li a:not([class*=button]),
+  .text-content a:not([class*=button]) {
+  
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $link-underline-color;
+      position: absolute;
+      bottom: 3px;
+    }
 
     &:hover:before {
       height: 0;
