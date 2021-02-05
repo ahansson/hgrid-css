@@ -16,7 +16,7 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
-**0.0.1**. New version forked from a deprecated version (1.2.0). There are extensive changes, so let's start fresh.
+**0.1.0-alpha**. New version forked from a deprecated version (1.2.0). There are extensive changes, so let's start fresh.
 
 
 ## How to install

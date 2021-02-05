@@ -1,12 +1,35 @@
 {
   "name": "hgrid-css",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha",
   "description": "A Lightweight and Practical CSS Utility Kit.",
-  "author": "Atle Hansson",
-  "license": "MIT",
-  "repository": "github.com/ahansson/hgrid-css",
   "main": "sass/hgrid.scss",
   "style": "dist/hgrid.min.css",
+  "author": {
+    "name": "Atle Hansson",
+    "user": "@ahansson"
+  },
+  "license": "MIT",
+  "homepage": "https://hgrid.io",
+  "keywords": [
+    "css",
+    "css-framework",
+    "css-utilities",
+    "dart-sass",
+    "hgrid",
+    "hgrid-css",
+    "postcss",
+    "sass",
+    "scss",
+    "responsive-design",
+    "utility-classes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahansson/hgrid-css"
+  },
+    "bugs": {
+    "url": "https://github.com/ahansson/hgrid-css/issues"
+  },
   "scripts": {
     "watch": "sass --watch sass:dist",
     "prefix": "postcss --use autoprefixer -b 'last 4 versions' --no-map dist/hgrid.css -o dist/hgrid.css",
