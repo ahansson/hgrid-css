@@ -1,4 +1,4 @@
-/*! hgrid v1.3.0 | MIT License | github.com/ahansson/hgrid-css
+/*! hgrid v0.1.1 | MIT License | github.com/ahansson/hgrid-css
 !*/
 *,
 *::before,
@@ -48,8 +48,7 @@ h6 {
 html {
   line-height: 1.5;
   /* 1 */
-  -moz-text-size-adjust: none;
-       text-size-adjust: none;
+  text-size-adjust: none;
   /* 2 */
   -webkit-text-size-adjust: none;
   font-size: 62.5%;
@@ -61,7 +60,6 @@ body {
   background-color: #fff;
   display: block;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Segoe UI Emoji";
-  font-display: optional;
   font-size: 1.6rem;
   height: 100vh;
   width: 100%;
@@ -123,14 +121,10 @@ h5,
 h6,
 p {
   display: block;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-  -webkit-margin-end: 0;
-          margin-inline-end: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 h1,
@@ -301,14 +295,6 @@ select {
   text-transform: none;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #999;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #999;
-}
-
 input::placeholder,
 textarea::placeholder {
   color: #999;
@@ -428,24 +414,17 @@ ul,
 menu,
 dir {
   list-style: none;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
 }
 
 blockquote,
 q {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-end: 0;
-          margin-inline-end: 0;
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
   padding: 0;
   quotes: none;
 }
@@ -611,8 +590,7 @@ figcaption > code,
 td > code th > code {
   background: #ffe4c9;
   border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-decoration-break: clone;
   color: #620042;
   display: inline;
   font-size: 83%;
@@ -746,30 +724,19 @@ mark,
 }
 
 .user-select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .user-select-text {
-  -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
+  user-select: text;
 }
 
 .user-select-all {
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
+  user-select: all;
 }
 
 .user-select-auto {
-  -webkit-user-select: auto;
-     -moz-user-select: auto;
-      -ms-user-select: auto;
-          user-select: auto;
+  user-select: auto;
 }
 
 .cursor-cursor {
@@ -809,50 +776,35 @@ mark,
 }
 
 .two-columns {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 4%;
-       column-gap: 4%;
+  hyphens: auto;
+  column-count: 2;
+  column-gap: 4%;
 }
 @media (max-width: 600px) {
   .two-columns {
-    -moz-column-count: initial;
-         column-count: initial;
+    column-count: initial;
   }
 }
 
 .three-columns {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  -moz-column-count: 3;
-       column-count: 3;
-  -moz-column-gap: 4%;
-       column-gap: 4%;
+  hyphens: auto;
+  column-count: 3;
+  column-gap: 4%;
 }
 @media (max-width: 768px) {
   .three-columns {
-    -moz-column-count: initial;
-         column-count: initial;
+    column-count: initial;
   }
 }
 
 .four-columns {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  -moz-column-count: 4;
-       column-count: 4;
-  -moz-column-gap: 4%;
-       column-gap: 4%;
+  hyphens: auto;
+  column-count: 4;
+  column-gap: 4%;
 }
 @media (max-width: 900px) {
   .four-columns {
-    -moz-column-count: initial;
-         column-count: initial;
+    column-count: initial;
   }
 }
 
@@ -2693,38 +2645,31 @@ hr {
 }
 
 .col-rule-light {
-  -moz-column-rule: 1px solid #fff;
-       column-rule: 1px solid #fff;
+  column-rule: 1px solid #fff;
 }
 
 .col-rule-dark {
-  -moz-column-rule: 1px solid #000;
-       column-rule: 1px solid #000;
+  column-rule: 1px solid #000;
 }
 
 .col-rule-gray-lighter {
-  -moz-column-rule: 1px solid #eee;
-       column-rule: 1px solid #eee;
+  column-rule: 1px solid #eee;
 }
 
 .col-rule-gray-light {
-  -moz-column-rule: 1px solid #ccc;
-       column-rule: 1px solid #ccc;
+  column-rule: 1px solid #ccc;
 }
 
 .col-rule-gray {
-  -moz-column-rule: 1px solid #888;
-       column-rule: 1px solid #888;
+  column-rule: 1px solid #888;
 }
 
 .col-rule-gray-dark {
-  -moz-column-rule: 1px solid #555;
-       column-rule: 1px solid #555;
+  column-rule: 1px solid #555;
 }
 
 .col-rule-gray-darker {
-  -moz-column-rule: 1px solid #333;
-       column-rule: 1px solid #333;
+  column-rule: 1px solid #333;
 }
 
 .padding-0 {
@@ -4916,7 +4861,6 @@ hr {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -5395,28 +5339,23 @@ hr {
 }
 
 .fill {
-  -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .contain {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .cover {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .scale-down {
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  object-fit: scale-down;
 }
 
 .object-fit-none {
-  -o-object-fit: none;
-     object-fit: none;
+  object-fit: none;
 }
 
 .align-top {
@@ -5500,14 +5439,10 @@ hr {
 }
 
 .min-content {
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
   min-width: min-content;
 }
 
 .max-content {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
   min-width: max-content;
 }
 
@@ -5957,17 +5892,7 @@ hr {
 }
 
 .fade-in {
-  -webkit-animation: fadingIn ease 1.6s forwards;
-          animation: fadingIn ease 1.6s forwards;
-}
-
-@-webkit-keyframes fadingIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadingIn ease 1.6s forwards;
 }
 
 @keyframes fadingIn {
@@ -5979,19 +5904,7 @@ hr {
   }
 }
 .fade-out {
-  -webkit-animation: fadingOut ease 0.6s forwards;
-          animation: fadingOut ease 0.6s forwards;
-}
-
-@-webkit-keyframes fadingOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-  }
+  animation: fadingOut ease 0.6s forwards;
 }
 
 @keyframes fadingOut {
@@ -6005,20 +5918,11 @@ hr {
   }
 }
 .flash {
-  -webkit-animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
-          animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
+  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
 }
 
 .flash-once {
-  -webkit-animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
-          animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
-}
-
-@-webkit-keyframes flash {
-  80%, 100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
+  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
 }
 
 @keyframes flash {
@@ -6028,19 +5932,11 @@ hr {
   }
 }
 .rotate {
-  -webkit-animation: rotate 1s linear infinite;
-          animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 .rotate-once {
-  -webkit-animation: rotate 0.8s linear;
-          animation: rotate 0.8s linear;
-}
-
-@-webkit-keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: rotate 0.8s linear;
 }
 
 @keyframes rotate {
@@ -6071,17 +5967,7 @@ hr {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  -webkit-animation: spinner 1.2s linear infinite;
-          animation: spinner 1.2s linear infinite;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: spinner 1.2s linear infinite;
 }
 
 @keyframes spinner {
@@ -6103,17 +5989,8 @@ hr {
 }
 
 .transition.vanish {
-  -webkit-animation: vanish 0.6s;
-          animation: vanish 0.6s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes vanish {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
+  animation: vanish 0.6s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes vanish {
@@ -6183,7 +6060,7 @@ hr {
 }
 
 .appearance-none {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
+
+/*# sourceMappingURL=hgrid.css.map */
