@@ -30,7 +30,7 @@
 
 // Pixel Perfect Push & Pull Without Affecting Siblings
 
-// Move Downwwards
+// Move Downwards
 @for $px from 1 through 40 {
   .translate-push#{$px}v {
     transform: translate(0, ($px/10 + rem));
