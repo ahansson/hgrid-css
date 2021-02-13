@@ -2352,6 +2352,7 @@ table.striped tbody tr:nth-child(odd):hover {
   margin-bottom: 1%;
 }
 .embed iframe,
+.embed video,
 .embed object,
 .embed embed {
   position: absolute;
