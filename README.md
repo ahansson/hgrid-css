@@ -1,6 +1,6 @@
 # hgrid-css
 
-## ⚠️ WORK IN PROGRESS
+### ⚠️ WORK IN PROGRESS
 
 _Documentation may be incomplete or inaccurate_
 
@@ -36,7 +36,7 @@ yarn add hgrid-css --dev
 ```html
 <head>
   <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
-  <-- more css below -->
+  <!-- more css below -->
 </head>
 ```
 **@import into your stylesheet:**
@@ -49,7 +49,7 @@ yarn add hgrid-css --dev
 @import 'https://cdn.domain.com/dist/hgrid.min.css';
 ```
 
-For detailed information on how to integrate **hgrid** in your frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+For detailed information on how to integrate **hgrid** in your frontend framework as `scss`, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
 
 ## Local development
 
