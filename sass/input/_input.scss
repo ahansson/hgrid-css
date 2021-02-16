@@ -1,0 +1,19 @@
+input {
+
+  &[type=text]{
+    cursor: text;
+  }
+  &:disabled,
+  .disabled {
+    color: #666;
+  }
+  &:read-only,
+  .readonly {
+    cursor: not-allowed;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
