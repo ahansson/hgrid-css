@@ -89,7 +89,7 @@ pre {
 
   & > code {
     background: $pre-code-bg;
-    border-radius: 4px;
+    border-radius: $border-radius;
     color: $pre-code-color;
     font-size: $pre-code-size;
     display: block;
@@ -146,10 +146,12 @@ span a {
   article ul li a:not([class*=button]),
   article ol li a:not([class*=button]),
   article span a:not([class*=button]),
+  article label a,
   .text-content a:not([class*=button]),
   .text-content ul li a:not([class*=button]),
   .text-content ol li a:not([class*=button]),
-  .text-content a:not([class*=button]) {
+  .text-content span a:not([class*=button]),
+  .text-content label a {
   
     &:before {
       content: "";

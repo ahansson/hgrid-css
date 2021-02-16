@@ -274,15 +274,14 @@ textarea {
 }
 
 a,
-button,
-[role=button],
+button, 
 select,
-input:not([type=text]) {
+input:not([type=text]),
+input:not([type=search]),
+input:not([type=number]),
+input:not([type=color]),
+input:not([type=tel]) {
   cursor: pointer;
-}
-
-input[type=text]{
-  cursor: text;
 }
 
 /*
@@ -294,10 +293,6 @@ select {
   text-transform: none;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #999;
-}
 
 /*
 Correct the inability to style clickable types in iOS and Safari

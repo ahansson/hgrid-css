@@ -1,5 +1,4 @@
-/*! hgrid v0.1.1 | MIT License | github.com/ahansson/hgrid-css
-!*/
+/*! hgrid v0.1.1 | MIT License | github.com/ahansson/hgrid-css !*/
 *,
 *::before,
 *::after {
@@ -277,14 +276,13 @@ textarea {
 
 a,
 button,
-[role=button],
 select,
-input:not([type=text]) {
+input:not([type=text]),
+input:not([type=search]),
+input:not([type=number]),
+input:not([type=color]),
+input:not([type=tel]) {
   cursor: pointer;
-}
-
-input[type=text] {
-  cursor: text;
 }
 
 /*
@@ -297,7 +295,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #999;
+  color: #888;
 }
 
 /*
@@ -435,6 +433,15 @@ q::after {
 }
 
 /*! End reset */
+:focus {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.3rem #49a7ff75;
+}
+
 body {
   font-size: 1.88rem;
   line-height: 2.88rem;
@@ -607,7 +614,7 @@ pre {
 }
 pre > code {
   background: #361c43;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #fff;
   font-size: 83%;
   display: block;
@@ -5887,6 +5894,74 @@ hr {
   overflow-y: auto;
 }
 
+.overflow-inherit {
+  overflow: inherit;
+}
+
+.overflow-x-inherit {
+  overflow-x: inherit;
+}
+
+.overflow-y-inherit {
+  overflow-y: inherit;
+}
+
+.overflow-initial {
+  overflow: initial;
+}
+
+.overflow-x-initial {
+  overflow-x: initial;
+}
+
+.overflow-y-initial {
+  overflow-y: initial;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-unset {
+  overflow: unset;
+}
+
+.overflow-x-unset {
+  overflow-x: unset;
+}
+
+.overflow-y-unset {
+  overflow-y: unset;
+}
+
+input[type=text] {
+  cursor: text;
+}
+
+button:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed;
+}
+
+input:disabled,
+.disabled {
+  color: #666;
+}
+
+input:read-only,
+.readonly {
+  cursor: not-allowed;
+}
+
 .fade {
   transition: ease 0.3s;
   opacity: 0;
@@ -6002,54 +6077,6 @@ hr {
 }
 .flex-force {
   display: flex;
-}
-
-.overflow-inherit {
-  overflow: inherit;
-}
-
-.overflow-x-inherit {
-  overflow: inherit;
-}
-
-.overflow-y-inherit {
-  overflow: inherit;
-}
-
-.overflow-initial {
-  overflow: initial;
-}
-
-.overflow-x-initial {
-  overflow: initial;
-}
-
-.overflow-y-initial {
-  overflow: initial;
-}
-
-.overflow-unset {
-  overflow: unset;
-}
-
-.overflow-x-unset {
-  overflow: unset;
-}
-
-.overflow-y-unset {
-  overflow: unset;
-}
-
-.overflow-visible {
-  overflow: visible;
-}
-
-.overflow-x-visible {
-  overflow: visible;
-}
-
-.overflow-y-visible {
-  overflow: visible;
 }
 
 .no-hover:hover {
