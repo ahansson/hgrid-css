@@ -1,0 +1,8 @@
+:focus {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0;
+  border-radius: $border-radius;
+  box-shadow: 0 0 0 $focus-border-weight $focus-border-color;
+}
