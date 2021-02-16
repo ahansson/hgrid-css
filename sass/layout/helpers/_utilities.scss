@@ -335,3 +335,19 @@ $singleViewports: phone-landscape, tablet-portrait, tablet-landscape, desktop, d
 .overflow-y-auto { // vertical scroll if parent is too short for content
   overflow-y: auto;
 }
+
+$overflow-values: inherit, initial, visible, unset;
+
+@each $val in $overflow-values {
+  .overflow-#{$val} {
+    overflow: $val;
+  }
+
+  .overflow-x-#{$val} {
+    overflow-x: $val;
+  }
+
+  .overflow-y-#{$val} {
+    overflow-y: $val;
+  }
+}

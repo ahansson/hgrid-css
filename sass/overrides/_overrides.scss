@@ -3,24 +3,6 @@
   display: flex;
 }
 
-// Overflow overrides
-// More overflow classes in 'layout/_utilities.scss'
-$overflow-values: inherit, initial, unset, visible;
-
-@each $val in $overflow-values {
-  .overflow-#{$val} {
-    overflow: $val;
-  }
-
-  .overflow-x-#{$val} {
-    overflow: $val;
-  }
-
-  .overflow-y-#{$val} {
-    overflow: $val;
-  }
-}
-
 // No hover effect
 .no-hover {
   &:hover {
