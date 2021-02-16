@@ -293,11 +293,6 @@ select {
   text-transform: none;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #888;
-}
-
 /*
 Correct the inability to style clickable types in iOS and Safari
 Add a few default hgrid styles
@@ -5942,24 +5937,163 @@ hr {
   overflow-y: unset;
 }
 
-input[type=text] {
+::placeholder {
+  color: #888;
+}
+
+label {
+  font-size: 82%;
+  line-height: 2rem;
+  min-height: 2.2rem;
+  margin-bottom: 0.6rem;
+  width: fit-content;
+}
+
+input[type=text]:not(:read-only) {
   cursor: text;
 }
+input:disabled, input[type=submit]:disabled {
+  background: #eee;
+  color: #777;
+  cursor: default;
+}
+input[type=radio]:checked:disabled, input[type=radio]:checked:read-only, input[type=checkbox]:checked:disabled, input[type=checkbox]:checked:read-only {
+  background-color: #aaa;
+  border: 1px solid #aaa;
+}
 
+input:not([type=submit]),
+input:not(button),
+select,
+textarea {
+  border: 1px solid #c7c7c7;
+  display: block;
+  width: 100%;
+  padding: 1rem 1.4rem;
+  margin: 0.4rem 0 2rem;
+  transition: box-shadow 0.2s ease;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: inline-block;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.6rem 0 0;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in;
+  transform: translate(0, 0.3rem);
+  appearance: none;
+  border-radius: 2px;
+}
+
+input[type=radio] {
+  border-radius: 100%;
+}
+
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+  background-color: #8a00c0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 16 16' version='1.1'%3E%3Cg id='Page-2' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Artboard' fill='%23FFFFFF'%3E%3Ccircle id='Oval' cx='7.98442047' cy='8.01557953' r='7.77999693'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: 4px;
+  border: 1px solid #8a00c0;
+}
+
+input[type=checkbox]:checked {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='15px' viewBox='0 0 182 152' version='1.1'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='iconfinder_icon-checkmark_211644' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cpath d='M180.055518,18.8658943 L156.162996,1.8435043 C155.423155,1.29312679 154.509233,0.9 153.464751,0.9 C152.420269,0.9 151.462828,1.29312679 150.722986,1.88281697 L63.8133926,102.759151 C63.8133926,102.759151 29.6501322,73.0780786 28.6926906,72.2131997 C27.7352489,71.3483207 26.4731666,69.8937516 24.5582832,69.8937516 C22.6433999,69.8937516 21.7729983,71.1124447 20.7720365,72.0166363 C20.0321952,72.7242645 7.8465737,84.2821921 1.84080308,90.0218433 C1.49264246,90.3756574 1.27504208,90.5722208 0.970401539,90.8474095 C0.448160616,91.5157251 0.1,92.262666 0.1,93.0882322 C0.1,93.9531112 0.448160616,94.6607394 0.970401539,95.3290549 L2.18896369,96.3511846 C2.18896369,96.3511846 62.8124309,148.951549 63.8133926,149.855741 C64.8143544,150.759932 66.0329166,151.9 67.8172397,151.9 C69.5580428,151.9 70.9942053,150.209555 71.8210868,149.462614 L180.229598,23.6620411 C180.751839,22.9937256 181.1,22.2467847 181.1,21.3819058 C181.1,20.3990888 180.664799,19.5735225 180.055518,18.8658943 Z' id='Path'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 11px;
+}
+
+button,
+input[type=submit] {
+  width: unset;
+  padding: 1.4rem 2.6rem;
+  border: 2px solid #66008d;
+  transition: 0.3s ease;
+}
 button:disabled,
-select:disabled,
-input:disabled {
-  cursor: not-allowed;
+input[type=submit]:disabled {
+  background: #eee;
+  color: #777;
+  cursor: default;
+}
+button:hover,
+input[type=submit]:hover {
+  border: 2px solid #66008d;
+  background: none;
+  color: #66008d;
+}
+button:focus, button:active,
+input[type=submit]:focus,
+input[type=submit]:active {
+  background: #66008d;
+  color: #fff;
+  border: 2px solid #66008d;
+}
+button.secondary,
+input[type=submit].secondary {
+  background: none;
+  color: #66008d;
+}
+button.secondary:hover,
+input[type=submit].secondary:hover {
+  color: #a135cc;
+  border-color: #a135cc;
 }
 
-input:disabled,
 .disabled {
-  color: #666;
+  color: #777;
+  cursor: default;
 }
 
+input:disabled:focus,
+button:disabled:focus,
+select:disabled:focus {
+  box-shadow: unset;
+}
+
+.readonly,
 input:read-only,
-.readonly {
+button:read-only,
+input[type=radio]:read-only,
+input[type=radio]:checked:read-only,
+input[type=checkbox]:read-only,
+input[type=checkbox]:checked:read-only {
   cursor: not-allowed;
+}
+
+select {
+  display: block;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-position: right 0.75rem center;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuNzA3MSAxNS43MDcxQzEyLjMxNjYgMTYuMDk3NiAxMS42ODM0IDE2LjA5NzYgMTEuMjkyOSAxNS43MDcxTDUuMjkyODkgOS43MDcxMUM0LjkwMjM3IDkuMzE2NTggNC45MDIzNyA4LjY4MzQyIDUuMjkyODkgOC4yOTI4OUM1LjY4MzQyIDcuOTAyMzcgNi4zMTY1OCA3LjkwMjM3IDYuNzA3MTEgOC4yOTI4OUwxMiAxMy41ODU4TDE3LjI5MjkgOC4yOTI4OUMxNy42ODM0IDcuOTAyMzcgMTguMzE2NiA3LjkwMjM3IDE4LjcwNzEgOC4yOTI4OUMxOS4wOTc2IDguNjgzNDIgMTkuMDk3NiA5LjMxNjU4IDE4LjcwNzEgOS43MDcxMUwxMi43MDcxIDE1LjcwNzFaIiBmaWxsPSJibGFjayIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+");
+  background-repeat: no-repeat;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  line-height: 1.4;
+}
+
+label:not(.block) + label:not(.block),
+input[type=submit]:not(.block) + button:not(.block),
+button:not(.block) + button:not(.block),
+input[type=submit]:not(.block) + input[type=submit]:not(.block) {
+  margin-left: 2rem;
+}
+
+fieldset {
+  margin-bottom: 3rem;
+}
+
+legend {
+  font-size: 108%;
+  margin-bottom: 1rem;
 }
 
 .fade {
