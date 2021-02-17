@@ -5941,21 +5941,13 @@ hr {
   color: #888;
 }
 
-label {
-  font-size: 82%;
-  line-height: 2rem;
-  min-height: 2.2rem;
-  margin-bottom: 0.6rem;
-  width: fit-content;
-}
-
-input[type=text]:not(:read-only) {
+input[type=text]:not(:read-only):not(:disabled) {
   cursor: text;
 }
 input:disabled, input[type=submit]:disabled {
-  background: #eee;
-  color: #777;
-  cursor: default;
+  background: #f2f2f2;
+  color: #888;
+  cursor: not-allowed;
 }
 input[type=radio]:checked:disabled, input[type=radio]:checked:read-only, input[type=checkbox]:checked:disabled, input[type=checkbox]:checked:read-only {
   background-color: #aaa;
@@ -5966,7 +5958,7 @@ input:not([type=submit]),
 input:not(button),
 select,
 textarea {
-  border: 1px solid #c7c7c7;
+  border: 1px solid #ccc;
   display: block;
   width: 100%;
   padding: 1rem 1.4rem;
@@ -6016,9 +6008,9 @@ input[type=submit] {
 }
 button:disabled,
 input[type=submit]:disabled {
-  background: #eee;
-  color: #777;
-  cursor: default;
+  background: #f2f2f2;
+  color: #888;
+  cursor: not-allowed;
 }
 button:hover,
 input[type=submit]:hover {
@@ -6044,27 +6036,6 @@ input[type=submit].secondary:hover {
   border-color: #a135cc;
 }
 
-.disabled {
-  color: #777;
-  cursor: default;
-}
-
-input:disabled:focus,
-button:disabled:focus,
-select:disabled:focus {
-  box-shadow: unset;
-}
-
-.readonly,
-input:read-only,
-button:read-only,
-input[type=radio]:read-only,
-input[type=radio]:checked:read-only,
-input[type=checkbox]:read-only,
-input[type=checkbox]:checked:read-only {
-  cursor: not-allowed;
-}
-
 select {
   display: block;
   background-repeat: no-repeat;
@@ -6075,11 +6046,28 @@ select {
   appearance: none;
   -webkit-appearance: none;
 }
+select.disabled {
+  cursor: not-allowed;
+  color: #565656;
+}
 
 textarea {
   line-height: 1.4;
 }
 
+.readonly,
+input:read-only,
+button:read-only,
+input[type=radio]:read-only,
+input[type=radio]:checked:read-only,
+input[type=checkbox]:read-only,
+input[type=checkbox]:checked:read-only {
+  color: #888;
+  cursor: not-allowed;
+}
+
+input:not(.block, [type=radio], [type=checkbox]) + input:not(.block, [type=radio], [type=checkbox]),
+select:not(.block) + select:not(.block),
 label:not(.block) + label:not(.block),
 input[type=submit]:not(.block) + button:not(.block),
 button:not(.block) + button:not(.block),
@@ -6094,6 +6082,14 @@ fieldset {
 legend {
   font-size: 108%;
   margin-bottom: 1rem;
+}
+
+label {
+  font-size: 82%;
+  line-height: 2rem;
+  min-height: 2.2rem;
+  margin-bottom: 0.6rem;
+  width: max-content;
 }
 
 .fade {

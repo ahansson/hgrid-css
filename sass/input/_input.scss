@@ -2,27 +2,18 @@
   color: $color-gray;
 }
 
-// Input label
-label {
-  font-size: 82%;
-  line-height: 2rem;
-  min-height: 2.2rem;
-  margin-bottom: 0.6rem;
-  width: fit-content;
-}
-
 // Input elements
 input {
 
-  &[type=text]:not(:read-only){
+  &[type=text]:not(:read-only):not(:disabled) {
     cursor: text;
   }
 
   &:disabled,
   &[type=submit]:disabled {
-    background: #eee;
-    color: #777;
-    cursor: default;
+    background: #f2f2f2;
+    color: $color-gray;
+    cursor: not-allowed;
   }
 
   &[type=radio]:checked:disabled,
@@ -32,14 +23,14 @@ input {
     background-color: #aaa;
     border: 1px solid #aaa;
   }
-
 }
 
+// Basic styling for input elements
 input:not([type=submit]),
 input:not(button),
 select,
 textarea {
-  border: 1px solid #c7c7c7;
+  border: 1px solid $color-gray-light;
   display: block;
   width: 100%;
   padding: 1rem 1.4rem;
@@ -47,6 +38,7 @@ textarea {
   transition: box-shadow 0.2s ease;
 }
 
+// Radio buttons and checkboxes
 input[type=checkbox],
 input[type=radio] {
   display: inline-block;
@@ -89,9 +81,9 @@ input[type=submit] {
   transition: 0.3s ease;
 
   &:disabled {
-    background: #eee;
-    color: #777;
-    cursor: default;
+    background: #f2f2f2;
+    color: $color-gray;
+    cursor: not-allowed;
   }
 
   &:hover {
@@ -118,29 +110,7 @@ input[type=submit] {
   }
 }
 
-// Input states
-.disabled {
-  color: #777;
-  cursor: default;
-}
-
-input:disabled:focus,
-button:disabled:focus,
-select:disabled:focus {
-  box-shadow: unset;
-}
-
-.readonly,
-input:read-only,
-button:read-only,
-input[type=radio]:read-only,
-input[type=radio]:checked:read-only,
-input[type=checkbox]:read-only,
-input[type=checkbox]:checked:read-only {
- cursor: not-allowed;
-}
-
-// Select menus
+// Select menu
 select{
   display: block;
   background-repeat: no-repeat;
@@ -150,15 +120,34 @@ select{
   background-repeat: no-repeat;
   appearance: none;
   -webkit-appearance: none;
+
+  &.disabled {
+    cursor: not-allowed;
+    // Darker than ::placeholder to counter for reduced opacity (chromium)
+    color: #565656;
+  }
 }
 
-// Text fields
+// Text field
 textarea {
   line-height: 1.4;
 }
 
-// Space between input elements 
-// if laid out horizontally
+// Readonly state
+.readonly,
+input:read-only,
+button:read-only,
+input[type=radio]:read-only,
+input[type=radio]:checked:read-only,
+input[type=checkbox]:read-only,
+input[type=checkbox]:checked:read-only {
+  color: $color-gray;
+  cursor: not-allowed;
+}
+
+// Gap between horizontal input elements
+input:not(.block, [type=radio], [type=checkbox]) + input:not(.block, [type=radio], [type=checkbox]),
+select:not(.block) + select:not(.block),
 label:not(.block) + label:not(.block),
 input[type=submit]:not(.block) + button:not(.block),
 button:not(.block) + button:not(.block),
