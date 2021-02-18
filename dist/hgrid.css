@@ -5937,6 +5937,23 @@ hr {
   overflow-y: unset;
 }
 
+fieldset {
+  margin-bottom: 3rem;
+}
+
+legend {
+  font-size: 108%;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 83%;
+  line-height: 2rem;
+  min-height: 2.2rem;
+  margin-bottom: 0.6rem;
+  width: max-content;
+}
+
 ::placeholder {
   color: #888;
 }
@@ -5949,9 +5966,14 @@ input:disabled, input[type=submit]:disabled {
   color: #888;
   cursor: not-allowed;
 }
-input[type=radio]:checked:disabled, input[type=radio]:checked:read-only, input[type=checkbox]:checked:disabled, input[type=checkbox]:checked:read-only {
-  background-color: #aaa;
-  border: 1px solid #aaa;
+input[type=radio]:disabled, input[type=radio]:checked:disabled, input[type=checkbox]:disabled, input[type=checkbox]:checked:disabled {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
+input[type=radio]:checked:disabled, input[type=checkbox]:checked:disabled {
+  background-color: #888;
+  border: 1px solid #555;
 }
 
 input:not([type=submit]),
@@ -5961,7 +5983,7 @@ textarea {
   border: 1px solid #ccc;
   display: block;
   width: 100%;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.4rem;
   margin: 0.4rem 0 2rem;
   transition: box-shadow 0.2s ease;
 }
@@ -5975,7 +5997,7 @@ input[type=radio] {
   margin: 0 0.6rem 0 0;
   background-color: #fff;
   transition: background-color 0.2s ease-in;
-  transform: translate(0, 0.3rem);
+  transform: translate(0, 0.4rem);
   appearance: none;
   border-radius: 2px;
 }
@@ -6000,44 +6022,70 @@ input[type=checkbox]:checked {
 }
 
 button,
-input[type=submit] {
-  width: unset;
-  padding: 1.4rem 2.6rem;
-  border: 2px solid #66008d;
-  transition: 0.3s ease;
-}
-button:disabled,
-input[type=submit]:disabled {
-  background: #f2f2f2;
-  color: #888;
-  cursor: not-allowed;
-}
-button:hover,
-input[type=submit]:hover {
-  border: 2px solid #66008d;
-  background: none;
-  color: #66008d;
-}
-button:focus, button:active,
-input[type=submit]:focus,
-input[type=submit]:active {
-  background: #66008d;
+input[type=submit]:not(:disabled) {
   color: #fff;
   border: 2px solid #66008d;
+  padding: 1.4rem 2.6rem;
+  transition-property: background, border, color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  width: max-content;
+  margin-bottom: 2rem;
 }
-button.secondary,
-input[type=submit].secondary {
+button.outline, button:not(:disabled):hover,
+input[type=submit]:not(:disabled).outline,
+input[type=submit]:not(:disabled):not(:disabled):hover {
   background: none;
+  border: 2px solid #66008d;
   color: #66008d;
 }
-button.secondary:hover,
-input[type=submit].secondary:hover {
-  color: #a135cc;
-  border-color: #a135cc;
+button:not(:disabled).outline:hover, button:not(:disabled, .outline):active,
+input[type=submit]:not(:disabled):not(:disabled).outline:hover,
+input[type=submit]:not(:disabled):not(:disabled, .outline):active {
+  background: #66008d;
+  border: 2px solid #66008d;
+  color: #fff;
+}
+button:not(:disabled).outline:active,
+input[type=submit]:not(:disabled):not(:disabled).outline:active {
+  background: none;
+  border: 2px solid #66008d;
+  color: #66008d;
+}
+button.secondary,
+input[type=submit]:not(:disabled).secondary {
+  background: #9139b4;
+  border: 2px solid #9139b4;
+  color: #fff;
+}
+button.secondary:not(:disabled):hover,
+input[type=submit]:not(:disabled).secondary:not(:disabled):hover {
+  background: none;
+  border: 2px solid #9139b4;
+  color: #9139b4;
+}
+button.secondary.secondary:not(:disabled):active,
+input[type=submit]:not(:disabled).secondary.secondary:not(:disabled):active {
+  background: #9139b4;
+  border: 2px solid #9139b4;
+  color: #fff;
+}
+button:disabled, button.secondary:disabled,
+input[type=submit]:not(:disabled):disabled,
+input[type=submit]:not(:disabled).secondary:disabled {
+  background: #ccc;
+  border: 2px solid #ccc;
+  color: #555;
+  cursor: not-allowed;
+}
+button.outline:disabled,
+input[type=submit]:not(:disabled).outline:disabled {
+  background: #eee;
+  border: 2px solid #ccc;
+  color: #888;
 }
 
 select {
-  display: block;
   background-repeat: no-repeat;
   background-color: #fff;
   background-position: right 0.75rem center;
@@ -6048,48 +6096,37 @@ select {
 }
 select.disabled {
   cursor: not-allowed;
-  color: #565656;
+  opacity: 1;
+  background-color: #f2f2f2;
+  color: #888;
 }
 
 textarea {
   line-height: 1.4;
 }
 
+.disabled,
 .readonly,
-input:read-only,
-button:read-only,
-input[type=radio]:read-only,
-input[type=radio]:checked:read-only,
-input[type=checkbox]:read-only,
-input[type=checkbox]:checked:read-only {
+input:not([type=submit]):read-only {
   color: #888;
   cursor: not-allowed;
 }
 
-input:not(.block, [type=radio], [type=checkbox]) + input:not(.block, [type=radio], [type=checkbox]),
-select:not(.block) + select:not(.block),
-label:not(.block) + label:not(.block),
-input[type=submit]:not(.block) + button:not(.block),
-button:not(.block) + button:not(.block),
-input[type=submit]:not(.block) + input[type=submit]:not(.block) {
-  margin-left: 2rem;
+input:not(.block, [type=radio], [type=checkbox]),
+select:not(.block),
+label:not(.block),
+input[type=submit]:not(.block),
+button:not(.block),
+input[type=submit]:not(.block) {
+  margin-right: 2rem;
 }
-
-fieldset {
-  margin-bottom: 3rem;
-}
-
-legend {
-  font-size: 108%;
-  margin-bottom: 1rem;
-}
-
-label {
-  font-size: 82%;
-  line-height: 2rem;
-  min-height: 2.2rem;
-  margin-bottom: 0.6rem;
-  width: max-content;
+input:not(.block, [type=radio], [type=checkbox]):last-child,
+select:not(.block):last-child,
+label:not(.block):last-child,
+input[type=submit]:not(.block):last-child,
+button:not(.block):last-child,
+input[type=submit]:not(.block):last-child {
+  margin-right: unset;
 }
 
 .fade {
