@@ -16,12 +16,19 @@ input {
     cursor: not-allowed;
   }
 
+  &[type=radio]:disabled,
   &[type=radio]:checked:disabled,
-  &[type=radio]:checked:read-only,
-  &[type=checkbox]:checked:disabled,
-  &[type=checkbox]:checked:read-only {
-    background-color: #aaa;
-    border: 1px solid #aaa;
+  &[type=checkbox]:disabled,
+  &[type=checkbox]:checked:disabled {
+    background-color: $color-gray-lighter;
+    border: 1px solid $color-gray-light;
+    cursor: not-allowed;
+  }
+
+  &[type=radio]:checked:disabled,
+  &[type=checkbox]:checked:disabled {
+    background-color: $color-gray;
+    border: 1px solid $color-gray-dark;
   }
 }
 
@@ -33,7 +40,7 @@ textarea {
   border: 1px solid $color-gray-light;
   display: block;
   width: 100%;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.4rem;
   margin: 0.4rem 0 2rem;
   transition: box-shadow 0.2s ease;
 }
@@ -48,7 +55,7 @@ input[type=radio] {
   margin: 0 .6rem 0 0;
   background-color: #fff;
   transition: background-color 0.2s ease-in;
-  transform: translate(0, 0.3rem);
+  transform: translate(0, 0.4rem);
   appearance: none;
   border-radius: 2px;
 }
@@ -74,45 +81,71 @@ input[type=checkbox]:checked {
 
 // Buttons
 button,
-input[type=submit] {
-  width: unset;
+input[type=submit]:not(:disabled) {
+  color: #fff;
+  border: 2px solid $theme-color-primary;
   padding: 1.4rem 2.6rem;
-  border: 2px solid #66008d;
-  transition: 0.3s ease;
+  transition-property: background, border, color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  width: max-content;
+  margin-bottom: 2rem;
 
-  &:disabled {
-    background: #f2f2f2;
-    color: $color-gray;
-    cursor: not-allowed;
-  }
-
-  &:hover {
-    border: 2px solid #66008d;
+  &.outline,
+  &:not(:disabled):hover {
     background: none;
-    color: #66008d;
+    border: 2px solid $theme-color-primary;
+    color: $theme-color-primary;
   }
 
-  &:focus,
-  &:active {
-    background: #66008d;
+  &:not(:disabled).outline:hover,
+  &:not(:disabled, .outline):active {
+    background: $theme-color-primary;
+    border: 2px solid $theme-color-primary;
     color: #fff;
-    border: 2px solid #66008d;
+  }
+
+  &:not(:disabled).outline:active {
+    background: none;
+    border: 2px solid $theme-color-primary;
+    color: $theme-color-primary;
   }
 
   &.secondary {
-    background: none;
-    color: #66008d;
+    background: $theme-color-secondary;
+    border: 2px solid $theme-color-secondary;
+    color: #fff;
 
-    &:hover {
-      color: #a135cc;
-      border-color: #a135cc;
+    &:not(:disabled):hover {
+      background: none;
+      border: 2px solid $theme-color-secondary;
+      color: $theme-color-secondary;
     }
+
+    &.secondary:not(:disabled):active {
+      background: $theme-color-secondary;
+      border: 2px solid $theme-color-secondary;
+      color: #fff;
+    }
+  }
+  
+  &:disabled,
+  &.secondary:disabled {
+    background: $bg-gray-light;
+    border: 2px solid $bg-gray-light;
+    color: $bg-gray-dark;
+    cursor: not-allowed;
+  }
+
+  &.outline:disabled {
+    background: $bg-gray-lighter;
+    border: 2px solid $color-gray-light;
+    color: $color-gray;
   }
 }
 
 // Select menu
 select{
-  display: block;
   background-repeat: no-repeat;
   background-color: #fff;
   background-position: right .75rem center;
@@ -123,8 +156,9 @@ select{
 
   &.disabled {
     cursor: not-allowed;
-    // Darker than ::placeholder to counter for reduced opacity (chromium)
-    color: #565656;
+    opacity: 1; // Fix for Chromium
+    background-color: #f2f2f2;
+    color: $color-gray;
   }
 }
 
@@ -133,24 +167,24 @@ textarea {
   line-height: 1.4;
 }
 
-// Readonly state
+// Disabled and readonly states
+.disabled,
 .readonly,
-input:read-only,
-button:read-only,
-input[type=radio]:read-only,
-input[type=radio]:checked:read-only,
-input[type=checkbox]:read-only,
-input[type=checkbox]:checked:read-only {
+input:not([type=submit]):read-only {
   color: $color-gray;
   cursor: not-allowed;
 }
 
 // Gap between horizontal input elements
-input:not(.block, [type=radio], [type=checkbox]) + input:not(.block, [type=radio], [type=checkbox]),
-select:not(.block) + select:not(.block),
-label:not(.block) + label:not(.block),
-input[type=submit]:not(.block) + button:not(.block),
-button:not(.block) + button:not(.block),
-input[type=submit]:not(.block) + input[type=submit]:not(.block) {
-  margin-left: 2rem;
+input:not(.block, [type=radio], [type=checkbox]),
+select:not(.block),
+label:not(.block),
+input[type=submit]:not(.block),
+button:not(.block),
+input[type=submit]:not(.block) {
+  margin-right: 2rem;
+
+  &:last-child {
+    margin-right: unset;
+  }
 }

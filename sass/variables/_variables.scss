@@ -26,7 +26,12 @@ $border-radius: 6px !default;
 $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
-// Colors
+// Theme Colors
+$theme-color-primary: #66008d !default;
+$theme-color-secondary: #9139b4 !default;
+$theme-color-tertiary: #c19ad1 !default;
+
+// Generic Colors
 $color-light: #fff !default;
 $color-dark: #000 !default;
 $color-red: red !default;
@@ -39,14 +44,14 @@ $color-gray: #888 !default;
 $color-gray-dark: #555 !default;
 $color-gray-darker: #333 !default;
 
-// Text color
+// Text Colors
 $text-highlight-color: #ffe4c9 !default;
 $inline-code-color: #620042 !default;
 $inline-code-bg: #ffe4c9 !default;
 $pre-code-color: #fff !default;
 $pre-code-bg: #361c43 !default;
 
-// Background color
+// Background colors
 $body-bg: #fff !default;
 $bg-light: $color-light !default;
 $bg-dark: $color-dark !default;
@@ -57,9 +62,9 @@ $bg-gray-dark: $color-gray-dark !default;
 $bg-gray-darker: $color-gray-darker !default;
 
 // Link colors
-$link-color: #66008d !default;
-$link-color-hover: #9139b4 !default;
-$link-underline-color: #c19ad1 !default;
+$link-color: $theme-color-primary !default;
+$link-color-hover: $theme-color-secondary !default;
+$link-underline-color: $theme-color-tertiary !default;
 
 // Link settings
 $turn-off-link-decoration: false !default;
