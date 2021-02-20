@@ -5,10 +5,6 @@
 // Input elements
 input {
 
-  &[type=text]:not(:read-only):not(:disabled) {
-    cursor: text;
-  }
-
   &:disabled,
   &[type=submit]:disabled {
     background: #f2f2f2;
@@ -33,8 +29,7 @@ input {
 }
 
 // Basic styling for input elements
-input:not([type=submit]),
-input:not(button),
+input:not([type=submit],[type=reset], [type=button]),
 select,
 textarea {
   border: 1px solid $color-gray-light;
@@ -81,9 +76,13 @@ input[type=checkbox]:checked {
 
 // Buttons
 button,
-input[type=submit]:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+[type=file]:not(:disabled) {
   color: #fff;
   border: 2px solid $theme-color-primary;
+  background: $theme-color-primary;
   padding: 1.4rem 2.6rem;
   transition-property: background, border, color;
   transition-timing-function: ease-in-out;
@@ -181,7 +180,7 @@ select:not(.block),
 label:not(.block),
 input[type=submit]:not(.block),
 button:not(.block),
-input[type=submit]:not(.block) {
+input[type=reset]:not(.block) {
   margin-right: 2rem;
 
   &:last-child {
