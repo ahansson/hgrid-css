@@ -276,11 +276,8 @@ textarea {
 a,
 button, 
 select,
-input:not([type=text]),
-input:not([type=search]),
-input:not([type=number]),
-input:not([type=color]),
-input:not([type=tel]) {
+[role=button],
+input:not([type=text],[type=search],[type=number],[type=email],[type=tel],[type=password]) {
   cursor: pointer;
 }
 
