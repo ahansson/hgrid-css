@@ -68,8 +68,8 @@ li > code,
 div > code,
 dd > code,
 figcaption > code,
-td > code,
-th > code {
+table td > code,
+table th > code {
   background: $inline-code-bg;
   border-radius: 2px;
   box-decoration-break: clone;

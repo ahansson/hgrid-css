@@ -277,11 +277,8 @@ textarea {
 a,
 button,
 select,
-input:not([type=text]),
-input:not([type=search]),
-input:not([type=number]),
-input:not([type=color]),
-input:not([type=tel]) {
+[role=button],
+input:not([type=text], [type=search], [type=number], [type=email], [type=tel], [type=password]) {
   cursor: pointer;
 }
 
@@ -302,18 +299,8 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
-  background-color: #66008d;
   background-image: none;
   border: none;
-  color: #fff;
-  transition: background-color 0.4s ease;
-}
-
-button:hover,
-[type=button]:hover,
-[type=reset]:hover,
-[type=submit]:hover {
-  background-color: #9139b4;
 }
 
 /*
@@ -381,6 +368,12 @@ Remove inner padding in Chrome and Safari on macOS
   /* 1 */
   font: inherit;
   /* 2 */
+}
+
+/* Remove field behind file button */
+input[type=file] {
+  border: unset;
+  padding: 0;
 }
 
 /*
@@ -589,7 +582,8 @@ li > code,
 div > code,
 dd > code,
 figcaption > code,
-td > code th > code {
+table td > code,
+table th > code {
   background: #ffe4c9;
   border-radius: 2px;
   box-decoration-break: clone;
@@ -5958,9 +5952,6 @@ label {
   color: #888;
 }
 
-input[type=text]:not(:read-only):not(:disabled) {
-  cursor: text;
-}
 input:disabled, input[type=submit]:disabled {
   background: #f2f2f2;
   color: #888;
@@ -5976,8 +5967,7 @@ input[type=radio]:checked:disabled, input[type=checkbox]:checked:disabled {
   border: 1px solid #555;
 }
 
-input:not([type=submit]),
-input:not(button),
+input:not([type=submit], [type=reset], [type=button]),
 select,
 textarea {
   border: 1px solid #ccc;
@@ -6021,10 +6011,18 @@ input[type=checkbox]:checked {
   background-size: 11px;
 }
 
+input[type=file] {
+  margin: 2rem 0 3rem;
+}
+
 button,
-input[type=submit]:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+[type=file]:not(:disabled) {
   color: #fff;
   border: 2px solid #66008d;
+  background: #66008d;
   padding: 1.4rem 2.6rem;
   transition-property: background, border, color;
   transition-timing-function: ease-in-out;
@@ -6033,53 +6031,86 @@ input[type=submit]:not(:disabled) {
   margin-bottom: 2rem;
 }
 button.outline, button:not(:disabled):hover,
-input[type=submit]:not(:disabled).outline,
-input[type=submit]:not(:disabled):not(:disabled):hover {
+[type=button]:not(:disabled).outline,
+[type=button]:not(:disabled):not(:disabled):hover,
+[type=reset]:not(:disabled).outline,
+[type=reset]:not(:disabled):not(:disabled):hover,
+[type=submit]:not(:disabled).outline,
+[type=submit]:not(:disabled):not(:disabled):hover,
+[type=file]:not(:disabled).outline,
+[type=file]:not(:disabled):not(:disabled):hover {
   background: none;
   border: 2px solid #66008d;
   color: #66008d;
 }
 button:not(:disabled).outline:hover, button:not(:disabled, .outline):active,
-input[type=submit]:not(:disabled):not(:disabled).outline:hover,
-input[type=submit]:not(:disabled):not(:disabled, .outline):active {
+[type=button]:not(:disabled):not(:disabled).outline:hover,
+[type=button]:not(:disabled):not(:disabled, .outline):active,
+[type=reset]:not(:disabled):not(:disabled).outline:hover,
+[type=reset]:not(:disabled):not(:disabled, .outline):active,
+[type=submit]:not(:disabled):not(:disabled).outline:hover,
+[type=submit]:not(:disabled):not(:disabled, .outline):active,
+[type=file]:not(:disabled):not(:disabled).outline:hover,
+[type=file]:not(:disabled):not(:disabled, .outline):active {
   background: #66008d;
   border: 2px solid #66008d;
   color: #fff;
 }
 button:not(:disabled).outline:active,
-input[type=submit]:not(:disabled):not(:disabled).outline:active {
+[type=button]:not(:disabled):not(:disabled).outline:active,
+[type=reset]:not(:disabled):not(:disabled).outline:active,
+[type=submit]:not(:disabled):not(:disabled).outline:active,
+[type=file]:not(:disabled):not(:disabled).outline:active {
   background: none;
   border: 2px solid #66008d;
   color: #66008d;
 }
 button.secondary,
-input[type=submit]:not(:disabled).secondary {
+[type=button]:not(:disabled).secondary,
+[type=reset]:not(:disabled).secondary,
+[type=submit]:not(:disabled).secondary,
+[type=file]:not(:disabled).secondary {
   background: #9139b4;
   border: 2px solid #9139b4;
   color: #fff;
 }
 button.secondary:not(:disabled):hover,
-input[type=submit]:not(:disabled).secondary:not(:disabled):hover {
+[type=button]:not(:disabled).secondary:not(:disabled):hover,
+[type=reset]:not(:disabled).secondary:not(:disabled):hover,
+[type=submit]:not(:disabled).secondary:not(:disabled):hover,
+[type=file]:not(:disabled).secondary:not(:disabled):hover {
   background: none;
   border: 2px solid #9139b4;
   color: #9139b4;
 }
 button.secondary.secondary:not(:disabled):active,
-input[type=submit]:not(:disabled).secondary.secondary:not(:disabled):active {
+[type=button]:not(:disabled).secondary.secondary:not(:disabled):active,
+[type=reset]:not(:disabled).secondary.secondary:not(:disabled):active,
+[type=submit]:not(:disabled).secondary.secondary:not(:disabled):active,
+[type=file]:not(:disabled).secondary.secondary:not(:disabled):active {
   background: #9139b4;
   border: 2px solid #9139b4;
   color: #fff;
 }
 button:disabled, button.secondary:disabled,
-input[type=submit]:not(:disabled):disabled,
-input[type=submit]:not(:disabled).secondary:disabled {
+[type=button]:not(:disabled):disabled,
+[type=button]:not(:disabled).secondary:disabled,
+[type=reset]:not(:disabled):disabled,
+[type=reset]:not(:disabled).secondary:disabled,
+[type=submit]:not(:disabled):disabled,
+[type=submit]:not(:disabled).secondary:disabled,
+[type=file]:not(:disabled):disabled,
+[type=file]:not(:disabled).secondary:disabled {
   background: #ccc;
   border: 2px solid #ccc;
   color: #555;
   cursor: not-allowed;
 }
 button.outline:disabled,
-input[type=submit]:not(:disabled).outline:disabled {
+[type=button]:not(:disabled).outline:disabled,
+[type=reset]:not(:disabled).outline:disabled,
+[type=submit]:not(:disabled).outline:disabled,
+[type=file]:not(:disabled).outline:disabled {
   background: #eee;
   border: 2px solid #ccc;
   color: #888;
@@ -6117,7 +6148,7 @@ select:not(.block),
 label:not(.block),
 input[type=submit]:not(.block),
 button:not(.block),
-input[type=submit]:not(.block) {
+input[type=reset]:not(.block) {
   margin-right: 2rem;
 }
 input:not(.block, [type=radio], [type=checkbox]):last-child,
@@ -6125,7 +6156,7 @@ select:not(.block):last-child,
 label:not(.block):last-child,
 input[type=submit]:not(.block):last-child,
 button:not(.block):last-child,
-input[type=submit]:not(.block):last-child {
+input[type=reset]:not(.block):last-child {
   margin-right: unset;
 }
 
@@ -6195,12 +6226,12 @@ input[type=submit]:not(.block):last-child {
   scroll-behavior: inherit;
 }
 
-.scroll-unset {
-  scroll-behavior: unset;
-}
-
 .scroll-smooth {
   scroll-behavior: smooth;
+}
+
+.scroll-unset {
+  scroll-behavior: unset;
 }
 
 .donut-spinner {
