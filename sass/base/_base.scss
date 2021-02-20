@@ -301,18 +301,8 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
-  background-color: $link-color;
   background-image: none;
   border: none;
-  color: #fff;
-  transition: background-color 0.4s ease;
-}
-
-button:hover,
-[type=button]:hover,
-[type=reset]:hover,
-[type=submit]:hover {
-  background-color: $link-color-hover;
 }
 
 /*
