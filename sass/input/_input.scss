@@ -74,6 +74,10 @@ input[type=checkbox]:checked {
   background-size: 11px;
 }
 
+input[type=file] {
+  margin: 2rem 0 3rem;
+}
+
 // Buttons
 button,
 [type=button]:not(:disabled),
