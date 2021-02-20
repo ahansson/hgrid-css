@@ -376,6 +376,12 @@ Remove inner padding in Chrome and Safari on macOS
   font: inherit; /* 2 */
 }
 
+/* Remove field behind file button */
+input[type=file] {
+  border: unset;
+  padding: 0;
+}
+
 /*
 Add the correct display in Chrome and Safari
 */
