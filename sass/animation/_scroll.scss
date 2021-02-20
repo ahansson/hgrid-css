@@ -8,10 +8,10 @@
   scroll-behavior: inherit;
 }
 
-.scroll-unset {
-  scroll-behavior: unset;
-}
-
 .scroll-smooth { // hgrid default (_base.scss)
   scroll-behavior: smooth;
+}
+
+.scroll-unset {
+  scroll-behavior: unset;
 }
