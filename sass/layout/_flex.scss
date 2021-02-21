@@ -90,15 +90,7 @@
   align-content: space-evenly;
 }
 
-$justification: auto, start, end, center, stretch;
-
-@each $val in $justification {
-  .justify-items-#{$val} {
-    align-items: $val; 
-  }
-}
-
-$aligns: center, flex-start, flex-end, baseline, stretch;
+$aligns: center, flex-start, flex-end, baseline, stretch, unset;
 
 @each $val in $aligns {
   .align-items-#{$val} {

@@ -7,3 +7,11 @@
 .inline-grid {
   display: inline-grid;
 }
+
+$justification: auto, start, end, center, stretch;
+
+@each $val in $justification {
+  .justify-items-#{$val} {
+    justify-items: $val; 
+  }
+}

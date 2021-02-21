@@ -2042,26 +2042,6 @@ strong span {
   align-content: space-evenly;
 }
 
-.justify-items-auto {
-  align-items: auto;
-}
-
-.justify-items-start {
-  align-items: start;
-}
-
-.justify-items-end {
-  align-items: end;
-}
-
-.justify-items-center {
-  align-items: center;
-}
-
-.justify-items-stretch {
-  align-items: stretch;
-}
-
 .align-items-center {
   align-items: center;
 }
@@ -2080,6 +2060,10 @@ strong span {
 
 .align-items-stretch {
   align-items: stretch;
+}
+
+.align-items-unset {
+  align-items: unset;
 }
 
 .f-grow-1 {
@@ -2272,6 +2256,26 @@ strong span {
 
 .inline-grid {
   display: inline-grid;
+}
+
+.justify-items-auto {
+  justify-items: auto;
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
 }
 
 .scrollable-x {
