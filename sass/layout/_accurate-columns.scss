@@ -22,8 +22,8 @@
   flex-grow: 1;
 }
 
-// Responsive wrapping columns
-// Use in <div class="row f-wrap">
+// Controls proportional width of items per breakpoint
+// in flex-wrap containers like '<div class="row f-wrap">'
 @each $breakpoint in $breakpoints {
   @include viewport($breakpoint) {
     @for $fraction from 1 through 24 {
