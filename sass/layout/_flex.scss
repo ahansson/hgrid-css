@@ -141,11 +141,12 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
   }
 }
 
-// Flex shorthand class
-// Pattern: 'flex: [integer];'
-// Shorthand for 'flex-grow', 'flex-shrink' and 'flex-basis'.
-// Initial (default) is '0 1 auto'
-// When set with a single digit, it equals 1 0.
+// Shorthand for
+//  'flex-grow'
+//  'flex-shrink'
+//  'flex-basis'
+// Initial (default) value is '0 1 auto' where auto is a width.
+// With a single digit, it equals 1 1 0%.
 // Used to set internal element proportions. 
 // .f-2 is always twice the size of .f-1 (etc.)
 @for $i from 1 through 24 {
