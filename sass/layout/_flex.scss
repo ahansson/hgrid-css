@@ -34,12 +34,12 @@
   flex-wrap: wrap;
 }
 
-.f-wrap-nowrap {
-  flex-wrap: nowrap;
-}
-
 .f-wrap-reverse {
   flex-wrap: wrap-reverse;
+}
+
+.f-wrap-nowrap {
+  flex-wrap: nowrap;
 }
 
 .justify-content-flex-start {
@@ -98,6 +98,44 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
   }
 }
 
+// Responsive overrides for parent elements
+@each $breakpoint in $breakpoints {
+  @include viewport($breakpoint) {
+
+    // Unset flex container 
+    .f-unset-#{$breakpoint} {
+      display: unset;
+    }
+
+    // Flex wrap reverse:
+    .f-wrap-reverse-#{$breakpoint} {
+      flex-wrap: wrap-reverse;
+    }
+
+    // Don't flex-wrap:
+    .f-wrap-unset-#{$breakpoint} {
+      flex-wrap: unset;
+    }
+
+    // Change flex-direction:
+    .f-direction-column-#{$breakpoint} {
+      flex-direction: column;
+    }
+
+    .f-direction-column-reverse-#{$breakpoint} {
+      flex-direction: column-reverse;
+    }
+
+    .f-direction-row-#{$breakpoint} {
+      flex-direction: row;
+    }
+
+    .f-direction-row-reverse-#{$breakpoint} {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
 // Flex for child elements
 .f-grow-1 {
   flex-grow: 1;
@@ -142,13 +180,13 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
 }
 
 // Shorthand for
-//  'flex-grow'
-//  'flex-shrink'
-//  'flex-basis'
-// Initial (default) value is '0 1 auto' where auto is a width.
-// With a single digit, it equals 1 1 0%.
-// Used to set internal element proportions. 
-// .f-2 is always twice the size of .f-1 (etc.)
+//    'flex-grow'
+//    'flex-shrink'
+//    'flex-basis'
+// Default value is '0 1 auto' where auto is a width.
+// Used with a single digit, it equals 1 1 0%, 
+// used to set internal element proportions. 
+// .f-2 is always twice the size of .f-1, etc.
 @for $i from 1 through 24 {
   .f-#{$i} {
     flex: $i;
