@@ -6,6 +6,16 @@
 @import 'base/a11y';
 @import 'typography/typography';
 
+@import 'input/form';
+@import 'input/input';
+
+@import 'animation/fade';
+@import 'animation/flash';
+@import 'animation/rotate';
+@import 'animation/scroll';
+@import 'animation/spinner';
+@import 'animation/transition';
+
 @import 'layout/containers';
 @import 'layout/auto-columns';
 @import 'layout/accurate-columns';
@@ -18,15 +28,5 @@
 @import 'layout/helpers/background';
 @import 'layout/helpers/adjustment';
 @import 'layout/helpers/utilities';
-
-@import 'input/form';
-@import 'input/input';
-
-@import 'animation/fade';
-@import 'animation/flash';
-@import 'animation/rotate';
-@import 'animation/scroll';
-@import 'animation/spinner';
-@import 'animation/transition';
 
 @import 'overrides/overrides';
