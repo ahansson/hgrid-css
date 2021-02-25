@@ -16,6 +16,7 @@ $desktop: 1280px !default;
 $desktop-large: 1680px !default; // 1281 -> 1680px
 $desktop-xl: 1681px !default; // 1681 -> ∞
 $breakpoints: desktop-xl, desktop-large, desktop, tablet-landscape, tablet-portrait, phone-landscape, phone;
+$widths: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
 
 // Stack columns on viewports less or equal to:
 $stack-point: $phone-landscape !default;
