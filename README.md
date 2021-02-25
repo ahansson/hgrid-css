@@ -16,6 +16,8 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
+**0.2.0-alpha**. Form input and focus outline styling. Responsive overrides for flex items. Theme colors. Media embed.
+
 **0.1.0-alpha**. New version forked from a deprecated version (1.2.0). There are extensive changes, so let's start fresh.
 
 
