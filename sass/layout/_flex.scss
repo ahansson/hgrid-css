@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Flex for parent containers
 
 .flex {
@@ -183,7 +185,6 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
 //    'flex-grow'
 //    'flex-shrink'
 //    'flex-basis'
-// Default value is '0 1 auto' where auto is a width.
 // Used with a single digit, it equals 1 1 0%, 
 // used to set internal element proportions. 
 // .f-2 is always twice the size of .f-1, etc.
@@ -203,4 +204,17 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
 
 .f-none {
   flex: none;
+}
+
+// Responsive overrides for flex children:
+@each $breakpoint in $breakpoints {
+  @include viewport($breakpoint) {
+    // Set item min-width per breakpoint with flex-basis 
+    // to determine behavior with flex-wrap
+    @each $width in $widths {
+      .f-#{$breakpoint}-#{math.floor($width)} {
+        flex: 1 0 ($width * 1%)
+      }
+    }
+  }
 }
