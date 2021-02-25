@@ -52,18 +52,6 @@
   display: block;
 }
 
-// Adjustment for flex-wrap rows
-.row.f-wrap {
-  [class*='column-'] {
-    margin-top: $column-gutter-width;
-    @include viewport($stack-point) {
-      &:first-child {
-      margin-top: 4.4%;
-      }
-    }
-  }
-}
-
 // Override default stacking at custom breakpoint
 .row.custom-stack {
   @include viewport($custom-stack-point) {
