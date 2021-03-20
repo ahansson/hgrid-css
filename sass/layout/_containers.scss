@@ -70,9 +70,13 @@
   @include viewport($stack-point) {
     display: flex;
     @for $fraction from 1 through 24 {
-      & .column-#{$fraction} {
+      .column-#{$fraction} {
         width: (100% / $fraction) - $column-gutter-width;
+        margin-bottom: 0;
       }
+    }
+    .column {
+      margin-bottom: 0;
     }
   }
 }
