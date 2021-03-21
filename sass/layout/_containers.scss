@@ -35,6 +35,8 @@
 
 // Required wrapper for '.column' and '.column-*'
 // Stacks columns on portable devices
+// .row is used with columns
+// .row-block can be used for block elements, without columns
 .row,
 .row-block {
   @include row-margins;
