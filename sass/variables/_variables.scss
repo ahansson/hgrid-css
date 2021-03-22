@@ -15,7 +15,14 @@ $tablet-landscape: 1024px !default;
 $desktop: 1280px !default;
 $desktop-large: 1680px !default; // 1281 -> 1680px
 $desktop-xl: 1681px !default; // 1681 -> ∞
-$breakpoints: desktop-xl, desktop-large, desktop, tablet-landscape, tablet-portrait, phone-landscape, phone;
+$breakpoints: 
+  'desktop-xl',
+  'desktop-large',
+  'desktop',
+  'tablet-landscape',
+  'tablet-portrait',
+  'phone-landscape',
+  'phone';
 $widths: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
 
 // Stack columns on viewports less or equal to:
@@ -23,7 +30,7 @@ $stack-point: $phone-landscape !default;
 $custom-stack-point: $phone !default; // used to override $stack-point
 
 // Misc
-$border-radius: 6px !default;
+$border-radius: 6px !default; // used for '.radius' class and focus-outline (see _a11y.scss)
 $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
@@ -73,7 +80,7 @@ $use-global-link-underlines: false !default;
 $use-article-link-underlines: false !default;
 
 // Typography
-$font-base: 62.5% !default; // Sets scale for 1rem = 10px
+$font-base: 62.5% !default; // Sets scale: 1rem = 10px
 $font-size: 1.6rem !default;
 $small-font-size: 83% !default;
 $inline-code-size: 83% !default;
