@@ -418,3 +418,17 @@ hr {
     margin-left: $margin + rem;
   }
 }
+
+// Margin auto (horizontal)
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-right-auto {
+  margin-right: auto;
+}
