@@ -58,11 +58,11 @@ table {
     tbody tr:nth-child(even) {
       background: $bg-gray-lighter;
       border-bottom: 1px dotted $bg-gray-light;
-      transition: background 0.4s ease
+      transition: background-color 0.4s ease
     }
 
     tbody tr:nth-child(even):hover {
-      background: #e1dae5;
+      background-color: #e1dae5;
       cursor: pointer;
     }
 
