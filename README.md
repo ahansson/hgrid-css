@@ -16,10 +16,22 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
+**0.3.0-alpha**. Default viewport [renamed](https://github.com/ahansson/hgrid-css/commit/0974b24299e8877eb34539d7934979f4955d276d) to 'laptop'. Buggy custom link underline [replaced](https://github.com/ahansson/hgrid-css/commit/81a12bdc87a75490535a3f8d557274772f36ae0e) with a better version of the default underline. [Remove](https://github.com/ahansson/hgrid-css/commit/4dfa56c664c306bb579f5cfd4b2b18c7420dea50) reset style for images that gave unwanted side effects. Changes in [width and height](https://github.com/ahansson/hgrid-css/commit/2eba0449584ec5e038087a857ccdbdea2de9cb9a) classes. Bugfixes.
+
+* `.full-width` replaced by `.width-100pct`.
+* `.full-height`/`.full-height-vh` replaced by `.height-100pct`/`.height-100vh`.
+* `.full-width-vw`, `.min-width-0`, `min-height-0` and `min-width-100` are gone.
+* `.max-width-{ x }pct` added.
+* width and height `auto` added
+* `.pointer-events-none` and `-all` added
+* [Margin auto](https://github.com/ahansson/hgrid-css/commit/4a1b0b08b46ade5f1fdc57cdda1a04f4231cbb41) added
+<br><br>
+
 **0.2.0-alpha**. Form input and focus outline styling. Responsive overrides for flex items. Theme colors. Media embed.
+<br><br>
 
 **0.1.0-alpha**. New version forked from a deprecated version (1.2.0). There are extensive changes, so let's start fresh.
-
+<br><br>
 
 ## How to install
 
