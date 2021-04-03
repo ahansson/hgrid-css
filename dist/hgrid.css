@@ -1,4 +1,54 @@
 /*! hgrid v0.3.0 | MIT License | github.com/ahansson/hgrid-css !*/
+:root {
+  --phone: 600px;
+  --phone-landscape: 768px;
+  --tablet-portrait: 900px;
+  --tablet-landscape: 1024px;
+  --laptop: 1280px;
+  --desktop: 1680px;
+  --desktop-large: 1681px;
+  --theme-color-primary: #66008d;
+  --theme-color-secondary: #9139b4;
+  --theme-color-tertiary: #c19ad1;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-red: #ff0000;
+  --color-green: #1f6e00;
+  --color-blue: #003f88;
+  --color-orange: #e93e00;
+  --color-gray-lighter: #eee;
+  --color-gray-light: #ccc;
+  --color-gray: #888;
+  --color-gray-dark: #555;
+  --color-gray-darker: #333;
+  --text-highlight-color: #ffe4c9;
+  --inline-code-color: #620042;
+  --inline-code-bg: #ffe4c9;
+  --pre-code-color: #fff;
+  --pre-code-bg: #361c43;
+  --body-bg: #fff;
+  --bg-light: #fff;
+  --bg-dark: #000;
+  --bg-gray-light: #ccc;
+  --bg-gray-lighter: #eee;
+  --bg-gray: #888;
+  --bg-gray-dark: #555;
+  --bg-gray-darker: #333;
+  --link-color: #66008d;
+  --link-color-hover: #9139b4;
+  --link-underline-color: #c19ad1;
+  --focus-border-color: #49a7ff75;
+  --focus-border-weight: 0.3rem;
+  --font-size: 1.6rem;
+  --small-font-size: 83%;
+  --container-max-width: 1440px;
+  --gutter: 1.6%;
+  --group-margin-bottom: 0 0 6rem 0;
+  --paragraph-margin-bottom: 2rem;
+  --stack-point: 768px;
+  --custom-stack-point: 600px;
+}
+
 *,
 *::before,
 *::after {
@@ -514,19 +564,7 @@ ol li a,
 label a,
 span a {
   color: #66008d;
-  text-decoration: none;
-}
-
-a,
-p a,
-ul li a,
-ol li a,
-label a,
-span a {
-  -webkit-text-decoration: underline #c19ad1 solid;
-          text-decoration: underline #c19ad1 solid;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.12rem;
+  text-decoration: underline;
 }
 a:hover,
 p a:hover,
@@ -885,19 +923,19 @@ strong span {
 }
 
 .text-red {
-  color: red;
+  color: #ff0000;
 }
 
 .text-green {
-  color: green;
+  color: #1f6e00;
 }
 
 .text-blue {
-  color: blue;
+  color: #003f88;
 }
 
 .text-orange {
-  color: orangered;
+  color: #e93e00;
 }
 
 .text-gray-lighter {
@@ -3352,10 +3390,10 @@ table.striped tbody tr td {
 table.striped tbody tr:nth-child(even) {
   background: #eee;
   border-bottom: 1px dotted #ccc;
-  transition: background 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 table.striped tbody tr:nth-child(even):hover {
-  background: #e1dae5;
+  background-color: #e1dae5;
   cursor: pointer;
 }
 table.striped tbody tr:nth-child(odd):hover {
