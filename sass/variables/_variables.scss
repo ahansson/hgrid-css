@@ -32,7 +32,7 @@ $breakpoints:
   'tablet-portrait',
   'phone-landscape',
   'phone';
-$widths: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
+$fractions: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
 
 // Array for specific viewport overrides
 // (phone and desktop-large are already "specific")

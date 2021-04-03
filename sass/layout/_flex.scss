@@ -211,9 +211,9 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
   @include viewport($breakpoint) {
     // Set item min-width per breakpoint with flex-basis 
     // to determine behavior with flex-wrap
-    @each $width in $widths {
-      .f-#{$breakpoint}-#{math.floor($width)} {
-        flex: 1 0 ($width * 1%)
+    @each $fraction in $fractions {
+      .f-#{$breakpoint}-#{math.floor($fraction)} {
+        flex: 1 0 ($fraction * 1%)
       }
     }
   }

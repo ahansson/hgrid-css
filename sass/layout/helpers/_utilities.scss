@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Shapes 
 .circle {
   border-radius: 100%;
@@ -123,56 +125,30 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 }
 
 // Widths and heights
-.full-width {
-  width: 100%;
-}
+@each $fraction in $fractions {
+  .width-#{math.floor($fraction)}pct {
+    width: $fraction * 1% ;
+  }
 
-.full-width-vw {
-  width: 100vw;
-}
-
-@for $pct from 10 through 90 {
-  @if $pct % 10 == 0 {
-    .width-#{$pct}pct {
-      width: $pct * 1% ;
-    }
+  .max-width-#{math.floor($fraction)}pct {
+    width: $fraction * 1% ;
   }
 }
 
-.width-33pct {
-  width: 33.3333333%;
-}
-
-.min-width-0 {
-  min-width: 0rem;
-}
-
-.min-width-100 {
-  min-width: 100%;
-}
-
-.min-content {
-  min-width: min-content;
-}
-
-.max-content {
-  min-width: max-content;
-}
-
-.full-height {
-  height: 100%;
-}
-
-.full-height-vh {
-  height: 100vh;
+.width-auto {
+  width: auto;
 }
 
 .height-auto {
   height: auto;
 }
 
-.min-height-0 {
-  min-height: 0rem;
+.height-100pct {
+  height: 100%;
+}
+
+.height-100vh {
+  height: 100vh;
 }
 
 .min-height-100 {
@@ -183,8 +159,15 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
   min-height: 100vh;
 }
 
-// Display and visibility
+.min-content {
+  min-width: min-content;
+}
 
+.max-content {
+  min-width: max-content;
+}
+
+// Display and visibility
 .hide,
 .display-none {
   display: none;
@@ -219,6 +202,10 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 
 .visible {
   visibility: visible;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }
 
 @each $breakpoint in $breakpoints {
