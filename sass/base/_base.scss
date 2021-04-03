@@ -1,3 +1,9 @@
+// Reset styles include inspiration from
+// https://github.com/sindresorhus/modern-normalize (MIT)
+// https://github.com/suitcss/
+// https://github.com/tailwindlabs/tailwindcss (MIT)
+// https://www.zachleat.com/web/fluid-images
+
 *,
 *::before,
 *::after {
@@ -31,25 +37,15 @@ h6 {
   padding: 0;
 }
 
-/*!
-  Reset styles include inspiration from
-  https://github.com/sindresorhus/modern-normalize (MIT)
-  https://github.com/suitcss/
-  https://github.com/tailwindlabs/tailwindcss (MIT)
-  https://www.zachleat.com/web/fluid-images
-!*/
-
-/*
-  Set a sensible line height in all browsers (1)
-  Prevent auto-scaling of text on small screens (2)
-  Adjust font-size so 1rem = 10px (3)
-*/
+// Set a sensible line height in all browsers (1)
+// Prevent auto-scaling of text on small screens (2)
+// Adjust font-size so 1rem = 10px (3)
 
 html {
-  line-height: 1.5; /* 1 */
-  text-size-adjust: none; /* 2 */
+  line-height: 1.5; // 1
+  text-size-adjust: none; // 2
   -webkit-text-size-adjust: none;
-  font-size: $font-base; /* 3 */
+  font-size: $font-base; // 3
   display: block;
 }
 
@@ -64,30 +60,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/*
-Improve system font consistency (1)
-Correct 'em' font sizing (all browsers) (2)
-Remove line-height (all browsers) (3)
-*/
+// Improve system font consistency (1)
+// Correct 'em' font sizing (all browsers) (2)
+// Remove line-height (all browsers) (3)
 
 code,
 kbd,
 samp,
 pre {
-  font-family: $font-family-mono; /* 1 */
-  font-size: 1em; /* 2 */
-  line-height: 0; /* 3 */
+  font-family: $font-family-mono; // 1
+  font-size: 1em; // 2
+  line-height: 0; // 3
 }
 
-/*
-1. Correct height in Firefox.
-2. Correct inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Make it visible by default
-*/
+// 1. Correct height in Firefox.
+// 2. Correct inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+// 3. Make it visible by default
 
 hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
+  height: 0; // 1
+  color: inherit; // 2
   border-top-width: 1px;
 }
 
@@ -133,27 +125,21 @@ span {
   font-weight: inherit;
 }
 
-/*
-Add correct text decoration in Chrome, Edge, and Safari.
-*/
+// Add correct text decoration in Chrome, Edge, and Safari.
 
 abbr[title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
 
-/*
-Add correct font weight for Edge and Safari
-*/
+// Add correct font weight for Edge and Safari
 
 b,
 strong {
   font-weight: bolder;
 }
 
-/*
-Prevent 'sub' and 'sup' elements from affecting line height (all browsers)
-*/
+// Prevent 'sub' and 'sup' elements from affecting line height (all browsers)
 
 sub,
 sup {
@@ -171,9 +157,7 @@ sup {
   top: -0.5rem;
 }
 
-/*
-Opinionated setting for section and image elements
-*/
+// Opinionated setting for section and image elements
 
 article,
 aside,
@@ -197,9 +181,7 @@ object {
   display: block;
 }
 
-/* 
-Constrain images and videos to the parent width and preserve their instrinsic aspect ratio.
-*/
+// Constrain images and videos to the parent width and preserve their instrinsic aspect ratio.
 
 video {
   width: 100%;
@@ -211,13 +193,11 @@ img {
   max-width: 100%;
 
   &[width][height] {
-  height: auto; /* Preserve aspect ratio */
+  height: auto; // Preserve aspect ratio
   }
 }
 
-/* 
-Strip styling from linked images
-*/ 
+// Strip styling from linked images
 
 a[href$=jpg],
 a[href$=jpeg],
@@ -229,33 +209,29 @@ a[href$=gif] {
 	border: 0 none !important;
 }
 
-/*
-1) Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-*/
+// 1) Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  border-color: inherit; /* 1 */
+  border-color: inherit; // 1
   width: 100%;
 }
 
-/*
-Forms
+// Forms
 
-1. Change the font styles in all browsers
-2. Remove the margin in Firefox and Safari
-*/
+// 1. Change the font styles in all browsers
+// 2. Remove the margin in Firefox and Safari
 
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit; // 1
+  font-size: 100%; // 1
+  line-height: 1.15; // 1
+  margin: 0; // 2
 }
 
 textarea {
@@ -270,20 +246,15 @@ input:not([type=text],[type=search],[type=number],[type=email],[type=tel],[type=
   cursor: pointer;
 }
 
-/*
-Remove the inheritance of text transform in Edge and Firefox
-*/
+// Remove the inheritance of text transform in Edge and Firefox
 
 button,
 select {
   text-transform: none;
 }
 
-
-/*
-Correct the inability to style clickable types in iOS and Safari
-Add a few default hgrid styles
-*/
+// Correct the inability to style clickable types in iOS and Safari
+// Add a few default hgrid styles
 
 button,
 [type=button],
@@ -294,96 +265,77 @@ button,
   border: none;
 }
 
-/*
-Remove the inner border and padding in Firefox
-*/
+// Remove the inner border and padding in Firefox
 
 ::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-/*
-Remove the additional ':invalid' styles in Firefox
-https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
-*/
+// Remove the additional ':invalid' styles in Firefox
+// https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
 
 :-moz-ui-invalid {
   box-shadow: none;
 }
 
-/*
-Remove padding so developers are not caught out when they zero out 'fieldset' in all browsers
-*/
+// Remove padding so developers are not caught out when they zero out 'fieldset' in all browsers
 
 legend {
   padding: 0;
 }
 
-/*
-Add correct vertical alignment in Chrome and Firefox
-*/
+// Add correct vertical alignment in Chrome and Firefox
 
 progress {
   vertical-align: baseline;
 }
 
-/*
-Correct the cursor style of increment and decrement buttons in Safari
-*/
+// Correct the cursor style of increment and decrement buttons in Safari
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
 
-/*
-1. Correct the odd appearance in Chrome and Safari
-2. Correct the outline style in Safari
-*/
+// 1. Correct the odd appearance in Chrome and Safari
+// 2. Correct the outline style in Safari
 
 [type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield; // 1
+  outline-offset: -2px; // 2
 }
 
-/*
-Remove inner padding in Chrome and Safari on macOS
-*/
+// Remove inner padding in Chrome and Safari on macOS
 
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/*
-1. Correct the inability to style clickable types in iOS and Safari
-2. Change font properties in Safari.
-*/
+// 1. Correct the inability to style clickable types in iOS and Safari
+// 2. Change font properties in Safari.
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button; // 1
+  font: inherit; // 2
 }
 
-/* Remove field behind file button */
+// Remove field behind file button
+
 input[type=file] {
   border: unset;
   padding: 0;
 }
 
-/*
-Add the correct display in Chrome and Safari
-*/
+// Add the correct display in Chrome and Safari
 
 summary {
   display: list-item;
 }
 
-/*
- * Firefox/IE bug where the transparent 'button' background
- * results in a loss of the default 'button' focus styles.
- * Also, remove default border
- */
+//  Firefox/IE bug where the transparent 'button' background
+//  results in a loss of the default 'button' focus styles.
+//  Also, remove default border
 
 fieldset,
 iframe {
@@ -415,4 +367,5 @@ q {
   &::after {
     content: none;
   }
-}/*! End reset */
+}
+/*! End reset */
