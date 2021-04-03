@@ -75,13 +75,13 @@
 // 601 - 768px      Phone (landscape)
 // 769 - 900px      Tablet
 // 901 - 1024px     Tablet (landscape)
-// 1025 - 1280px    Desktop
-// 1281 - 1680px    Desktop (large)
-// 1681 - ∞         Desktop (xl)
+// 1025 - 1280px    Laptop
+// 1281 - 1680px    Desktop
+// 1681 - ∞         Desktop (large)
 
-// Hgrid follows the desktop first paradigm. 
-// Styles apply by default to all viewport sizes.
-// We override styles for smaller screens where needed.
+// Styles apply by default to all viewports.
+// Hgrid follows the laptop first paradigm. 
+// We override styles for smaller and larger screens where needed.
 
 @mixin viewport($breakpoint) { 
   @if $breakpoint == phone {
@@ -96,14 +96,14 @@
   @if $breakpoint == tablet-landscape {
     @media (max-width: $tablet-landscape) { @content };
   }
+  @if $breakpoint == laptop {
+    @media (max-width: $laptop) { @content };
+  }
   @if $breakpoint == desktop {
-    @media (max-width: $desktop) { @content };
+    @media (min-width: $desktop) { @content };
   }
   @if $breakpoint == desktop-large {
     @media (min-width: $desktop-large) { @content };
-  }
-  @if $breakpoint == desktop-xl {
-    @media (min-width: $desktop-xl) { @content };
   }
   // Default Breakpoint for Stacking Content
   @if $breakpoint == $stack-point {
@@ -116,7 +116,7 @@
 }
 
 // Allow specific styles for each viewport
-// (phone and desktop-xl excluded, they are already "specific")
+// (phone and desktop-large excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
   @if $viewport == phone-landscape {
     @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };
@@ -127,10 +127,10 @@
   @if $viewport == tablet-landscape {
     @media (min-width: $tablet-portrait + 1px) and (max-width: $tablet-landscape) { @content };
   }
-  @if $viewport == desktop {
-    @media (min-width: $tablet-landscape + 1px) and (max-width: $desktop) { @content };
+  @if $viewport == laptop {
+    @media (min-width: $tablet-landscape + 1px) and (max-width: $laptop) { @content };
   }
-  @if $viewport == desktop-large {
-    @media (min-width: $desktop + 1px) and (max-width: $desktop-xl) { @content };
+  @if $viewport == desktop {
+    @media (min-width: $laptop + 1px) and (max-width: $desktop) { @content };
   }
 }

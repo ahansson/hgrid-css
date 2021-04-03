@@ -6,33 +6,37 @@ $group-margin-bottom: 0 0 6rem 0 !default;
 // Breakpoints
 
 // Styles apply to any viewport by default.
-// The benchmark is desktop
+// The benchmark is laptop
 // For larger screens we use min-width.
 
 // 0 - 600px        Phone
 // 601 - 768px      Phone (landscape)
 // 769 - 900px      Tablet
 // 901 - 1024px     Tablet (landscape)
-// 1025 - 1280px    Desktop
-// 1281 - 1680px    Desktop (large)
-// 1681 - ∞         Desktop (xl)
+// 1025 - 1280px    Laptop
+// 1281 - 1680px    Desktop
+// 1681 - ∞         Desktop (large)
 
 $phone: 600px !default;
 $phone-landscape: 768px !default;
 $tablet-portrait: 900px !default;
 $tablet-landscape: 1024px !default;
-$desktop: 1280px !default;
-$desktop-large: 1680px !default;
-$desktop-xl: 1681px !default;
+$laptop: 1280px !default;
+$desktop: 1680px !default;
+$desktop-large: 1681px !default;
 $breakpoints: 
-  'desktop-xl',
   'desktop-large',
   'desktop',
+  'laptop',
   'tablet-landscape',
   'tablet-portrait',
   'phone-landscape',
   'phone';
 $widths: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
+
+// Array for specific viewport overrides
+// (phone and desktop-large are already "specific")
+$singleViewports: phone-landscape, tablet-portrait, tablet-landscape, laptop, desktop;
 
 // Stack columns on viewports less or equal to:
 $stack-point: $phone-landscape !default;

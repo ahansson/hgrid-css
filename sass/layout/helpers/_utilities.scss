@@ -224,8 +224,8 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 @each $breakpoint in $breakpoints {
   @include viewport($breakpoint) {
 
-    // Hide element from a certain breakpoint and above (desktop-large and desktop-xl) /
-    // Hide element from a certain breakpoint and below (desktop, tablet, phone)
+    // Hide element from a certain breakpoint and above (desktop and desktop-large) /
+    // Hide element from a certain breakpoint and below (laptop, tablet, phone)
     .hide-#{$breakpoint} {
       display: none;
     }
@@ -236,8 +236,8 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
       visibility: visible;
     }
 
-    // Show element from a certain breakpoint and above (desktop-large and desktop-xl) /
-    // Show element from a certain breakpoint and below (desktop, tablet, phone)
+    // Show element from a certain breakpoint and above (desktop and desktop-large) /
+    // Show element from a certain breakpoint and below (laptop, tablet, phone)
 
     // Use with block elements
     .show-#{$breakpoint} {
@@ -254,7 +254,7 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 }
 
 // Hide or show _only_ on a certain viewport
-$singleViewports: phone-landscape, tablet-portrait, tablet-landscape, desktop, desktop-large;
+// Phone and desktop-large excluded as their styles are specific
 
 @each $viewport in $singleViewports {
   @include onlyViewport($viewport) { 
