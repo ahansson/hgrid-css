@@ -1,4 +1,4 @@
-/*! hgrid v0.3.0 | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.0-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --phone: 600px;
   --phone-landscape: 768px;
@@ -259,8 +259,11 @@ textarea {
 a,
 button,
 select,
+input[type=submit],
+input[type=radio],
+input[type=checkbox],
 [role=button],
-input:not([type=text], [type=search], [type=number], [type=email], [type=tel], [type=password]) {
+[type=button] {
   cursor: pointer;
 }
 
@@ -270,6 +273,7 @@ select {
 }
 
 button,
+[role=button],
 [type=button],
 [type=reset],
 [type=submit] {
@@ -1014,7 +1018,7 @@ input[type=radio]:checked:disabled, input[type=checkbox]:checked:disabled {
   border: 1px solid #555;
 }
 
-input:not([type=submit], [type=reset], [type=button]),
+input,
 select,
 textarea {
   border: 1px solid #ccc;
@@ -3435,11 +3439,11 @@ hr {
   margin-bottom: 3rem;
 }
 
-.border-lighter {
+.border-gray-lighter {
   border: 1px solid #eee;
 }
 
-.border-light {
+.border-gray-light {
   border: 1px solid #ccc;
 }
 
