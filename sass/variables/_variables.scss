@@ -223,9 +223,12 @@ $font-family-mono:
 
   --font-size: #{$font-size};
   --small-font-size: #{$small-font-size};
-  --inline-code-size: #{$inline-code-size};
-  --pre-code-size: #{$pre-code-size};
+
+  // Misc
+  --container-max-width: #{$container-max-width};
+  --gutter: #{$column-gutter-width};
+  --group-margin-bottom: #{$group-margin-bottom};
   --paragraph-margin-bottom: #{$paragraph-margin-bottom};
-  --headline-weight: #{$headline-weight};
-  --font-strong: #{$font-strong};
+  --stack-point: #{$stack-point};
+  --custom-stack-point: #{$custom-stack-point};
 }
