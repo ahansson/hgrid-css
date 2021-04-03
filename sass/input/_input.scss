@@ -2,7 +2,7 @@
   color: $color-gray;
 }
 
-// Input elements
+// Basic styling for input elements
 input {
 
   &:disabled,
@@ -28,8 +28,7 @@ input {
   }
 }
 
-// Basic styling for input elements
-input:not([type=submit],[type=reset], [type=button]),
+input,
 select,
 textarea {
   border: 1px solid $color-gray-light;
@@ -131,7 +130,7 @@ button,
       color: #fff;
     }
   }
-  
+
   &:disabled,
   &.secondary:disabled {
     background: $bg-gray-light;

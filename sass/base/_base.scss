@@ -241,8 +241,11 @@ textarea {
 a,
 button, 
 select,
+input[type=submit],
+input[type=radio],
+input[type=checkbox]
 [role=button],
-input:not([type=text],[type=search],[type=number],[type=email],[type=tel],[type=password]) {
+[type=button] {
   cursor: pointer;
 }
 
@@ -257,6 +260,7 @@ select {
 // Add a few default hgrid styles
 
 button,
+[role=button],
 [type=button],
 [type=reset],
 [type=submit] {
