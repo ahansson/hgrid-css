@@ -76,8 +76,8 @@
 // 769 - 900px      Tablet
 // 901 - 1024px     Tablet (landscape)
 // 1025 - 1280px    Desktop
-// 1281 - 1680px    Large Desktop
-// 1681 - ∞         XL Desktop
+// 1281 - 1680px    Desktop (large)
+// 1681 - ∞         Desktop (xl)
 
 // Hgrid follows the desktop first paradigm. 
 // Styles apply by default to all viewport sizes.
@@ -115,8 +115,8 @@
   }
 }
 
-// Allow specific styles for each viewport 
-// phone and desktop-xl are already specific
+// Allow specific styles for each viewport
+// (phone and desktop-xl excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
   @if $viewport == phone-landscape {
     @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };
