@@ -2,18 +2,21 @@
 
 .container,
 .container-max {
-  @include viewport(tablet-portrait) {
-    padding-left: ($column-gutter-width * 2);
-    padding-right: ($column-gutter-width * 2);
-  }
-  @include viewport(phone) {
-    padding-left: ($column-gutter-width * 2.2);
-    padding-right: ($column-gutter-width * 2.2);
-  }
+
   margin-left: auto;
   margin-right: auto;
   padding-left: $column-gutter-width;
   padding-right: $column-gutter-width;
+
+  @include viewport(tablet-portrait) {
+    padding-left: ($column-gutter-width * 2);
+    padding-right: ($column-gutter-width * 2);
+  }
+
+  @include viewport(phone) {
+    padding-left: ($column-gutter-width * 2.2);
+    padding-right: ($column-gutter-width * 2.2);
+  }
 }
 
 // Full width
@@ -26,17 +29,18 @@
   max-width: $container-max-width;
 }
 
-// Separates rows/content sections
+// Groups and separates rows/content sections
 .group {
   margin: $group-margin-bottom;
 }
 
 // Rows
 
-// Required wrapper for '.column' and '.column-*'
-// Stacks columns on portable devices
+// Required wrapper for '.column' and '.column-{x}'
+// Stacks columns on viewport setting '$stack-point'
+
 // .row is used with columns
-// .row-block can be used for block elements, without columns
+// .row-block is used for block elements, without columns
 .row,
 .row-block {
   @include row-margins;
@@ -47,14 +51,15 @@
   margin-bottom: $column-gutter-width;
 }
 
-// Row without columns
-// For full width text etc.
+// Row for use without columns
+// for full width text and other block elements
 .row-block {
   @include row-block-padding;
   display: block;
 }
 
-// Override default stacking at custom breakpoint
+// Alternative viewport width 
+// for layout stacking
 .row.custom-stack {
   @include viewport($custom-stack-point) {
     display: block;
