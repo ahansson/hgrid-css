@@ -53,6 +53,8 @@ yarn add hgrid-css --dev
 ```html
 <head>
   <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
+  <!-- CDN: <link rel="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"> -->
+  
   <!-- more css below -->
 </head>
 ```
@@ -63,10 +65,10 @@ yarn add hgrid-css --dev
 ```
 ```css
 /* From CDN */
-@import 'https://cdn.domain.com/dist/hgrid.min.css';
+@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';
 ```
 
-For detailed information on how to integrate **hgrid** in your frontend framework as `scss`, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+For detailed information on how to integrate **hgrid** in your frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
 
 ## Local development
 
