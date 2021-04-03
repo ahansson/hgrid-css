@@ -105,65 +105,63 @@ a,
 p a,
 ul li a,
 ol li a,
+label a,
 span a {
   color: $link-color;
-  position: relative;
-  display: inline-block;
+
   @if $turn-off-link-decoration {
     text-decoration: none;
   }
-  &:hover {
-    text-decoration: none;
+  @else if $turn-off-link-decoration == false {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
 // Are nicer underlines turned on?
 @if $use-global-link-underlines {
-  a:not([class*=button]),
-  ul li a:not([class*=button]),
-  ol li a:not([class*=button]),
-  span a:not([class*=button]) {
+  a,
+  p a,
+  ul li a,
+  ol li a,
+  label a,
+  span a {
+    text-decoration: underline $link-underline-color $link-underline-style;
+    text-decoration-thickness: $link-underline-thickness;
+    text-underline-offset: $link-underline-offset;
 
-    &:before {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: $link-underline-color;
-      position: absolute;
-      bottom: 3px;
-    }
-    &:hover:before {
-      height: 0;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
 
-// Use nicer underlines for links only in <article> and 
-// containers using the class '.text-content'?
-// '$use-global-link-underlines' must be set to 'false'
 @else if $use-article-link-underlines {
-  article a:not([class*=button]),
-  article ul li a:not([class*=button]),
-  article ol li a:not([class*=button]),
-  article span a:not([class*=button]),
+
+  // Use nicer underlines for links only in <article> and 
+  // in containing elements with the '.text-content' class?
+  // '$use-global-link-underlines' must be set to 'false'
+
+  article a,
+  article ul li a,
+  article ol li a,
+  article span a,
   article label a,
-  .text-content a:not([class*=button]),
-  .text-content ul li a:not([class*=button]),
-  .text-content ol li a:not([class*=button]),
-  .text-content span a:not([class*=button]),
+  .text-content a,
+  .text-content ul li a,
+  .text-content ol li a,
+  .text-content span a,
   .text-content label a {
   
-    &:before {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: $link-underline-color;
-      position: absolute;
-      bottom: 3px;
-    }
+    text-decoration: underline $link-underline-color $link-underline-style;
+    text-decoration-thickness: $link-underline-thickness;
+    text-underline-offset: $link-underline-offset;
 
-    &:hover:before {
-      height: 0;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
