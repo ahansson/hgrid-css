@@ -1,30 +1,30 @@
+// Sass variables are configurable
+// with the @use rule in your project
+// http://hgrid.io/documentation/integrate/
+
 // Containers
+
 $container-max-width: 1440px !default;
 $column-gutter-width: 1.6% !default;
 $group-margin-bottom: 0 0 6rem 0 !default;
 
 // Breakpoints
 
-// Styles apply to any viewport by default.
-// The benchmark is laptop
-// For larger screens we use min-width.
+// Styles apply to all viewports by default.
+// The benchmark is 'laptop'
 
-// 0 - 600px        Phone
-// 601 - 768px      Phone (landscape)
-// 769 - 900px      Tablet
-// 901 - 1024px     Tablet (landscape)
-// 1025 - 1280px    Laptop
-// 1281 - 1680px    Desktop
-// 1681 - ∞         Desktop (large)
+// For most viewports we use @media (max-width: )
+$phone:             600px !default;
+$phone-landscape:   768px !default;
+$tablet-portrait:   900px !default;
+$tablet-landscape:  1024px !default;
+$laptop:            1280px !default;
+$desktop:           1680px !default;
 
-$phone: 600px !default;
-$phone-landscape: 768px !default;
-$tablet-portrait: 900px !default;
-$tablet-landscape: 1024px !default;
-$laptop: 1280px !default;
-$desktop: 1680px !default;
-$desktop-large: 1681px !default;
-$breakpoints: 
+// For the largest viewport we use @media (min-width: )
+$desktop-large:     1681px !default;
+
+$breakpoints: // for viewport @mixin
   'desktop-large',
   'desktop',
   'laptop',
@@ -32,22 +32,44 @@ $breakpoints:
   'tablet-portrait',
   'phone-landscape',
   'phone';
-$fractions: 100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5;
 
-// Array for specific viewport overrides
-// (phone and desktop-large are already "specific")
-$singleViewports: phone-landscape, tablet-portrait, tablet-landscape, laptop, desktop;
+$fractions:
+  // Array used to generate width and heights
+  100,
+  90,
+  80,
+  75,
+  70,
+  66.666666,
+  60,
+  50,
+  40,
+  33.333333,
+  30,
+  25,
+  20,
+  10,
+  5;
 
-// Stack columns on viewports less or equal to:
+$singleViewports: 
+  // Array used to generate overrides for specific viewports
+  // phone and desktop-large excluded – they're already "specific"
+  phone-landscape,
+  tablet-portrait,
+  tablet-landscape,
+  laptop,
+  desktop;
+
+// Stack columns on viewports less than or equal to:
 $stack-point: $phone-landscape !default;
 $custom-stack-point: $phone !default; // used to override $stack-point
 
 // Misc
-$border-radius: 6px !default; // used for '.radius' class and focus-outline (see _a11y.scss)
+$border-radius: 6px !default; // for '.radius' class and focus-outline (_a11y.scss)
 $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
-// Theme Colors
+// Theme colors
 $theme-color-primary: #66008d !default;
 $theme-color-secondary: #9139b4 !default;
 $theme-color-tertiary: #c19ad1 !default;
@@ -55,10 +77,10 @@ $theme-color-tertiary: #c19ad1 !default;
 // Generic Colors
 $color-light: #fff !default;
 $color-dark: #000 !default;
-$color-red: red !default;
-$color-green: green !default;
-$color-blue: blue !default;
-$color-orange: orangered !default;
+$color-red: #ff0000 !default;
+$color-green: #1f6e00 !default;
+$color-blue: #003f88 !default;
+$color-orange: #e93e00 !default;
 $color-gray-lighter: #eee !default;
 $color-gray-light: #ccc !default;
 $color-gray: #888 !default;
@@ -88,19 +110,23 @@ $link-color-hover: $theme-color-secondary !default;
 $link-underline-color: $theme-color-tertiary !default;
 
 // Link settings
-$turn-off-link-decoration: true !default;
-$use-global-link-underlines: true !default;
+$turn-off-link-decoration: false !default;
+$use-global-link-underlines: false !default;
 $use-article-link-underlines: false !default;
 $link-underline-style: solid !default; // dotted, dashed, double, wavy
 $link-underline-thickness: 0.2rem !default;
 $link-underline-offset: 0.12rem !default;
 
+// Focus style (':focus')
+$focus-border-color: #49a7ff75 !default;
+$focus-border-weight: 0.3rem !default;
+
 // Typography
 $font-base: 62.5% !default; // Sets scale: 1rem = 10px
 $font-size: 1.6rem !default;
 $small-font-size: 83% !default;
-$inline-code-size: 83% !default;
-$pre-code-size: 83% !default;
+$inline-code-size: $small-font-size !default;
+$pre-code-size: $small-font-size !default;
 $paragraph-margin-bottom: 2rem !default;
 $headline-weight: 600 !default;
 $font-strong: bold !default;
@@ -127,3 +153,79 @@ $font-family-mono:
   'Liberation Mono',
   Menlo,
   monospace !default;
+
+:root {
+
+  // Let's expose some useful variables 
+  // to the outside world:
+
+  // Breakpoints
+
+  --phone: #{$phone};                        // 0 - 600px
+  --phone-landscape: #{$phone-landscape};    // 601 - 768px
+  --tablet-portrait: #{$tablet-portrait};    // 769 - 900px
+  --tablet-landscape: #{$tablet-landscape};  // 901 - 1024px
+  --laptop: #{$laptop};                      // 1025 - 1280px
+  --desktop: #{$desktop};                    // 1281 - 1680px
+  --desktop-large: #{$desktop-large};        // 1681 - ∞
+
+  // Theme Colors
+
+  --theme-color-primary: #{$theme-color-primary};
+  --theme-color-secondary: #{$theme-color-secondary};
+  --theme-color-tertiary: #{$theme-color-tertiary};
+
+  // Generic Colors
+
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
+  --color-red: #{$color-red};
+  --color-green: #{$color-green};
+  --color-blue: #{$color-blue};
+  --color-orange: #{$color-orange};
+  --color-gray-lighter: #{$color-gray-lighter};
+  --color-gray-light: #{$color-gray-light};
+  --color-gray: #{$color-gray};
+  --color-gray-dark: #{$color-gray-dark};
+  --color-gray-darker: #{$color-gray-darker};
+
+  // Text Colors
+
+  --text-highlight-color: #{$text-highlight-color};
+  --inline-code-color: #{$inline-code-color};
+  --inline-code-bg: #{$inline-code-bg};
+  --pre-code-color: #{$pre-code-color};
+  --pre-code-bg: #{$pre-code-bg};
+
+  // Background colors
+
+  --body-bg: #{$body-bg};
+  --bg-light: #{$bg-light};
+  --bg-dark: #{$bg-dark};
+  --bg-gray-light: #{$bg-gray-light};
+  --bg-gray-lighter: #{$bg-gray-lighter};
+  --bg-gray: #{$bg-gray};
+  --bg-gray-dark: #{$bg-gray-dark};
+  --bg-gray-darker: #{$bg-gray-darker};
+
+  // Link colors
+
+  --link-color: #{$link-color};
+  --link-color-hover: #{$link-color-hover};
+  --link-underline-color: #{$link-underline-color};
+
+  // Focus style (':focus')
+
+  --focus-border-color: #{$focus-border-color};
+  --focus-border-weight: #{$focus-border-weight};
+
+  // Typography
+
+  --font-size: #{$font-size};
+  --small-font-size: #{$small-font-size};
+  --inline-code-size: #{$inline-code-size};
+  --pre-code-size: #{$pre-code-size};
+  --paragraph-margin-bottom: #{$paragraph-margin-bottom};
+  --headline-weight: #{$headline-weight};
+  --font-strong: #{$font-strong};
+}
