@@ -220,9 +220,10 @@ Strip styling from linked images
 */ 
 
 a[href$=jpg],
-a[href$=jpeg], 
-a[href$=jpe], 
-a[href$=png], 
+a[href$=jpeg],
+a[href$=jpe],
+a[href$=png],
+a[href$=svg],
 a[href$=gif] {
 	text-decoration: none !important;
 	border: 0 none !important;
