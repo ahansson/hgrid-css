@@ -105,11 +105,11 @@
   @if $breakpoint == desktop-large {
     @media (min-width: $desktop-large) { @content };
   }
-  // Default Breakpoint for Stacking Content
+  // Default breakpoint for content stacking
   @if $breakpoint == $stack-point {
     @media (max-width: $stack-point) { @content };
   }
-  // Custom Override for $stack-point
+  // Custom override for $stack-point
   @if $breakpoint == $custom-stack-point {
     @media (max-width: $custom-stack-point) { @content };
   }
