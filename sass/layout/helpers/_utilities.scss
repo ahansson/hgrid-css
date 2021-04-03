@@ -208,6 +208,10 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
   pointer-events: none;
 }
 
+.pointer-events-all {
+  pointer-events: all;
+}
+
 @each $breakpoint in $breakpoints {
   @include viewport($breakpoint) {
 
