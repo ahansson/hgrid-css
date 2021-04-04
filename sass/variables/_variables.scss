@@ -1,6 +1,6 @@
 // Sass variables are configurable
 // with the @use rule in your project
-// http://hgrid.io/documentation/integrate/
+// https://hgrid.io/documentation/integrate/
 
 // Containers
 
@@ -96,6 +96,7 @@ $pre-code-bg: #361c43 !default;
 
 // Background colors
 $body-bg: #fff !default;
+$transition-bg: $body-bg !default;
 $bg-light: $color-light !default;
 $bg-dark: $color-dark !default;
 $bg-gray-light: $color-gray-light !default;
@@ -200,6 +201,7 @@ $font-family-mono:
   // Background colors
 
   --body-bg: #{$body-bg};
+  --transition-bg: #{$transition-bg};
   --bg-light: #{$bg-light};
   --bg-dark: #{$bg-dark};
   --bg-gray-light: #{$bg-gray-light};
