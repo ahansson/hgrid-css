@@ -1,4 +1,4 @@
-/*! hgrid v0.4.0-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.2-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --phone: 600px;
   --phone-landscape: 768px;
@@ -27,6 +27,7 @@
   --pre-code-color: #fff;
   --pre-code-bg: #361c43;
   --body-bg: #fff;
+  --transition-bg: #fff;
   --bg-light: #fff;
   --bg-dark: #000;
   --bg-gray-light: #ccc;
@@ -261,8 +262,7 @@ button,
 select,
 input[type=submit],
 input[type=radio],
-input[type=checkbox],
-[role=button],
+input[type=checkbox] [role=button],
 [type=button] {
   cursor: pointer;
 }
@@ -1402,14 +1402,12 @@ input[type=reset]:not(.block):last-child {
 @-webkit-keyframes vanish {
   100% {
     opacity: 0;
-    visibility: hidden;
   }
 }
 
 @keyframes vanish {
   100% {
     opacity: 0;
-    visibility: hidden;
   }
 }
 .container,
