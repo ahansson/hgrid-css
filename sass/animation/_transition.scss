@@ -2,6 +2,7 @@
 // <span class="transition vanish"></span>
 // Remove '.vanish' when page loads, 
 // reapply '.vanish' when loading is completed
+// https://hgrid.io/documentation/animations/
 
 .transition {
   position: fixed;
@@ -10,7 +11,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: $transition-bg;
 }
 
 .transition.vanish{
