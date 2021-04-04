@@ -2,6 +2,7 @@
 // <span class="transition vanish"></span>
 // Remove '.vanish' when page loads, 
 // reapply '.vanish' when loading is completed
+
 // https://hgrid.io/documentation/animations/
 
 .transition {
@@ -22,6 +23,5 @@
 @keyframes vanish{
   100%{
     opacity: 0;
-    visibility: hidden;
   }
 }
