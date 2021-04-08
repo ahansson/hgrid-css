@@ -10,9 +10,6 @@ $group-margin-bottom: 0 0 6rem 0 !default;
 
 // Breakpoints
 
-// Styles apply to all viewports by default.
-// The benchmark is 'laptop'
-
 // For most viewports we use @media (max-width: )
 $phone:             600px !default;
 $phone-landscape:   768px !default;
@@ -88,8 +85,10 @@ $color-gray-dark: #555 !default;
 $color-gray-darker: #333 !default;
 
 // Text Colors
-$text-default-color: $color-dark !default;
-$text-highlight-color: #ffe4c9 !default; // Used for <mark> and '.highlight'
+$text-color-primary: $color-dark !default;
+$text-color-secondary: $color-gray-darker !default;
+$text-color-tertiary: $color-gray-dark !default;
+$text-highlight-color: #ffe4c9 !default; // used for <mark> and '.highlight'
 $inline-code-color: #620042 !default;
 $inline-code-bg: #ffe4c9 !default;
 $pre-code-color: #fff !default;
@@ -97,7 +96,7 @@ $pre-code-bg: #361c43 !default;
 
 // Background colors
 $body-bg: #fff !default;
-$transition-bg: $body-bg !default; // For page transition animation
+$transition-bg: $body-bg !default; // for page transition animation
 $bg-light: $color-light !default;
 $bg-dark: $color-dark !default;
 $bg-gray-light: $color-gray-light !default;
@@ -124,7 +123,7 @@ $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
 // Typography
-$font-base: 62.5% !default; // Sets scale: 1rem = 10px
+$font-base: 62.5% !default; // sets scale: 1rem = 10px
 $font-size: 1.6rem !default;
 $small-font-size: 83% !default;
 $inline-code-size: $small-font-size !default;
@@ -163,13 +162,13 @@ $font-family-mono:
 
   // Breakpoints
 
-  --phone: #{$phone};                        // 0 - 600px
-  --phone-landscape: #{$phone-landscape};    // 601 - 768px
-  --tablet-portrait: #{$tablet-portrait};    // 769 - 900px
-  --tablet-landscape: #{$tablet-landscape};  // 901 - 1024px
-  --laptop: #{$laptop};                      // 1025 - 1280px
-  --desktop: #{$desktop};                    // 1281 - 1680px
-  --desktop-large: #{$desktop-large};        // 1681 - ∞
+  --phone: #{$phone};                        // 600px
+  --phone-landscape: #{$phone-landscape};    // 768px
+  --tablet-portrait: #{$tablet-portrait};    // 900px
+  --tablet-landscape: #{$tablet-landscape};  // 1024px
+  --laptop: #{$laptop};                      // 1280px
+  --desktop: #{$desktop};                    // 1680px
+  --desktop-large: #{$desktop-large};        // 1681px -> ∞
 
   // Theme Colors
 
@@ -192,8 +191,10 @@ $font-family-mono:
   --color-gray-darker: #{$color-gray-darker};
 
   // Text Colors
-
-  --text-default-color: #{$text-default-color};
+  
+  --text-color-primary: #{$text-color-primary};
+  --text-color-secondary: #{$text-color-secondary};
+  --text-color-tertiary: #{$text-color-tertiary};
   --text-highlight-color: #{$text-highlight-color};
   --inline-code-color: #{$inline-code-color};
   --inline-code-bg: #{$inline-code-bg};
