@@ -65,7 +65,7 @@ $stack-point: $phone-landscape !default;
 $custom-stack-point: $phone !default; // used to override $stack-point
 
 // Misc
-$border-radius: 6px !default; // for '.radius' class and focus-outline (_a11y.scss)
+$border-radius: 6px !default; // used for '.radius' class
 $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
@@ -88,7 +88,8 @@ $color-gray-dark: #555 !default;
 $color-gray-darker: #333 !default;
 
 // Text Colors
-$text-highlight-color: #ffe4c9 !default;
+$text-default-color: $color-dark !default;
+$text-highlight-color: #ffe4c9 !default; // Used for <mark> and '.highlight'
 $inline-code-color: #620042 !default;
 $inline-code-bg: #ffe4c9 !default;
 $pre-code-color: #fff !default;
@@ -96,7 +97,7 @@ $pre-code-bg: #361c43 !default;
 
 // Background colors
 $body-bg: #fff !default;
-$transition-bg: $body-bg !default;
+$transition-bg: $body-bg !default; // For page transition animation
 $bg-light: $color-light !default;
 $bg-dark: $color-dark !default;
 $bg-gray-light: $color-gray-light !default;
@@ -192,6 +193,7 @@ $font-family-mono:
 
   // Text Colors
 
+  --text-default-color: #{$text-default-color};
   --text-highlight-color: #{$text-highlight-color};
   --inline-code-color: #{$inline-code-color};
   --inline-code-bg: #{$inline-code-bg};
