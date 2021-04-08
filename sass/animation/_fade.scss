@@ -1,15 +1,25 @@
+// Usage:
+// <div class="fade">
+//    ...
+// </div>
+
+// Use JS to trigger '.fade-in' and '.fade-out'
+// Details: https://hgrid.io/documentation/animations/
+
 .fade {
   transition: ease 0.3s;
   opacity: 0;
+  pointer-events: none;
 }
 
 .fade-in {
   animation: fadingIn ease 1.6s forwards;
+  pointer-events: all;
 }
 
 @keyframes fadingIn {
   from {
-    opacity: 0;
+	  opacity:0;
   }
   to {
     opacity: 1;
@@ -18,6 +28,7 @@
 
 .fade-out {
   animation: fadingOut ease 0.6s forwards;
+  pointer-events: none;
 }
 
 @keyframes fadingOut {
@@ -26,7 +37,5 @@
   }
   to {
 	  opacity:0;
-    visibility: hidden;
-    display: none;
   }
 }
