@@ -160,16 +160,6 @@ $font-family-mono:
   // Let's expose some useful variables 
   // to the outside world:
 
-  // Breakpoints
-
-  --phone: #{$phone};                        // 600px
-  --phone-landscape: #{$phone-landscape};    // 768px
-  --tablet-portrait: #{$tablet-portrait};    // 900px
-  --tablet-landscape: #{$tablet-landscape};  // 1024px
-  --laptop: #{$laptop};                      // 1280px
-  --desktop: #{$desktop};                    // 1680px
-  --desktop-large: #{$desktop-large};        // 1681px -> ∞
-
   // Theme Colors
 
   --theme-color-primary: #{$theme-color-primary};
@@ -234,6 +224,4 @@ $font-family-mono:
   --gutter: #{$column-gutter-width};
   --group-margin-bottom: #{$group-margin-bottom};
   --paragraph-margin-bottom: #{$paragraph-margin-bottom};
-  --stack-point: #{$stack-point};
-  --custom-stack-point: #{$custom-stack-point};
 }

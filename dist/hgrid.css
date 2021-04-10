@@ -1,12 +1,5 @@
 /*! hgrid v0.4.2-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
-  --phone: 600px;
-  --phone-landscape: 768px;
-  --tablet-portrait: 900px;
-  --tablet-landscape: 1024px;
-  --laptop: 1280px;
-  --desktop: 1680px;
-  --desktop-large: 1681px;
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
   --theme-color-tertiary: #c19ad1;
@@ -49,8 +42,6 @@
   --gutter: 1.6%;
   --group-margin-bottom: 0 0 6rem 0;
   --paragraph-margin-bottom: 2rem;
-  --stack-point: 768px;
-  --custom-stack-point: 600px;
 }
 
 *,
