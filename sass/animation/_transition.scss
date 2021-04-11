@@ -1,11 +1,11 @@
-@use '../variables/variables' as *;
-
 // Usage:
 // <span class="transition vanish"></span>
 // Remove '.vanish' when page loads, 
 // reapply '.vanish' when loading is completed
 
 // https://hgrid.io/documentation/animations/
+
+@use '../variables/variables' as *;
 
 .transition {
   position: fixed;
