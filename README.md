@@ -16,7 +16,7 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
-Latest: **0.4.3-alpha**
+Latest: **0.4.4-alpha**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
@@ -53,17 +53,32 @@ yarn add hgrid-css --dev
 @import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';
 ```
 
-For detailed information on how to integrate **hgrid** in your frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+**@use with Sass**
+
+```scss
+@use 'hgrid-css/sass/hgrid' with (
+
+  // example customization
+
+  $link-color: #ffe88d,
+  $link-color-hover: #fff0b4,
+  $container-max-width: 1600px,
+  $link-underline-color: #ffe88d
+);
+```
+For detailed information on how to integrate **hgrid** in your Node driven frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
 
 ## Local development
 
 _Requires nodejs with npm installed on your system._
 
+Run `npm install`.
+
 Start compiling `.scss` files to `.css` with the terminal command `npm run watch` from the root of the hgrid folder. Any changes you make to files in the `/sass` folder will result in css and map files being updated in the `/dist` folder.
 
 To produce the minified **hgrid** file, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
 
-As always, see [hgrid.io](https://hgrid.io) for details on how to integrate **hgrid** as Sass or plain CSS in
+As always, see [hgrid.io](https://hgrid.io) for details on how to integrate **hgrid** as Sass or plain CSS in your projects.
 
 ## Author
 
