@@ -1,32 +1,33 @@
-/*! hgrid v0.4.3-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+@use 'base/version';
 
-@import 'variables/variables';
-@import 'mixins/mixins';
-@import 'base/base';
-@import 'base/a11y';
-@import 'typography/typography';
+@forward 'variables/variables';
+@use 'mixins/mixins';
 
-@import 'input/form';
-@import 'input/input';
+@use 'base/base';
+@use 'base/a11y';
+@use 'typography/typography';
 
-@import 'animation/fade';
-@import 'animation/flash';
-@import 'animation/rotate';
-@import 'animation/scroll';
-@import 'animation/spinner';
-@import 'animation/transition';
+@use 'input/form';
+@use 'input/input';
 
-@import 'layout/containers';
-@import 'layout/auto-columns';
-@import 'layout/accurate-columns';
-@import 'layout/flex';
-@import 'layout/grid';
-@import 'layout/tables';
+@use 'animation/fade';
+@use 'animation/flash';
+@use 'animation/rotate';
+@use 'animation/scroll';
+@use 'animation/spinner';
+@use 'animation/transition';
 
-@import 'layout/helpers/embed';
-@import 'layout/helpers/separation';
-@import 'layout/helpers/background';
-@import 'layout/helpers/adjustment';
-@import 'layout/helpers/utilities';
+@use 'layout/containers';
+@use 'layout/auto-columns';
+@use 'layout/accurate-columns';
+@use 'layout/flex';
+@use 'layout/grid';
+@use 'layout/tables';
 
-@import 'overrides/overrides';
+@use 'layout/helpers/embed';
+@use 'layout/helpers/separation';
+@use 'layout/helpers/background';
+@use 'layout/helpers/adjustment';
+@use 'layout/helpers/utilities';
+
+@use 'overrides/overrides';

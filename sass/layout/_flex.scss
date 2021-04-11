@@ -1,4 +1,6 @@
 @use "sass:math";
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
 
 // Flex for parent containers
 
@@ -102,7 +104,7 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
 
 // Responsive overrides for parent elements
 @each $breakpoint in $breakpoints {
-  @include viewport($breakpoint) {
+  @include mixin.viewport($breakpoint) {
 
     // Unset flex container 
     .f-unset-#{$breakpoint} {
@@ -208,7 +210,7 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
 
 // Responsive overrides for flex children:
 @each $breakpoint in $breakpoints {
-  @include viewport($breakpoint) {
+  @include mixin.viewport($breakpoint) {
     // Set item min-width per breakpoint with flex-basis 
     // to determine behavior with flex-wrap
     @each $fraction in $fractions {

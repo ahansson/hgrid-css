@@ -1,3 +1,5 @@
+@use '../../mixins/mixins' as mixin;
+
 // Pixel Perfect Push & Pull Positioning
 
 // Push Down
@@ -76,7 +78,7 @@ $positions: static, absolute, fixed, relative, sticky;
 }
 
 .absolute-center {
-  @include absolute-center;
+  @include mixin.absolute-center;
 }
 
 // Align Positioned Elements
@@ -139,7 +141,7 @@ $positions: static, absolute, fixed, relative, sticky;
 }
 
 .clearfix {
-  @include clearfix;
+  @include mixin.clearfix;
 }
 
 .clear-none {

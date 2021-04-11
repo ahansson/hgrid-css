@@ -1,8 +1,11 @@
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
+
 // Automatic content columns
 // Always use inside '.row'
 .column {
-  @include column-padding;
-  @include viewport($stack-point) {
+  @include mixin.column-padding;
+  @include mixin.viewport($stack-point) {
     margin-bottom: $column-gutter-width;
   }
   -ms-flex-preferred-size: 0;

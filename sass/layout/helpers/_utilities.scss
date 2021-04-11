@@ -1,4 +1,6 @@
 @use "sass:math";
+@use '../../variables/variables' as *;
+@use '../../mixins/mixins' as mixin;
 
 // Shapes 
 .circle {
@@ -213,7 +215,7 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 }
 
 @each $breakpoint in $breakpoints {
-  @include viewport($breakpoint) {
+  @include mixin.viewport($breakpoint) {
 
     // Hide element from a certain breakpoint and above (desktop and desktop-large) /
     // Hide element from a certain breakpoint and below (laptop, tablet, phone)
@@ -248,7 +250,7 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 // Phone and desktop-large excluded as their styles are specific
 
 @each $viewport in $singleViewports {
-  @include onlyViewport($viewport) { 
+  @include mixin.onlyViewport($viewport) { 
     .hide-#{$viewport}-only {
       display: none;
     }

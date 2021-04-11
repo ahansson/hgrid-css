@@ -1,3 +1,5 @@
+@use '../variables/variables' as *;
+
 ::placeholder {
   color: $color-gray;
 }

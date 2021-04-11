@@ -1,3 +1,5 @@
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
 // Containers
 
 .container,
@@ -8,12 +10,12 @@
   padding-left: $column-gutter-width;
   padding-right: $column-gutter-width;
 
-  @include viewport(tablet-portrait) {
+  @include mixin.viewport(tablet-portrait) {
     padding-left: ($column-gutter-width * 2);
     padding-right: ($column-gutter-width * 2);
   }
 
-  @include viewport(phone) {
+  @include mixin.viewport(phone) {
     padding-left: ($column-gutter-width * 2.2);
     padding-right: ($column-gutter-width * 2.2);
   }
@@ -43,8 +45,8 @@
 // .row-block is used for block elements, without columns
 .row,
 .row-block {
-  @include row-margins;
-  @include viewport($stack-point) {
+  @include mixin.row-margins;
+  @include mixin.viewport($stack-point) {
     display: block;
   }
   display: flex;
@@ -54,14 +56,14 @@
 // Row for use without columns
 // for full width text and other block elements
 .row-block {
-  @include row-block-padding;
+  @include mixin.row-block-padding;
   display: block;
 }
 
 // Alternative viewport width 
 // for layout stacking
 .row.custom-stack {
-  @include viewport($custom-stack-point) {
+  @include mixin.viewport($custom-stack-point) {
     display: block;
 
     & .column,
@@ -74,7 +76,7 @@
 
 // Prevent stacking
 .row.no-stack {
-  @include viewport($stack-point) {
+  @include mixin.viewport($stack-point) {
     display: flex;
     @for $fraction from 1 through 24 {
       .column-#{$fraction} {

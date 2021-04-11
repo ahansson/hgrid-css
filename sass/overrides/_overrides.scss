@@ -1,3 +1,5 @@
+@use '../variables/variables' as *;
+
 // Manual override from display:block to flex
 .flex-force {
   display: flex;

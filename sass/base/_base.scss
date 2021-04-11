@@ -4,6 +4,8 @@
 // https://github.com/tailwindlabs/tailwindcss (MIT)
 // https://www.zachleat.com/web/fluid-images
 
+@use '../variables/variables' as *;
+
 *,
 *::before,
 *::after {

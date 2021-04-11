@@ -1,5 +1,8 @@
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
+
 body {
-  @include viewport(phone) {
+  @include mixin.viewport(phone) {
     font-size: ($font-size * 1.1);
     line-height: ($font-size * 1.6);
   }
@@ -20,7 +23,7 @@ $title-attributes: (
 @each $title, $attr in $title-attributes {
   #{$title},
   .#{$title} {
-    @include title(nth($attr, 1), nth($attr, 2), nth($attr, 3), nth($attr, 4), nth($attr, 5), nth($attr, 6));
+    @include mixin.title(nth($attr, 1), nth($attr, 2), nth($attr, 3), nth($attr, 4), nth($attr, 5), nth($attr, 6));
   }
 }
 
@@ -41,7 +44,7 @@ article ul,
 article ol,
 section ul,
 section ol {
-  @include viewport(phone) {
+  @include mixin.viewport(phone) {
     padding-left: 10%;
   }
   list-style-type: square;
@@ -287,22 +290,22 @@ $cursors: not-allowed, move, wait, text, pointer, default, auto;
 // Text columns
 
 .two-columns {
-  @include col-format(2);
-  @include viewport(phone) {
+  @include mixin.col-format(2);
+  @include mixin.viewport(phone) {
     column-count: initial;
   }
 }
 
 .three-columns {
-  @include col-format(3);
-  @include viewport(phone-landscape) {
+  @include mixin.col-format(3);
+  @include mixin.viewport(phone-landscape) {
     column-count: initial;
   }
 }
 
 .four-columns {
-  @include col-format(4);
-  @include viewport(tablet-portrait) {
+  @include mixin.col-format(4);
+  @include mixin.viewport(tablet-portrait) {
     column-count: initial;
   }
 }

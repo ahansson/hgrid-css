@@ -1,3 +1,6 @@
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
+
 // Accurate columns
 // '.column-1' to '.column-24'
 // for fractional layout organization
@@ -8,8 +11,8 @@
 }
 
 [class*='column-'] {
-  @include column-padding;
-  @include viewport(phone-landscape) {
+  @include mixin.column-padding;
+  @include mixin.viewport(phone-landscape) {
     margin-bottom: $column-gutter-width;
     width: (100% - $column-gutter-width);
   }
@@ -25,7 +28,7 @@
 // Controls proportional width of items per breakpoint
 // in flex-wrap containers like '<div class="row f-wrap">'
 @each $breakpoint in $breakpoints {
-  @include viewport($breakpoint) {
+  @include mixin.viewport($breakpoint) {
     @for $fraction from 1 through 24 {
       .#{$breakpoint}-#{$fraction} {
         flex: 0 1 ((100% / $fraction) - $column-gutter-width);
