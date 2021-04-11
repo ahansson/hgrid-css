@@ -1,0 +1,75 @@
+// https://hgrid.io/documentation/variables/
+
+@use 'variables' as *;
+
+:root {
+
+  // Let's expose useful internal 
+  // variables to the outside world 
+  // as custom properties:
+
+  // Theme Colors
+
+  --theme-color-primary: #{$theme-color-primary};
+  --theme-color-secondary: #{$theme-color-secondary};
+  --theme-color-tertiary: #{$theme-color-tertiary};
+
+  // Generic Colors
+
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
+  --color-red: #{$color-red};
+  --color-green: #{$color-green};
+  --color-blue: #{$color-blue};
+  --color-orange: #{$color-orange};
+  --color-gray-lighter: #{$color-gray-lighter};
+  --color-gray-light: #{$color-gray-light};
+  --color-gray: #{$color-gray};
+  --color-gray-dark: #{$color-gray-dark};
+  --color-gray-darker: #{$color-gray-darker};
+
+  // Text Colors
+  
+  --text-color-primary: #{$text-color-primary};
+  --text-color-secondary: #{$text-color-secondary};
+  --text-color-tertiary: #{$text-color-tertiary};
+  --text-highlight-color: #{$text-highlight-color};
+  --inline-code-color: #{$inline-code-color};
+  --inline-code-bg: #{$inline-code-bg};
+  --pre-code-color: #{$pre-code-color};
+  --pre-code-bg: #{$pre-code-bg};
+
+  // Background colors
+
+  --body-bg: #{$body-bg};
+  --transition-bg: #{$transition-bg};
+  --bg-light: #{$bg-light};
+  --bg-dark: #{$bg-dark};
+  --bg-gray-light: #{$bg-gray-light};
+  --bg-gray-lighter: #{$bg-gray-lighter};
+  --bg-gray: #{$bg-gray};
+  --bg-gray-dark: #{$bg-gray-dark};
+  --bg-gray-darker: #{$bg-gray-darker};
+
+  // Link colors
+
+  --link-color: #{$link-color};
+  --link-color-hover: #{$link-color-hover};
+  --link-underline-color: #{$link-underline-color};
+
+  // Focus style (':focus')
+
+  --focus-border-color: #{$focus-border-color};
+  --focus-border-weight: #{$focus-border-weight};
+
+  // Typography
+
+  --font-size: #{$font-size};
+  --small-font-size: #{$small-font-size};
+
+  // Misc
+  --container-max-width: #{$container-max-width};
+  --gutter: #{$column-gutter-width};
+  --group-margin-bottom: #{$group-margin-bottom};
+  --paragraph-margin-bottom: #{$paragraph-margin-bottom};
+}
