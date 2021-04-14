@@ -1,1 +1,4 @@
 /node_modules
+test.scss
+dist/test.css
+dist/test.css.map
