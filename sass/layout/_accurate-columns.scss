@@ -11,12 +11,12 @@
 }
 
 [class*='column-'] {
+  min-width: 0;
   @include mixin.column-padding;
-  @include mixin.viewport(phone-landscape) {
+  @include mixin.viewport($stack-point) {
     margin-bottom: $column-gutter-width;
     width: (100% - $column-gutter-width);
   }
-  min-width: 0;
 }
 
 // Fills up space left by
@@ -25,8 +25,8 @@
   flex-grow: 1;
 }
 
-// Controls proportional width of items per breakpoint
-// in flex-wrap containers like '<div class="row f-wrap">'
+// Controls column widths per breakpoint
+// in rows with flex-wrap ('<div class="row f-wrap">')
 @each $breakpoint in $breakpoints {
   @include mixin.viewport($breakpoint) {
     @for $fraction from 1 through 24 {

@@ -3,6 +3,7 @@
 
 // Automatic content columns
 // Always use inside '.row'
+
 .column {
   @include mixin.column-padding;
   @include mixin.viewport($stack-point) {

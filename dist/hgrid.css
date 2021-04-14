@@ -1686,10 +1686,10 @@ input[type=reset]:not(.block):last-child {
 }
 
 [class*=column-] {
+  min-width: 0;
   margin-left: 0.8%;
   margin-right: 0.8%;
   min-height: 1px;
-  min-width: 0;
 }
 @media (max-width: 768px) {
   [class*=column-] {
