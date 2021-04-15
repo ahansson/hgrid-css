@@ -4,6 +4,8 @@
 // Accurate columns
 // '.column-1' to '.column-24'
 // for fractional layout organization
+// https://hgrid.io/documentation/layout/accurate-columns/
+
 @for $fraction from 1 through 24 {
   .column-#{$fraction} {
     width: (100% / $fraction) - $column-gutter-width;

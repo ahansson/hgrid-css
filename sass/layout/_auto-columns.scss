@@ -3,6 +3,7 @@
 
 // Automatic content columns
 // Always use inside '.row'
+// https://hgrid.io/documentation/layout/automatic-columns/
 
 .column {
   @include mixin.column-padding;
