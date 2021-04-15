@@ -1,5 +1,6 @@
 @use '../variables/variables' as *;
 @use '../mixins/mixins' as mixin;
+
 // Containers
 
 .container,
@@ -66,7 +67,7 @@
   @include mixin.viewport($custom-stack-point) {
     display: block;
 
-    & .column,
+    .column,
     [class^='column-'] {
       margin-bottom: $column-gutter-width;
       width: (100% - $column-gutter-width);
@@ -88,4 +89,9 @@
       margin-bottom: 0;
     }
   }
+}
+
+// Remove margin for .row with flex-wrap
+.row.f-wrap {
+  margin-bottom: 0;
 }

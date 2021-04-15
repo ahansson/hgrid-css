@@ -36,3 +36,9 @@
     }
   }
 }
+
+// Adds margin-bottom to child elements
+// of rows with flex-wrap
+.row.f-wrap > * {
+  margin-bottom: $column-gutter-width;
+}

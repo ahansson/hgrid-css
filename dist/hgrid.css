@@ -1572,6 +1572,10 @@ input[type=reset]:not(.block):last-child {
   }
 }
 
+.row.f-wrap {
+  margin-bottom: 0;
+}
+
 .column {
   margin-left: 0.8%;
   margin-right: 0.8%;
@@ -2381,6 +2385,10 @@ input[type=reset]:not(.block):last-child {
     flex: 0 1 2.5666666667%;
   }
 }
+.row.f-wrap > * {
+  margin-bottom: 1.6%;
+}
+
 .flex {
   display: flex;
 }
