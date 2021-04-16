@@ -16,7 +16,7 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
-Latest: **0.4.5-alpha**
+Latest: **0.4.6-alpha**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
