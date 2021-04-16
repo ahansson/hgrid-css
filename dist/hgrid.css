@@ -1575,6 +1575,9 @@ input[type=reset]:not(.block):last-child {
 .row.f-wrap {
   margin-bottom: 0;
 }
+.row.f-wrap > [class*=column-] {
+  margin-bottom: 1.6%;
+}
 
 .column {
   margin-left: 0.8%;
@@ -2000,10 +2003,6 @@ input[type=reset]:not(.block):last-child {
     flex: 0 1 6.7333333333%;
   }
 }
-.row.f-wrap > * {
-  margin-bottom: 1.6%;
-}
-
 .flex {
   display: flex;
 }

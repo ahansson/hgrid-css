@@ -23,6 +23,7 @@
 
 // Fills up space left by
 // other columns on the same row
+
 .column-fill {
   flex-grow: 1;
 }
@@ -46,10 +47,4 @@
       }
     }
   }
-}
-
-// Adds margin-bottom to child elements
-// of rows with flex-wrap
-.row.f-wrap > * {
-  margin-bottom: $column-gutter-width;
 }

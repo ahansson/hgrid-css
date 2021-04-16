@@ -42,7 +42,6 @@
 // Required wrapper for '.column' and '.column-{x}'
 // Stacks columns on viewport setting '$stack-point'
 
-// .row is used with columns
 // .row-block is used for block elements, without columns
 .row,
 .row-block {
@@ -54,8 +53,8 @@
   margin-bottom: $column-gutter-width;
 }
 
-// Row for use without columns
-// for full width text and other block elements
+// For use without columns
+// (full width text and other block elements)
 .row-block {
   @include mixin.row-block-padding;
   display: block;
@@ -94,4 +93,9 @@
 // Remove margin for .row with flex-wrap
 .row.f-wrap {
   margin-bottom: 0;
+
+  // Add margin-bottom to wrapped columns
+  > [class*='column-'] {
+    margin-bottom: $column-gutter-width;
+  }
 }
