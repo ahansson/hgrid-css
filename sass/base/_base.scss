@@ -245,7 +245,8 @@ button,
 select,
 input[type=submit],
 input[type=radio],
-input[type=checkbox]
+input[type=checkbox],
+input[type=reset],
 [role=button],
 [type=button] {
   cursor: pointer;
