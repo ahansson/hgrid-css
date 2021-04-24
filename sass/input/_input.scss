@@ -81,10 +81,10 @@ input[type=file] {
 
 // Buttons
 button,
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-[type=file]:not(:disabled) {
+[type=button],
+[type=reset],
+[type=submit],
+[type=file] {
   color: #fff;
   border: 2px solid $theme-color-primary;
   background: $theme-color-primary;
@@ -95,24 +95,49 @@ button,
   width: max-content;
   margin-bottom: 2rem;
 
+  &.negative {
+    background: $color-light;
+    border: 2px solid $color-light;
+    color: $theme-color-primary;
+  }
+
   &.outline,
-  &:not(:disabled):hover {
+  &:hover {
     background: none;
     border: 2px solid $theme-color-primary;
     color: $theme-color-primary;
   }
 
-  &:not(:disabled).outline:hover,
-  &:not(:disabled, .outline):active {
+  &.outline:hover,
+  &:active {
     background: $theme-color-primary;
     border: 2px solid $theme-color-primary;
     color: #fff;
   }
 
-  &:not(:disabled).outline:active {
+  &.outline:active {
     background: none;
     border: 2px solid $theme-color-primary;
     color: $theme-color-primary;
+  }
+
+  &.outline.negative,
+  &.negative:hover {
+    background: none;
+    border: 2px solid $color-light;
+    color: $color-light;
+  }
+
+  &.outline.negative:hover,
+  &.negative:active {
+    background: $color-light;
+    color: $theme-color-primary;
+  }
+
+  &.outline.negative:active {
+    background: none;
+    border: 2px solid $color-light;
+    color: $color-light;
   }
 
   &.secondary {
@@ -120,13 +145,13 @@ button,
     border: 2px solid $theme-color-secondary;
     color: #fff;
 
-    &:not(:disabled):hover {
+    &:hover {
       background: none;
       border: 2px solid $theme-color-secondary;
       color: $theme-color-secondary;
     }
 
-    &.secondary:not(:disabled):active {
+    &.secondary:active {
       background: $theme-color-secondary;
       border: 2px solid $theme-color-secondary;
       color: #fff;
@@ -142,8 +167,8 @@ button,
   }
 
   &.outline:disabled {
-    background: $bg-gray-lighter;
-    border: 2px solid $color-gray-light;
+    background: none;
+    border: 2px solid $color-gray;
     color: $color-gray;
   }
 }
