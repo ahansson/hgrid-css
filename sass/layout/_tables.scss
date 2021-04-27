@@ -44,12 +44,12 @@ table {
     padding: 0.2rem 1rem;
   }
   
-  &-auto {
-    table-layout: auto;
+  &.layout-fixed {
+    table-layout: fixed;
   }
 
-  &-fixed {
-    table-layout: fixed;
+  &.layout-auto {
+    table-layout: auto;
   }
 
   &.striped {

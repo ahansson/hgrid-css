@@ -3039,11 +3039,11 @@ table tfoot tr td {
   line-height: 1.6rem;
   padding: 0.2rem 1rem;
 }
-table-auto {
-  table-layout: auto;
-}
-table-fixed {
+table.layout-fixed {
   table-layout: fixed;
+}
+table.layout-auto {
+  table-layout: auto;
 }
 table.striped tbody tr td {
   border: none;
