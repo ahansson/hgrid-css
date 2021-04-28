@@ -2,7 +2,7 @@
 @use '../mixins/mixins' as mixin;
 
 // Accurate columns
-// '.column-1' to '.column-24'
+// Always use inside '.row'
 // for fractional layout organization
 // https://hgrid.io/documentation/layout/accurate-columns/
 
@@ -12,7 +12,7 @@
   }
 }
 
-[class*='column-'] {
+[class^='column-'] {
   min-width: 0;
   @include mixin.column-padding;
   @include mixin.viewport($stack-point) {
