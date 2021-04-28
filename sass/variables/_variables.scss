@@ -31,6 +31,15 @@ $breakpoints: // for viewport @mixin
   'phone-landscape',
   'phone' !default;
 
+$responsiveBreakpoints:
+  // default viewport 'laptop' excluded
+  'desktop-large',
+  'desktop',
+  'tablet-landscape',
+  'tablet-portrait',
+  'phone-landscape',
+  'phone';
+
 $fractions:
   // Array used to generate width and heights
   100,

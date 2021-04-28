@@ -31,14 +31,6 @@
 // Controls column widths per breakpoint
 // in rows with flex-wrap ('<div class="row f-wrap">')
 
- $responsiveBreakpoints:
-  'desktop-large',
-  'desktop',
-  'tablet-landscape',
-  'tablet-portrait',
-  'phone-landscape',
-  'phone';
-
 @each $screen in $responsiveBreakpoints {
   @include mixin.viewport($screen) {
     @for $fraction from 1 through 12 {
