@@ -27,8 +27,8 @@
 // individual columns, or
 // between all columns in a row
 
-.column.no-gutter,
-[class^=column-].no-gutter,
+.column.no-gutter:not(:first-child, :last-child),
+[class^=column-].no-gutter:not(:first-child, :last-child),
 .row.no-gutter .column:not(:first-child, :last-child),
 .row.no-gutter [class^=column-]:not(:first-child, :last-child) {
   margin-left: 0;
@@ -36,17 +36,22 @@
 }
 
 @for $fraction from 1 through 24 {
-  .row.no-gutter .column-#{$fraction} {
+  .row.no-gutter .column-#{$fraction},
+  .column-#{$fraction}.no-gutter {
     width: (100% / $fraction);
   }
 }
 
 .row.no-gutter .column:first-child,
-.row.no-gutter [class^=column-]:first-child {
+.row.no-gutter [class^=column-]:first-child,
+.column.no-gutter:first-child,
+[class^=column-].no-gutter:first-child {
   margin-right: 0;
 }
 
 .row.no-gutter .column:last-child,
-.row.no-gutter [class^=column-]:last-child {
+.row.no-gutter [class^=column-]:last-child,
+.column.no-gutter:last-child,
+[class^=column-].no-gutter:last-child {
   margin-left: 0;
 }
