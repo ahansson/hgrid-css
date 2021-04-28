@@ -1,4 +1,4 @@
-/*! hgrid v0.4.6-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.7-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -1620,7 +1620,7 @@ input[type=reset]:not(.block):last-child {
 .row.f-wrap {
   margin-bottom: 0;
 }
-.row.f-wrap > [class*=column-] {
+.row.f-wrap > [class^=column-] {
   margin-bottom: 1.6%;
 }
 
@@ -1737,14 +1737,14 @@ input[type=reset]:not(.block):last-child {
   width: 2.5666666667%;
 }
 
-[class*=column-] {
+[class^=column-] {
   min-width: 0;
   margin-left: 0.8%;
   margin-right: 0.8%;
   min-height: 1px;
 }
 @media (max-width: 768px) {
-  [class*=column-] {
+  [class^=column-] {
     margin-bottom: 1.6%;
     width: 98.4%;
   }
@@ -6771,4 +6771,118 @@ hr {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.column.no-gutter,
+[class^=column-].no-gutter,
+.row.no-gutter .column:not(:first-child, :last-child),
+.row.no-gutter [class^=column-]:not(:first-child, :last-child) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter .column-1 {
+  width: 100%;
+}
+
+.row.no-gutter .column-2 {
+  width: 50%;
+}
+
+.row.no-gutter .column-3 {
+  width: 33.3333333333%;
+}
+
+.row.no-gutter .column-4 {
+  width: 25%;
+}
+
+.row.no-gutter .column-5 {
+  width: 20%;
+}
+
+.row.no-gutter .column-6 {
+  width: 16.6666666667%;
+}
+
+.row.no-gutter .column-7 {
+  width: 14.2857142857%;
+}
+
+.row.no-gutter .column-8 {
+  width: 12.5%;
+}
+
+.row.no-gutter .column-9 {
+  width: 11.1111111111%;
+}
+
+.row.no-gutter .column-10 {
+  width: 10%;
+}
+
+.row.no-gutter .column-11 {
+  width: 9.0909090909%;
+}
+
+.row.no-gutter .column-12 {
+  width: 8.3333333333%;
+}
+
+.row.no-gutter .column-13 {
+  width: 7.6923076923%;
+}
+
+.row.no-gutter .column-14 {
+  width: 7.1428571429%;
+}
+
+.row.no-gutter .column-15 {
+  width: 6.6666666667%;
+}
+
+.row.no-gutter .column-16 {
+  width: 6.25%;
+}
+
+.row.no-gutter .column-17 {
+  width: 5.8823529412%;
+}
+
+.row.no-gutter .column-18 {
+  width: 5.5555555556%;
+}
+
+.row.no-gutter .column-19 {
+  width: 5.2631578947%;
+}
+
+.row.no-gutter .column-20 {
+  width: 5%;
+}
+
+.row.no-gutter .column-21 {
+  width: 4.7619047619%;
+}
+
+.row.no-gutter .column-22 {
+  width: 4.5454545455%;
+}
+
+.row.no-gutter .column-23 {
+  width: 4.347826087%;
+}
+
+.row.no-gutter .column-24 {
+  width: 4.1666666667%;
+}
+
+.row.no-gutter .column:first-child,
+.row.no-gutter [class^=column-]:first-child {
+  margin-right: 0;
+}
+
+.row.no-gutter .column:last-child,
+.row.no-gutter [class^=column-]:last-child {
+  margin-left: 0;
 }

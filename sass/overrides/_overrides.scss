@@ -22,3 +22,31 @@
 .appearance-none {
   appearance: none;
 }
+
+// Remove vertical margin between
+// individual columns, or
+// between all columns in a row
+
+.column.no-gutter,
+[class^=column-].no-gutter,
+.row.no-gutter .column:not(:first-child, :last-child),
+.row.no-gutter [class^=column-]:not(:first-child, :last-child) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@for $fraction from 1 through 24 {
+  .row.no-gutter .column-#{$fraction} {
+    width: (100% / $fraction);
+  }
+}
+
+.row.no-gutter .column:first-child,
+.row.no-gutter [class^=column-]:first-child {
+  margin-right: 0;
+}
+
+.row.no-gutter .column:last-child,
+.row.no-gutter [class^=column-]:last-child {
+  margin-left: 0;
+}
