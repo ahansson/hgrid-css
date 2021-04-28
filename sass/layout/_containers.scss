@@ -95,7 +95,7 @@
   margin-bottom: 0;
 
   // Add margin-bottom to wrapped columns
-  > [class*='column-'] {
+  > [class^='column-'] {
     margin-bottom: $column-gutter-width;
   }
 }
