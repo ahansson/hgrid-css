@@ -1,4 +1,4 @@
-/*! hgrid v0.4.8-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.9-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -6773,116 +6773,144 @@ hr {
           appearance: none;
 }
 
-.column.no-gutter,
-[class^=column-].no-gutter,
+.column.no-gutter:not(:first-child, :last-child),
+[class^=column-].no-gutter:not(:first-child, :last-child),
 .row.no-gutter .column:not(:first-child, :last-child),
 .row.no-gutter [class^=column-]:not(:first-child, :last-child) {
   margin-left: 0;
   margin-right: 0;
 }
 
-.row.no-gutter .column-1 {
+.row.no-gutter .column-1,
+.column-1.no-gutter {
   width: 100%;
 }
 
-.row.no-gutter .column-2 {
+.row.no-gutter .column-2,
+.column-2.no-gutter {
   width: 50%;
 }
 
-.row.no-gutter .column-3 {
+.row.no-gutter .column-3,
+.column-3.no-gutter {
   width: 33.3333333333%;
 }
 
-.row.no-gutter .column-4 {
+.row.no-gutter .column-4,
+.column-4.no-gutter {
   width: 25%;
 }
 
-.row.no-gutter .column-5 {
+.row.no-gutter .column-5,
+.column-5.no-gutter {
   width: 20%;
 }
 
-.row.no-gutter .column-6 {
+.row.no-gutter .column-6,
+.column-6.no-gutter {
   width: 16.6666666667%;
 }
 
-.row.no-gutter .column-7 {
+.row.no-gutter .column-7,
+.column-7.no-gutter {
   width: 14.2857142857%;
 }
 
-.row.no-gutter .column-8 {
+.row.no-gutter .column-8,
+.column-8.no-gutter {
   width: 12.5%;
 }
 
-.row.no-gutter .column-9 {
+.row.no-gutter .column-9,
+.column-9.no-gutter {
   width: 11.1111111111%;
 }
 
-.row.no-gutter .column-10 {
+.row.no-gutter .column-10,
+.column-10.no-gutter {
   width: 10%;
 }
 
-.row.no-gutter .column-11 {
+.row.no-gutter .column-11,
+.column-11.no-gutter {
   width: 9.0909090909%;
 }
 
-.row.no-gutter .column-12 {
+.row.no-gutter .column-12,
+.column-12.no-gutter {
   width: 8.3333333333%;
 }
 
-.row.no-gutter .column-13 {
+.row.no-gutter .column-13,
+.column-13.no-gutter {
   width: 7.6923076923%;
 }
 
-.row.no-gutter .column-14 {
+.row.no-gutter .column-14,
+.column-14.no-gutter {
   width: 7.1428571429%;
 }
 
-.row.no-gutter .column-15 {
+.row.no-gutter .column-15,
+.column-15.no-gutter {
   width: 6.6666666667%;
 }
 
-.row.no-gutter .column-16 {
+.row.no-gutter .column-16,
+.column-16.no-gutter {
   width: 6.25%;
 }
 
-.row.no-gutter .column-17 {
+.row.no-gutter .column-17,
+.column-17.no-gutter {
   width: 5.8823529412%;
 }
 
-.row.no-gutter .column-18 {
+.row.no-gutter .column-18,
+.column-18.no-gutter {
   width: 5.5555555556%;
 }
 
-.row.no-gutter .column-19 {
+.row.no-gutter .column-19,
+.column-19.no-gutter {
   width: 5.2631578947%;
 }
 
-.row.no-gutter .column-20 {
+.row.no-gutter .column-20,
+.column-20.no-gutter {
   width: 5%;
 }
 
-.row.no-gutter .column-21 {
+.row.no-gutter .column-21,
+.column-21.no-gutter {
   width: 4.7619047619%;
 }
 
-.row.no-gutter .column-22 {
+.row.no-gutter .column-22,
+.column-22.no-gutter {
   width: 4.5454545455%;
 }
 
-.row.no-gutter .column-23 {
+.row.no-gutter .column-23,
+.column-23.no-gutter {
   width: 4.347826087%;
 }
 
-.row.no-gutter .column-24 {
+.row.no-gutter .column-24,
+.column-24.no-gutter {
   width: 4.1666666667%;
 }
 
 .row.no-gutter .column:first-child,
-.row.no-gutter [class^=column-]:first-child {
+.row.no-gutter [class^=column-]:first-child,
+.column.no-gutter:first-child,
+[class^=column-].no-gutter:first-child {
   margin-right: 0;
 }
 
 .row.no-gutter .column:last-child,
-.row.no-gutter [class^=column-]:last-child {
+.row.no-gutter [class^=column-]:last-child,
+.column.no-gutter:last-child,
+[class^=column-].no-gutter:last-child {
   margin-left: 0;
 }
