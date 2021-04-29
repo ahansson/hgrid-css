@@ -286,6 +286,33 @@ hr {
   border-width: 10px;
 }
 
+// Remove borders responsively
+@each $bp in $breakpoints {
+  @include mixin.viewport($bp) {
+
+    .#{$bp}-bn-0 {
+      border: none;
+    }
+
+    .#{$bp}-bt-0 {
+      border-top: 0;
+    }
+
+    .#{$bp}-br-0 {
+      border-right: 0;
+    }
+
+    .#{$bp}-bb-0 {
+      border-bottom: 0;
+    }
+
+    .#{$bp}-bl-0 {
+      border-left: 0;
+    }
+
+  }
+}
+
 // Text column separator
 .col-rule-light {
   column-rule: 1px solid $color-light;
