@@ -299,6 +299,10 @@ $cursors: not-allowed, move, wait, text, pointer, default, auto;
 .three-columns {
   @include mixin.col-format(3);
   @include mixin.viewport(phone-landscape) {
+    column-count: 2;
+  }
+
+  @include mixin.viewport(phone) {
     column-count: initial;
   }
 }
@@ -306,6 +310,10 @@ $cursors: not-allowed, move, wait, text, pointer, default, auto;
 .four-columns {
   @include mixin.col-format(4);
   @include mixin.viewport(tablet-portrait) {
+    column-count: 2;
+  }
+
+  @include mixin.viewport(phone) {
     column-count: initial;
   }
 }
