@@ -1,4 +1,5 @@
 @use '../../variables/variables' as *;
+@use '../../mixins/mixins' as mixin;
 
 // Lines and borders
 
@@ -315,10 +316,10 @@ hr {
 }
 
 // Padding (general)
-@for $p from 0 through 15 {
-  .padding-#{$p * 10} {
+@for $value from 0 through 15 {
+  .padding-#{$value * 10} {
     // Adjust visual diff top/bottom/sides.
-    padding: ($p*.8)+rem $p+rem;
+    padding: ($value*.8)+rem $value+rem;
   }
 }
 
@@ -327,34 +328,34 @@ hr {
 }
 
 // Padding (top) 
-@for $p from 0 through 15 {
-  .pt-#{$p * 10},
-  .padding-top-#{$p * 10} {
-    padding-top: $p + rem;
+@for $value from 0 through 15 {
+  .pt-#{$value * 10},
+  .padding-top-#{$value * 10} {
+    padding-top: $value + rem;
   }
 }
 
 // Padding (right side)
-@for $p from 0 through 15 {
-  .pr-#{$p * 10},
-  .padding-right-#{$p * 10} {
-    padding-right: $p + rem;
+@for $value from 0 through 15 {
+  .pr-#{$value * 10},
+  .padding-right-#{$value * 10} {
+    padding-right: $value + rem;
   }
 }
 
 // Padding (left side)
-@for $p from 0 through 15 {
-  .pl-#{$p * 10},
-  .padding-left-#{$p * 10} {
-    padding-left: $p + rem;
+@for $value from 0 through 15 {
+  .pl-#{$value * 10},
+  .padding-left-#{$value * 10} {
+    padding-left: $value + rem;
   }
 }
 
 // Padding (bottom) 
-@for $p from 0 through 15 {
-  .pb-#{$p * 10},
-  .padding-bottom-#{$p * 10} {
-    padding-bottom: $p + rem;
+@for $value from 0 through 15 {
+  .pb-#{$value * 10},
+  .padding-bottom-#{$value * 10} {
+    padding-bottom: $value + rem;
   }
 }
 
@@ -432,4 +433,104 @@ hr {
 
 .margin-right-auto {
   margin-right: auto;
+}
+
+// Responsive padding and 
+// margin overrides
+
+@each $bp in $responsiveBreakpoints {
+  @include mixin.viewport($bp) {
+    @for $value from 0 through 15 {
+
+      // Padding (general)
+      .#{$bp}-p-#{$value * 10} {
+        padding: ($value*.8)+rem $value+rem;
+      }
+
+      // Top
+      .#{$bp}-pt-#{$value * 10} {
+        padding-top: $value + rem;
+      }
+
+      // Right
+      .#{$bp}-pr-#{$value * 10} {
+        padding-right: $value + rem;
+      }
+
+      // Bottom
+      .#{$bp}-pb-#{$value * 10} {
+        padding-bottom: $value + rem;
+      }
+
+      // Left
+      .#{$bp}-pl-#{$value * 10} {
+        padding-left: $value + rem;
+      }
+
+      // Margin (general)
+      .#{$bp}-m-#{$value * 10} {
+        margin: $value + rem;
+      }
+
+      // Top
+      .#{$bp}-mt-#{$value * 10} {
+        margin-top: $value + rem;
+      }
+
+      // Right
+      .#{$bp}-mr-#{$value * 10} {
+        margin-right: $value + rem;
+      }
+
+      // Bottom
+      .#{$bp}-mb-#{$value * 10} {
+        margin-bottom: $value + rem;
+      }
+
+      // Left
+      .#{$bp}-ml-#{$value * 10} {
+        margin-left: $value + rem;
+      } 
+    }
+
+    .#{$bp}-p-5 {
+      padding: 0.5rem
+    }
+
+    .#{$bp}-pt-5 {
+      padding-top: 0.5rem
+    }
+
+    .#{$bp}-pr-5 {
+      padding-right: 0.5rem
+    }
+
+    .#{$bp}-pb-5 {
+      padding-bottom: 0.5rem
+    }
+
+    .#{$bp}-pl-5 {
+      padding-left: 0.5rem
+    }
+
+    .#{$bp}-m-5 {
+      margin: 0.5rem
+    }
+
+    .#{$bp}-mt-5 {
+      margin-top: 0.5rem
+    }
+
+    .#{$bp}-mr-5 {
+      margin-right: 0.5rem
+    }
+
+    .#{$bp}-mb-5 {
+      margin-bottom: 0.5rem
+    }
+
+    .#{$bp}-ml-5 {
+      margin-left: 0.5rem
+    }
+  }
 }
