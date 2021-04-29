@@ -1,18 +1,18 @@
 @use '../variables/variables' as *;
 
-// Scroll table (vertical)
-// Set a height for table to scroll
-.scrollable-x {
-  overflow: auto;
-  overflow-y: hidden;
-}
-
-// Scroll table (horizontal)
+// Scroll table (horizontally)
 // Requires the table to have a width, min-width 
 // or otherwise enough content to make it overflow
-.scrollable-y {
-  overflow: auto;
+.scrollable-x {
   overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+// Scroll table (vertically)
+// Requires a fixed container height
+.scrollable-y {
+  overflow: hidden;
+  overflow-y: scroll;
   max-width: 100%;
 }
 
