@@ -3017,13 +3017,13 @@ input[type=reset]:not(.block):last-child {
 }
 
 .scrollable-x {
-  overflow: auto;
   overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .scrollable-y {
-  overflow: auto;
-  overflow-y: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
   max-width: 100%;
 }
 
@@ -3241,7 +3241,7 @@ hr {
 }
 
 .border-right-gray {
-  border-right: 1px dotted #888;
+  border-right: 1px solid #888;
 }
 
 .border-right-gray-dotted {
@@ -3285,7 +3285,7 @@ hr {
 }
 
 .border-left-gray {
-  border-left: 1px dotted #888;
+  border-left: 1px solid #888;
 }
 
 .border-left-gray-dotted {
