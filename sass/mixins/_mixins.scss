@@ -102,7 +102,7 @@
     @media (max-width: $laptop) { @content };
   }
   @if $breakpoint == desktop {
-    @media (min-width: $desktop) { @content };
+    @media (max-width: $desktop) { @content };
   }
   @if $breakpoint == desktop-large {
     @media (min-width: $desktop-large) { @content };
