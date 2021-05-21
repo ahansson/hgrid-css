@@ -3153,7 +3153,7 @@ hr {
 }
 
 .border-top-gray {
-  border-top: 1px dotted #888;
+  border-top: 1px solid #888;
 }
 
 .border-top-gray-dotted {
@@ -8458,10 +8458,6 @@ hr {
 
 .bg-local {
   background-attachment: local;
-}
-
-.bg-scroll {
-  background-attachment: scroll;
 }
 
 .bg-pos-top {
