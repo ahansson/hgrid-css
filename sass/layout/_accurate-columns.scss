@@ -1,5 +1,6 @@
 @use '../variables/variables' as *;
 @use '../mixins/mixins' as mixin;
+@use 'sass:math';
 
 // Accurate columns
 // Always use inside '.row'
@@ -8,7 +9,7 @@
 
 @for $fraction from 1 through 24 {
   .column-#{$fraction} {
-    width: (100% / $fraction) - $column-gutter-width;
+    width: math.div( 100%, $fraction ) - $column-gutter-width;
   }
 }
 
@@ -35,7 +36,7 @@
   @include mixin.viewport($screen) {
     @for $fraction from 1 through 12 {
       .#{$screen}-#{$fraction} {
-        flex: 0 1 ((100% / $fraction) - $column-gutter-width);
+        flex: 0 1 (math.div( 100%, $fraction ) - $column-gutter-width);
       }
     }
   }

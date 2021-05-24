@@ -1,32 +1,33 @@
 @use '../../mixins/mixins' as mixin;
+@use 'sass:math';
 
 // Pixel Perfect Push & Pull Positioning
 
 // Push Down
 @for $px from 1 through 40 {
   .push#{$px}v {
-    margin-top: $px/10 + rem;
+    margin-top: math.div( $px, 10 ) + rem;
   }
 }
 
 // Push Left to Right (horizontally)
 @for $px from 1 through 40 {
   .push#{$px}h {
-    margin-left: $px/10 + rem;
+    margin-left: math.div( $px, 10 ) + rem;
   }
 }
 
 // Pull Up (vertically)
 @for $px from 1 through 40 {
   .pull#{$px}v {
-    margin-top: -$px/10 + rem;
+    margin-top: math.div( -$px, 10 ) + rem;
   }
 }
 
 // Pull Right to Left (horizontally)
 @for $px from 1 through 40 {
   .pull#{$px}h {
-    margin-left: -$px/10 + rem;
+    margin-left: math.div( -$px, 10 ) + rem;
   }
 }
 
@@ -35,28 +36,28 @@
 // Move Downwards
 @for $px from 1 through 40 {
   .translate-push#{$px}v {
-    transform: translate(0, ($px/10 + rem));
+    transform: translate(0, (math.div( $px, 10 ) + rem));
   }
 }
 
 // Move Upwards
 @for $px from 1 through 40 {
   .translate-pull#{$px}v {
-    transform: translate(0, (-$px/10 + rem));
+    transform: translate(0, (math.div( -$px, 10 ) + rem));
   }
 }
 
 // Left to Right
 @for $px from 1 through 40 {
   .translate-push#{$px}h {
-    transform: translate($px/10 + rem);
+    transform: translate(math.div( $px, 10 ) + rem);
   }
 }
 
 // Right to Left
 @for $px from 1 through 40 {
   .translate-pull#{$px}h {
-    transform: translate(-$px/10 + rem);
+    transform: translate(math.div( -$px, 10 ) + rem);
   }
 }
 

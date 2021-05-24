@@ -1,4 +1,5 @@
 @use '../variables/variables' as *;
+@use 'sass:math';
 
 // Manual override from display:block to flex
 .flex-force {
@@ -38,7 +39,7 @@
 @for $fraction from 1 through 24 {
   .row.no-gutter .column-#{$fraction},
   .column-#{$fraction}.no-gutter {
-    width: (100% / $fraction);
+    width: math.div( 100%, $fraction );
   }
 }
 

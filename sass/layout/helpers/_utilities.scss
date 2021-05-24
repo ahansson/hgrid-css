@@ -1,6 +1,6 @@
-@use "sass:math";
 @use '../../variables/variables' as *;
 @use '../../mixins/mixins' as mixin;
+@use "sass:math";
 
 // Shapes 
 .circle {
@@ -278,8 +278,8 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 // Opacity
 // (.opacity-5 = 5%, .opacity-10 = 10% etc.)
 @for $alpha from 0 through 20 {
-  .opacity-#{($alpha * 10) / 2} {
-    opacity: ($alpha / 10) / 2;
+  .opacity-#{math.div( ($alpha * 10), 2 )} {
+    opacity: math.div( math.div( $alpha, 10 ), 2 );
   }
 }
 
