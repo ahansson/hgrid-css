@@ -180,7 +180,8 @@ blockquote {
 // Text utilities
 
 i,
-em {
+em,
+.italic {
   font-style: italic;
 }
 
@@ -240,10 +241,6 @@ mark,
 
 .clip {
   text-overflow: clip;
-}
-
-.italic {
-  font-style: italic;
 }
 
 .normal {
