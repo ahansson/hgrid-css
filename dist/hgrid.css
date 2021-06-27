@@ -662,31 +662,31 @@ mark,
   user-select: auto;
 }
 
-.cursor-cursor {
+.cursor-not-allowed {
   cursor: not-allowed;
 }
 
-.cursor-cursor {
+.cursor-move {
   cursor: move;
 }
 
-.cursor-cursor {
+.cursor-wait {
   cursor: wait;
 }
 
-.cursor-cursor {
+.cursor-text {
   cursor: text;
 }
 
-.cursor-cursor {
+.cursor-pointer {
   cursor: pointer;
 }
 
-.cursor-cursor {
+.cursor-default {
   cursor: default;
 }
 
-.cursor-cursor {
+.cursor-auto {
   cursor: auto;
 }
 

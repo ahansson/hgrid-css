@@ -175,7 +175,6 @@ span a {
 }
 
 // Text formatting
-
 i,
 em,
 .italic {
@@ -274,7 +273,7 @@ $user-select-values: none, text, all, auto;
 $cursors: not-allowed, move, wait, text, pointer, default, auto;
 
 @each $cursor in $cursors {
-  .cursor-#{cursor} {
+  .cursor-#{$cursor} {
     cursor: $cursor;
   }
 }
