@@ -1,10 +1,7 @@
 # hgrid-css
 
-### WORK IN PROGRESS
-
-⚠️ _Documentation may be incomplete or inaccurate._
-
 ### **A Lightweight and Practical CSS Utility Kit.**
+<br>
 
 ### Zero Config. Flat Learning Curve
 
@@ -14,9 +11,11 @@ Hgrid is not a UI framework, but a starting point intended to make HTML work out
 
 Website: [https://hgrid.io](https://hgrid.io)
 
+⚠️ _Documentation may be incomplete._
+
 ## Versions
 
-Latest: **0.5.2-beta**
+Latest: **0.5.3-beta**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
