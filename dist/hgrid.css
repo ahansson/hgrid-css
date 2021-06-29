@@ -869,48 +869,39 @@ strong span {
   font-weight: normal;
 }
 
-.spacing-neg-1,
-.tracking-neg-1 {
-  letter-spacing: -0.008rem;
-}
-
-.spacing-neg-2,
-.tracking-neg-2 {
-  letter-spacing: -0.03rem;
-}
-
-.spacing-neg-3,
-.tracking-neg-3 {
-  letter-spacing: -0.1rem;
-}
-
-.spacing-neg-4,
-.tracking-neg-4 {
+.spacing-neg-4 {
   letter-spacing: -0.3rem;
 }
 
-.spacing-0,
-.tracking-0 {
+.spacing-neg-3 {
+  letter-spacing: -0.1rem;
+}
+
+.spacing-neg-2 {
+  letter-spacing: -0.03rem;
+}
+
+.spacing-neg-1 {
+  letter-spacing: -0.008rem;
+}
+
+.spacing-0 {
   letter-spacing: 0;
 }
 
-.spacing-1,
-.tracking-1 {
+.spacing-1 {
   letter-spacing: 0.008rem;
 }
 
-.spacing-2,
-.tracking-2 {
+.spacing-2 {
   letter-spacing: 0.03rem;
 }
 
-.spacing-3,
-.tracking-3 {
+.spacing-3 {
   letter-spacing: 0.1rem;
 }
 
-.letter-spacing-4,
-.tracking-4 {
+.spacing-4 {
   letter-spacing: 0.3rem;
 }
 
