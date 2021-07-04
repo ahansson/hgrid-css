@@ -162,11 +162,39 @@ $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
 }
 
 .min-content {
-  min-width: min-content;
+  width: min-content;
 }
 
 .max-content {
+  width: max-content;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.min-content-min {
+  min-width: min-content
+}
+
+.min-content-max {
+  max-width: min-content
+}
+
+.max-content-min {
   min-width: max-content;
+}
+
+.max-content-max {
+  max-width: max-content;
+}
+
+.fit-content-min {
+  min-width: fit-content;
+}
+
+.fit-content-max {
+  max-width: fit-content;
 }
 
 // Display and visibility
