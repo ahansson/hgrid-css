@@ -116,6 +116,52 @@ $positions: static, absolute, fixed, relative, sticky;
   right: 0;
 }
 
+// Z-index
+@for $i from 1 through 20 {
+  .z-index-#{$i} {
+    z-index: $i;
+  }
+}
+
+.z-index-999 {
+  z-index: 999;
+}
+
+$z-values: auto, inherit, initial, unset;
+
+@each $z in $z-values {
+  .z-index-#{$z} {
+    z-index: $z;
+  }
+}
+
+// Object fit
+
+// Specifies how the content of an external object such as an image should 
+// be fitted within its container
+$values: fill, contain, cover, scale-down;
+
+@each $val in $values {
+  .#{$val} {
+    object-fit: $val;
+  }
+}
+
+.object-fit-none {
+  object-fit: none;
+}
+
+// Alignment for 'inline', 'inline-block' 
+// and 'table-cell' elements
+$vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
+// default = baseline (_base.scss)
+
+@each $val in $vertical-align-values {
+  .align-#{$val} {
+    vertical-align: $val;
+  }
+}
+
 // Floats and Clears
 .fr {
   float: right;

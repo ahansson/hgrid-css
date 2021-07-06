@@ -80,52 +80,6 @@
  box-shadow: 0px 0px 64px 0px #00000036;
 }
 
-// Z-index
-@for $i from 1 through 20 {
-  .z-index-#{$i} {
-    z-index: $i;
-  }
-}
-
-.z-index-999 {
-  z-index: 999;
-}
-
-$z-values: auto, inherit, initial, unset;
-
-@each $z in $z-values {
-  .z-index-#{$z} {
-    z-index: $z;
-  }
-}
-
-// Object fit
-
-// Specifies how the content should be fitted 
-// within the parent element
-$values: fill, contain, cover, scale-down;
-
-@each $val in $values {
-  .#{$val} {
-    object-fit: $val;
-  }
-}
-
-.object-fit-none {
-  object-fit: none;
-}
-
-// Alignment for 'inline', 'inline-block' 
-// and 'table-cell' elements
-$vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
-// default = baseline (_base.scss)
-
-@each $val in $vertical-align-values {
-  .align-#{$val} {
-    vertical-align: $val;
-  }
-}
-
 // Widths and heights
 @each $fraction in $fractions {
   .width-#{math.floor($fraction)}pct {
