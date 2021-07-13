@@ -199,7 +199,7 @@
 @each $breakpoint in $breakpoints {
   @include mixin.viewport($breakpoint) {
 
-    // Hide element from a certain breakpoint and above (desktop and desktop-large) /
+    // Hide element from a certain breakpoint and above (desktop)
     // Hide element from a certain breakpoint and below (laptop, tablet, phone)
     .hide-#{$breakpoint} {
       display: none;
@@ -207,22 +207,21 @@
     .invisible-#{$breakpoint} {
       visibility: hidden;
     }
+
+    // Show element from a certain breakpoint and above (desktop)
+    // Show element from a certain breakpoint and below (laptop, tablet, phone)
+
     .visible-#{$breakpoint} {
       visibility: visible;
     }
-
-    // Show element from a certain breakpoint and above (desktop and desktop-large) /
-    // Show element from a certain breakpoint and below (laptop, tablet, phone)
-
-    // Use with block elements
-    .show-#{$breakpoint} {
+    .show-#{$breakpoint} { // Use with block elements
       display: block;
     }
 
+    .flex-show-#{$breakpoint} { 
     // Use with flex containers (like '.row')
     // on non-stacking viewports, if they
     // have been hidden with 'display:none';
-    .flex-show-#{$breakpoint} {
       display: flex;
     }
   }
@@ -242,16 +241,13 @@
     .visible-#{$viewport}-only {
       visibility: visible;
     }
-
-    // Use with block elements
-    .show-#{$viewport}-only {
+    .show-#{$viewport}-only { // Use with block elements
       display: block;
     }
-
-    // Use with flex containers (like '.row')
-    // on non-stacking viewports, if they
-    // have been hidden with 'display:none';
     .flex-show-#{$viewport}-only {
+      // Use with flex containers (like '.row')
+      // on non-stacking viewports, if they
+      // have been hidden with 'display:none';
       display: flex;
     }
   }
