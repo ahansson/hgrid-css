@@ -176,14 +176,6 @@ sup {
   vertical-align: baseline;
 }
 
-sub {
-  bottom: -0.25rem;
-}
-
-sup {
-  top: -0.5rem;
-}
-
 article,
 aside,
 details,
@@ -618,6 +610,14 @@ s,
 del,
 .strike {
   text-decoration: line-through;
+}
+
+sub {
+  bottom: -0.25rem;
+}
+
+sup {
+  top: -0.5rem;
 }
 
 .no-underline,

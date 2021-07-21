@@ -221,6 +221,14 @@ del,
   text-decoration: line-through;
 }
 
+sub {
+  bottom: -0.25rem;
+}
+
+sup {
+  top: -0.5rem;
+}
+
 .no-underline,
 .no-decoration,
 .no-strike {
