@@ -1,3 +1,5 @@
+@use '../variables/variables' as *;
+
 // Flexible video/iframe container
 
 .embed {
@@ -5,7 +7,7 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  margin-bottom: 1%;
+  margin-bottom: $paragraph-margin-bottom;
 & iframe,
   video,
   object,  
