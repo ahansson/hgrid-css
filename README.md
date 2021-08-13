@@ -5,24 +5,22 @@
 
 ### Zero Config. Flat Learning Curve
 
-Hgrid is not a UI framework, but a starting point intended to make HTML work out of the box. It provides some sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
+**Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides some sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
 
 ## Documentation
 
 Website: [https://hgrid.io](https://hgrid.io)
 
-⚠️ _Documentation may be incomplete._
-
 ## Versions
 
-Latest: **0.5.3-beta**
+Latest: **0.5.4-beta**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
 
 ## How to install
 
-**As a packet:**
+### **As a node module:**
 
 ```bash
 npm install hgrid-css --save-dev
@@ -32,7 +30,7 @@ npm install hgrid-css --save-dev
 yarn add hgrid-css --dev
 ```
 
-**From local file or CDN:**
+### **From local file or CDN:**
 
 ```html
 <head>
@@ -42,7 +40,7 @@ yarn add hgrid-css --dev
   <!-- more css below -->
 </head>
 ```
-**@import into your stylesheet:**
+### **@import into your stylesheet:**
 ```css
 /* From node_modules */
 @import './../etc./node_modules/hgrid-css/dist/hgrid.min.css';
@@ -52,7 +50,7 @@ yarn add hgrid-css --dev
 @import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';
 ```
 
-**@use with Sass**
+### **@use as Sass in a Node.js driven project:**
 
 ```scss
 @use 'hgrid-css/sass/hgrid' with (
@@ -65,20 +63,24 @@ yarn add hgrid-css --dev
   $link-underline-color: #ffe88d
 );
 ```
-For detailed information on how to integrate **hgrid** in your Node driven frontend framework, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+For detailed information with step by step recipes on how to integrate **hgrid** in your projects, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
 
 ## Local development
 
-_Requires nodejs with npm installed on your system._
+_Requires Node.js installed on your system._
 
 Run `npm install`.
 
-Start compiling `.scss` files to `.css` with the terminal command `npm run watch` from the root of the hgrid folder. Any changes you make to files in the `/sass` folder will result in css and map files being updated in the `/dist` folder.
+Start compiling **hgrid's** `.scss` files to `.css` with the command `npm run watch` from the root of the **hgrid** folder. Any changes you make to files in the `/sass` folder will result in css and map files being updated in the `/dist` folder.
 
-To produce the minified **hgrid** file, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
+To produce the compiled, prefixed and minified **hgrid** output, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
 
-As always, see [hgrid.io](https://hgrid.io) for details on how to integrate **hgrid** as Sass or plain CSS in your projects.
+See [hgrid.io/documentation/](https://hgrid.io/documentation/) for complete usage instructions.
 
 ## Author
 
 Atle Hansson @ https://kubo.no
+
+## License
+
+MIT
