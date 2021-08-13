@@ -322,3 +322,12 @@ $overflow-values: inherit, initial, visible, unset;
     overflow-y: $val;
   }
 }
+
+// Figure
+figure {
+  margin-bottom: $paragraph-margin-bottom;
+
+  & img {
+    margin-bottom: $paragraph-margin-bottom
+  }
+}
