@@ -3067,7 +3067,7 @@ table.striped tbody tr:nth-child(odd):hover {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  margin-bottom: 1%;
+  margin-bottom: 2rem;
 }
 .embed iframe,
 .embed video,
@@ -11022,6 +11022,13 @@ hr {
 
 .overflow-y-unset {
   overflow-y: unset;
+}
+
+figure {
+  margin-bottom: 2rem;
+}
+figure img {
+  margin-bottom: 2rem;
 }
 
 .flex-force {
