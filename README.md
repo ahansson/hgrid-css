@@ -1,5 +1,6 @@
 <div align="center">
-<img src="https://hgrid.io/assets/img/icon.png" alt="hgrid logo icon" title="hgrid logo icon">
+<br>
+<img src="https://hgrid.io/assets/img/icon.png" alt="hgrid logo icon" title="hgrid logo icon" width="270">
 <br>
 
 # hgrid-css
