@@ -1,3 +1,6 @@
+<img src="https://hgrid.io/assets/img/icon.png" alt="hgrid logo icon" title="hgrid logo icon">
+<br><br>
+
 # hgrid-css
 
 ### **A Lightweight and Practical CSS Utility Kit.**
@@ -6,6 +9,8 @@
 ### Zero Config. Flat Learning Curve
 
 **Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides some sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
+
+</div>
 
 ## Documentation
 
@@ -26,7 +31,7 @@ See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 npm install hgrid-css --save-dev
 ```
 
-```
+```bash
 yarn add hgrid-css --dev
 ```
 
@@ -63,7 +68,7 @@ yarn add hgrid-css --dev
   $link-underline-color: #ffe88d
 );
 ```
-For detailed information with step by step recipes on how to integrate **hgrid** in your projects, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+For detailed information with step by step recipes on how to integrate **hgrid** in different JS frameworks, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
 
 ## Local development
 
