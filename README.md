@@ -4,8 +4,7 @@
 
 # hgrid-css
 
-### **A Lightweight and Practical CSS Utility Kit.**
-<br>
+## **A Lightweight and Practical CSS Utility Kit.**
 
 ### Zero Config. Flat Learning Curve
 
