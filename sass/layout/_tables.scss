@@ -52,25 +52,33 @@ table {
   }
 
   &.striped {
-    tbody tr td {
-      border: none;
-    }
+    tbody tr {
+      transition: background-color 0.3s ease;
 
-    tbody tr:nth-child(even) {
-      background: $bg-gray-lighter;
-      border-bottom: 1px dotted $bg-gray-light;
-      transition: background-color 0.4s ease
-    }
+      td {
+        border-bottom: none;
+        padding: 0.6rem 1rem 0.5rem 1rem; 
+      }
 
-    tbody tr:nth-child(even):hover {
-      background-color: #e1dae5;
-      cursor: pointer;
-    }
+      &:nth-child(even) {
+        background: $bg-gray-lighter;
+        border-bottom: 1px dotted $bg-gray-light;
 
-    tbody tr:nth-child(odd):hover {
-      background: #f5f0e3;
-      cursor: pointer;
-      border-bottom: 1px dotted $bg-gray-light;
+        &:hover {
+          background-color: #e1dae5;
+          cursor: pointer;
+        }
+      }
+
+      &:nth-child(odd) {
+        border-bottom: 1px solid transparent;
+        
+        &:hover {
+          background: #f5f0e3;
+          border-bottom: 1px dotted $bg-gray-light;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
