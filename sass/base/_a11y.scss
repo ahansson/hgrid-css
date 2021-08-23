@@ -1,5 +1,7 @@
+// https://hgrid.io/documentation/a11y/
+
 // Cross-platform focus outline 
-// instead of browser default
+// replaces browser default
 
 @use '../variables/variables' as *;
 
@@ -9,4 +11,25 @@
   outline-style: none;
   outline-width: 0;
   box-shadow: 0 0 0 $focus-border-weight $focus-border-color;
+}
+
+// Skip link for keyboard and 
+// assistive technology users
+
+.jump-to-content {
+  background: #ffffff20;
+  position: absolute;
+  z-index: 9999;
+  padding: 1% 3%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transition: ease 0.6s;
+  color: $link-color;
+  text-decoration: underline $link-underline-color $link-underline-style;
+  text-decoration-thickness: $link-underline-thickness;
+  text-underline-offset: $link-underline-offset;
+
+  &:focus {
+    transform: translate(-50%, 10%);
+  }
 }
