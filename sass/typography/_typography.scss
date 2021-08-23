@@ -109,48 +109,48 @@ pre {
 }
 
 // Hyperlinks
-a,
-p a,
-ul li a,
-ol li a,
-label a,
-span a {
+
+%nicer-link-styling {
   color: $link-color;
-
-  @if $turn-off-link-decoration {
-    text-decoration: none;
-  }
-  @else if $turn-off-link-decoration == false {
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
+  text-decoration: underline $link-underline-color $link-underline-style;
+  text-decoration-thickness: $link-underline-thickness;
+  text-underline-offset: $link-underline-offset;
 }
 
-// Are nicer underlines turned on?
-@if $use-global-link-underlines {
+@if $use-article-link-underlines == false {
   a,
   p a,
   ul li a,
   ol li a,
   label a,
   span a {
-    text-decoration: underline $link-underline-color $link-underline-style;
-    text-decoration-thickness: $link-underline-thickness;
-    text-underline-offset: $link-underline-offset;
+    @if $turn-off-link-decoration == false {
 
-    &:hover {
+      // Are nicer underlines turned on 
+      // in '_variables.scss'?
+      @if $use-global-link-underlines {
+        @extend %nicer-link-styling;
+      }
+      @else {
+        color: $link-color;
+        text-decoration: underline;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @else if $turn-off-link-decoration {
+      color: $link-color;
       text-decoration: none;
     }
   }
 }
 
-@else if $use-article-link-underlines {
+@else {
 
-  // Use nicer underlines for links only in <article> and 
-  // in containing elements with the '.text-content' class?
+  // Are nicer underlines turned on only for links in 
+  // <article> and in containing elements with a '.text-content' class?
   // ('$use-global-link-underlines' must be set to 'false')
 
   article a,
@@ -163,10 +163,8 @@ span a {
   .text-content ol li a,
   .text-content span a,
   .text-content label a {
-  
-    text-decoration: underline $link-underline-color $link-underline-style;
-    text-decoration-thickness: $link-underline-thickness;
-    text-underline-offset: $link-underline-offset;
+
+    @extend %nicer-link-styling;
 
     &:hover {
       text-decoration: none;
