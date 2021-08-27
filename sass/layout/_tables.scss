@@ -20,6 +20,13 @@ table {
   margin-bottom: 0.8rem;
   color: $color-gray-dark;
 
+  caption {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1.6rem;
+    text-align: center;
+  }
+
   thead tr {
   text-align: left;
   border-bottom: 2px solid #e2c5a9;
