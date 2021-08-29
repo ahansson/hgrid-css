@@ -7,24 +7,26 @@
 
 @use '../variables/variables' as *;
 
-.transition {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  background: $transition-bg;
+@if $include-transition {
+  .transition {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: $transition-bg;
 
-  &.vanish {
-    animation: vanish 0.6s;
-    animation-fill-mode: forwards;
+    &.vanish {
+      animation: vanish 0.6s;
+      animation-fill-mode: forwards;
+    }
   }
-}
 
-@keyframes vanish{
-  100%{
-    opacity: 0;
+  @keyframes vanish{
+    100%{
+      opacity: 0;
+    }
   }
 }

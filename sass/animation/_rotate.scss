@@ -1,13 +1,17 @@
-.rotate {
-  animation: rotate 1s linear infinite;
-}
+@use '../variables/variables' as *;
 
-.rotate-once {
-  animation: rotate 0.8s linear;
-}
+@if $include-rotate {
+  .rotate {
+    animation: rotate 1s linear infinite;
+  }
 
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
+  .rotate-once {
+    animation: rotate 0.8s linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

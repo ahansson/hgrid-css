@@ -1,14 +1,18 @@
-.flash {
-  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
-}
+@use '../variables/variables' as *;
 
-.flash-once {
-  animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
-}
+@if $include-flash {
+  .flash {
+    animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1) infinite;
+  }
 
-@keyframes flash {
-  80%, 100% {
-    transform: scale(1.4);
-    opacity: 0;
+  .flash-once {
+    animation: flash 1s cubic-bezier(0.15, 0.41, 1, 1);
+  }
+
+  @keyframes flash {
+    80%, 100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
   }
 }

@@ -133,8 +133,16 @@ $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
 
 // Grid
-$include-grid: true !default;
+$include-grid: true !default; // includes grid partial
 $grid-rows: 6 !default;
+
+// Animations
+$include-fade: true !default; // includes individual animation partials
+$include-flash: true !default;
+$include-rotate: true !default;
+$include-scroll: true !default;
+$include-spinner: true !default;
+$include-transition: true !default;
 
 // Typography
 $font-base: 62.5% !default; // sets scale: 1rem = 10px
@@ -168,4 +176,3 @@ $font-family-mono:
   'Liberation Mono',
   Menlo,
   monospace !default;
-  

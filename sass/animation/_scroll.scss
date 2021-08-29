@@ -1,15 +1,19 @@
-.scroll-auto { // initial css value
-  scroll-behavior: auto;
-}
+@use '../variables/variables' as *;
 
-.scroll-inherit {
-  scroll-behavior: inherit;
-}
+@if $include-scroll {
+  .scroll-auto { // initial css value
+    scroll-behavior: auto;
+  }
 
-.scroll-smooth { // hgrid default (_base.scss)
-  scroll-behavior: smooth;
-}
+  .scroll-inherit {
+    scroll-behavior: inherit;
+  }
 
-.scroll-unset {
-  scroll-behavior: unset;
+  .scroll-smooth { // hgrid default (_base.scss)
+    scroll-behavior: smooth;
+  }
+
+  .scroll-unset {
+    scroll-behavior: unset;
+  }
 }
