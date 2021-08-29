@@ -10,27 +10,27 @@
   width: 3rem;
   height: 3rem;
   animation: spinner 1.2s linear infinite;
-}
 
-.donut-spinner.small {
-  border: 0.3rem solid #00000030;
-  border-left-color: $theme-color-primary;
-  width: 2rem;
-  height: 2rem;
-}
+  &.small {
+    border: 0.3rem solid #00000030;
+    border-left-color: $theme-color-primary;
+    width: 2rem;
+    height: 2rem;
+  }
 
-.donut-spinner.large {
-  border: 0.6rem solid #0000001a;
-  border-left-color: $theme-color-primary;
-  width: 5rem;
-  height: 5rem;
-}
+  &.large {
+    border: 0.6rem solid #0000001a;
+    border-left-color: $theme-color-primary;
+    width: 5rem;
+    height: 5rem;
+  }
 
-.donut-spinner.xl {
-  border: 0.8rem solid #0000001a;
-  border-left-color: $theme-color-primary;
-  width: 7rem;
-  height: 7rem;
+  &.xl {
+    border: 0.8rem solid #0000001a;
+    border-left-color: $theme-color-primary;
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 @keyframes spinner {
