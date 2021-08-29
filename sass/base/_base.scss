@@ -186,8 +186,8 @@ video {
 img {
   max-width: 100%;
 
-  &[width][height] {
-  height: auto; // Preserve aspect ratio
+  &[height] {
+    height: auto; // Preserve aspect ratio
   }
 }
 
