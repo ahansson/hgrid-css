@@ -32,7 +32,7 @@
 // Controls column widths per breakpoint
 // in rows with flex-wrap ('<div class="row f-wrap">')
 
-@each $screen in $responsiveBreakpoints {
+@each $screen in $responsive-breakpoints {
   @include mixin.viewport($screen) {
     @for $fraction from 1 through 12 {
       .#{$screen}-#{$fraction} {

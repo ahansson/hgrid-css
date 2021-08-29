@@ -232,7 +232,7 @@
 // Phone and desktop-large excluded ('.hide-phone' 
 // etc. already have the same effect)
 
-@each $viewport in $singleViewports {
+@each $viewport in $single-viewports {
   @include mixin.onlyViewport($viewport) { 
     .hide-#{$viewport}-only {
       display: none;

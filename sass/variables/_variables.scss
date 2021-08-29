@@ -31,7 +31,7 @@ $breakpoints: // for viewport @mixin
   'phone-landscape',
   'phone' !default;
 
-$responsiveBreakpoints:
+$responsive-breakpoints:
   // default viewport 'laptop' excluded
   'desktop-large',
   'desktop',
@@ -39,6 +39,15 @@ $responsiveBreakpoints:
   'tablet-portrait',
   'phone-landscape',
   'phone';
+
+$single-viewports: 
+  // Array used to generate overrides for specific viewports
+  // phone and desktop-large excluded, they're "specific" by default
+  phone-landscape,
+  tablet-portrait,
+  tablet-landscape,
+  laptop,
+  desktop !default;
 
 $fractions:
   // Array used to generate width and heights
@@ -57,15 +66,6 @@ $fractions:
   20,
   10,
   5 !default;
-
-$singleViewports: 
-  // Array used to generate overrides for specific viewports
-  // phone and desktop-large excluded – they're already "specific"
-  phone-landscape,
-  tablet-portrait,
-  tablet-landscape,
-  laptop,
-  desktop !default;
 
 // Stack columns on viewports less than or equal to:
 $stack-point: $phone-landscape !default;
@@ -131,6 +131,10 @@ $link-underline-offset: 0.12rem !default;
 // Focus style (':focus')
 $focus-border-color: #49a7ff75 !default;
 $focus-border-weight: 0.3rem !default;
+
+// Grid
+$include-grid: true !default;
+$grid-rows: 6 !default;
 
 // Typography
 $font-base: 62.5% !default; // sets scale: 1rem = 10px

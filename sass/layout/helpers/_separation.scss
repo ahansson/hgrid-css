@@ -467,7 +467,7 @@ hr {
 // Responsive padding and 
 // margin overrides
 
-@each $bp in $responsiveBreakpoints {
+@each $bp in $responsive-breakpoints {
   @include mixin.viewport($bp) {
     @for $value from 0 through 15 {
 
