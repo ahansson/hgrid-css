@@ -11,8 +11,8 @@
   $justification: auto, start, end, center, stretch;
   $gaps: 
     1px, 2px,
-    0\.4vw, 0\.6vw, 0\.8vw, 1vw, 1\.6vw, 2vw, 2\.6vw, 3vw, 
-    0\.2rem, 0\.4rem, 0\.6rem, 0\.8rem, 1rem, 1\.2rem, 1\.4rem, 1\.6rem, 1\.8rem, 2rem;
+    0.4vw, 0.6vw, 0.8vw, 1vw, 1.6vw, 2vw, 2.6vw, 3vw, 
+    0.2rem, 0.4rem, 0.6rem, 0.8rem, 1rem, 1.2rem, 1.4rem, 1.6rem, 1.8rem, 2rem;
 
   .grid {
     display: grid;
@@ -28,14 +28,17 @@
       grid-template-columns: repeat($col, minmax(0, 1fr));
     }
 
+    // Column Span
     .g-column-span-#{$col} {
       grid-column: span $col / span $col;
     }
 
+    // Column Start
     .g-column-start-#{$col} {
       grid-column-start: $col;
     }
 
+    // Column End
     .g-column-end-#{$col} {
       grid-column-end: $col;
     }
@@ -47,6 +50,8 @@
     }
   }
 
+  // Grid Auto Content 
+  // Determines size of implicitly created grid cols
   .g-column-min-content {
     grid-auto-columns: min-content;
   }
@@ -55,33 +60,45 @@
     grid-auto-columns: max-content;
   }
 
-
   // Grid Rows
   @for $row from 1 through $rows {
     .g-row-#{$row} {
       grid-template-rows: repeat($row, minmax(0, 1fr));
     }
+
+    // Row Span
     .g-row-span-#{$row} {
       grid-row: span $row / span $row;
     }
+
+    // Row Start
     .g-row-start-#{$row} {
-      grid-column-start: $row;
+      grid-row-start: $row;
     }
 
+    // Row End
     .g-row-end-#{$row} {
-      grid-column-end: $row;
+      grid-row-end: $row;
     }
 
     @if $row == $rows {
       .g-row-end-#{$row + 1} {
-        grid-column-end: $row + 1;
+        grid-row-end: $row + 1;
       }
     }
   }
 
+  // Justify Items
   @each $val in $justification {
     .justify-items-#{$val} {
       justify-items: $val; 
+    }
+  }
+
+  // Column/Row Gaps
+  @for $i from 1 through 20 {
+    .gap-#{$i} {
+      gap: nth($gaps, $i);
     }
   }
 }
