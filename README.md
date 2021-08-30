@@ -7,9 +7,9 @@
 
 ## **A Lightweight and Practical CSS Utility Kit.**
 
-### Zero Config. Flat Learning Curve
+### Zero Config. Flat Learning Curve.
 
-**Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides some sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
+**Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
 
 </div>
 
@@ -36,27 +36,7 @@ npm install hgrid-css --save-dev
 yarn add hgrid-css --dev
 ```
 
-### **From local file or CDN:**
-
-```html
-<head>
-  <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
-  <!-- CDN: <link rel="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"> -->
-
-  <!-- more css below -->
-</head>
-```
-### **@import into your stylesheet:**
-```css
-/* From node_modules */
-@import './../etc./node_modules/hgrid-css/dist/hgrid.min.css';
-```
-```css
-/* From CDN */
-@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';
-```
-
-### **@use as Sass in a Node.js driven project:**
+### **Then, @use as Sass in your project:**
 
 ```scss
 @use 'hgrid-css/sass/hgrid' with (
@@ -70,6 +50,26 @@ yarn add hgrid-css --dev
 );
 ```
 For detailed information with step by step recipes on how to integrate **hgrid** in different JS frameworks, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
+
+### **From local file or CDN:**
+
+```html
+<head>
+  <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
+  <!-- CDN: <link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"> -->
+
+  <!-- more css below -->
+</head>
+```
+### **@import into your stylesheet:**
+```css
+/* From node_modules */
+@import './../etc./node_modules/hgrid-css/dist/hgrid.min.css';
+```
+```css
+/* From CDN */
+@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';
+```
 
 ## Local development
 
