@@ -41,7 +41,7 @@
 // Rows
 
 // Required wrapper for '.column' and '.column-{x}'
-// Stacks columns on viewport setting '$stack-point'
+// Stacks columns on viewport setting '$stack-point' and '$custom-stack-point'
 
 // .row-block is used for block elements, without columns
 .row,
@@ -61,9 +61,16 @@
   display: block;
 }
 
-// Alternative viewport width 
-// for layout stacking
+// Alternative viewport width
+// where column stacking kicks in
 .row.custom-stack {
+
+  @if $stack-point > $custom-stack-point {
+    @include mixin.viewport($stack-point) {
+      display: flex;
+    }
+  }
+
   @include mixin.viewport($custom-stack-point) {
     display: block;
 
@@ -73,6 +80,7 @@
       width: (100% - $column-gutter-width);
     }
   }
+
 }
 
 // Prevent stacking
