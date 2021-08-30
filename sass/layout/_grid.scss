@@ -24,6 +24,7 @@
 
   // Grid Columns
   @for $col from 1 through $columns {
+  
     .g-column-#{$col} {
       grid-template-columns: repeat($col, minmax(0, 1fr));
     }
@@ -62,6 +63,7 @@
 
   // Grid Rows
   @for $row from 1 through $rows {
+
     .g-row-#{$row} {
       grid-template-rows: repeat($row, minmax(0, 1fr));
     }
@@ -88,6 +90,23 @@
     }
   }
 
+  // Gaps
+  @for $i from 1 through 20 {
+
+    .gap-#{$i} {
+      gap: nth($gaps, $i);
+    }
+
+    .row-gap-#{$i} {
+      row-gap: nth($gaps, $i);
+    }
+
+    .column-gap-#{$i} {
+      column-gap: nth($gaps, $i);
+    }
+
+  }
+
   // Justify Items
   @each $val in $justification {
     .justify-items-#{$val} {
@@ -95,10 +114,4 @@
     }
   }
 
-  // Column/Row Gaps
-  @for $i from 1 through 20 {
-    .gap-#{$i} {
-      gap: nth($gaps, $i);
-    }
-  }
 }
