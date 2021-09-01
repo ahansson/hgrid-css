@@ -46,7 +46,9 @@ yarn add hgrid-css --dev
   $link-color: #ffe88d,
   $link-color-hover: #fff0b4,
   $container-max-width: 1600px,
-  $link-underline-color: #ffe88d
+  $link-underline-color: #ffe88d,
+  $use-global-link-underlines: true,
+  $include-grid: false
 );
 ```
 For detailed information with step by step recipes on how to integrate **hgrid** in different JS frameworks, please refer to [the documentation](https://hgrid.io/documentation/integrate/).
@@ -55,10 +57,11 @@ For detailed information with step by step recipes on how to integrate **hgrid**
 
 ```html
 <head>
-  <link rel="stylesheet" href="/path/to/hgrid-css/hgrid.min.css">
-  <!-- CDN: <link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"> -->
+  <!-- Without CSS grid utilities (slimmer) -->
+  <link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css">
 
-  <!-- more css below -->
+  <!-- Including CSS grid utilities (heavier) -->
+  <link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.grid.min.css">
 </head>
 ```
 ### **@import into your stylesheet:**
