@@ -121,9 +121,9 @@ $link-color-hover: $theme-color-secondary !default;
 $link-underline-color: $theme-color-tertiary !default;
 
 // Link settings
-$turn-off-link-decoration: false !default;
-$use-global-link-underlines: false !default;
-$use-article-link-underlines: false !default;
+$turn-off-link-decoration: false !default; // regular link underlines
+$use-global-link-underlines: false !default; // nicer links everywhere
+$use-article-link-underlines: false !default; // nicer links only in 'article' or '.text-content'
 $link-underline-style: solid !default; // dotted, dashed, double, wavy
 $link-underline-thickness: 0.2rem !default;
 $link-underline-offset: 0.12rem !default;

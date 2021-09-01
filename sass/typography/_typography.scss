@@ -126,7 +126,7 @@ pre {
   span a {
     @if $turn-off-link-decoration == false {
 
-      // Are nicer underlines turned on 
+      // Are nicer links turned on 
       // in '_variables.scss'?
       @if $use-global-link-underlines {
         @extend %nicer-link-styling;
@@ -140,35 +140,49 @@ pre {
       }
     }
 
-    @else if $turn-off-link-decoration {
-      color: $link-color;
-      text-decoration: none;
+    @if $turn-off-link-decoration {
+
+      // Are nicer links turned on 
+      // in '_variables.scss'?
+      @if $use-global-link-underlines {
+        @extend %nicer-link-styling;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      @else {
+        color: $link-color;
+        text-decoration: none;
+      }
     }
   }
-} 
+}
 
-@else if $use-global-link-underlines == false {
+@else if 
+  $use-global-link-underlines == false 
+  and $use-article-link-underlines {
 
-  // Are nicer underlines turned on only for links in 
-  // <article> and in elements with a '.text-content' class?
+  // Are nicer links turned on only in
+  // <article> and elements with a '.text-content' class?
 
-  article a,
-  article ul li a,
-  article ol li a,
-  article span a,
-  article label a,
-  .text-content a,
-  .text-content ul li a,
-  .text-content ol li a,
-  .text-content span a,
-  .text-content label a {
+    article a,
+    article ul li a,
+    article ol li a,
+    article span a,
+    article label a,
+    .text-content a,
+    .text-content ul li a,
+    .text-content ol li a,
+    .text-content span a,
+    .text-content label a {
 
-    @extend %nicer-link-styling;
+      @extend %nicer-link-styling;
 
-    &:hover {
-      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
-  }
 }
 
 // Text formatting
