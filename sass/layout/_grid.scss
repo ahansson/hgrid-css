@@ -1,17 +1,203 @@
-// For parent containers
+// Docs:
+// https://hgrid.io/documentation/layout/grid/
 
-.grid {
-  display: grid;
-}
+@use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
+@use "sass:math";
 
-.inline-grid {
-  display: inline-grid;
-}
+@if $include-grid {
 
-$justification: auto, start, end, center, stretch;
+  $columns: $grid-columns;
+  $rows: $grid-rows;
+  $justification: auto, start, end, center, stretch;
+  $gaps:
+    1px,
+    0.4vw, 0.6vw, 0.8vw, 1vw, 1.6vw, 2vw, 2.6vw, 3vw, 
+    0.2rem, 0.4rem, 0.6rem, 0.8rem, 1rem, 1.2rem, 1.4rem, 1.6rem, 1.8rem, 2rem;
 
-@each $val in $justification {
-  .justify-items-#{$val} {
-    justify-items: $val; 
+  .grid {
+    display: grid;
+  }
+
+  .inline-grid {
+    display: inline-grid;
+  }
+
+  // Grid Columns
+  @for $col from 1 through $columns {
+
+    .g-column-#{$col} {
+      grid-template-columns: repeat($col, minmax(0, 1fr));
+    }
+
+    // Column Span
+    .g-column-span-#{$col} {
+      grid-column: span $col / span $col;
+    }
+
+    // Column Start
+    .g-column-start-#{$col} {
+      grid-column-start: $col;
+    }
+
+    // Column End
+    .g-column-end-#{$col} {
+      grid-column-end: $col;
+    }
+
+    @if $col == $columns {
+      .g-column-end-#{$col + 1} {
+        grid-column-end: $col + 1;
+      }
+    }
+  }
+
+  // Grid Auto Content 
+  // Determines size of implicitly created grid cols
+  .g-column-min-content {
+    grid-auto-columns: min-content;
+  }
+
+  .g-column-max-content {
+    grid-auto-columns: max-content;
+  }
+
+  // Grid Rows
+  @for $row from 1 through $rows {
+
+    .g-row-#{$row} {
+      grid-template-rows: repeat($row, minmax(0, 1fr));
+    }
+
+    // Row Span
+    .g-row-span-#{$row} {
+      grid-row: span $row / span $row;
+    }
+
+    // Row Start
+    .g-row-start-#{$row} {
+      grid-row-start: $row;
+    }
+
+    // Row End
+    .g-row-end-#{$row} {
+      grid-row-end: $row;
+    }
+
+    @if $row == $rows {
+      .g-row-end-#{$row + 1} {
+        grid-row-end: $row + 1;
+      }
+    }
+  }
+
+  // Gaps
+  @for $i from 1 through length($gaps) {
+
+    .gap-#{$i} {
+      gap: nth($gaps, $i);
+    }
+
+    .row-gap-#{$i} {
+      row-gap: nth($gaps, $i);
+    }
+
+    .column-gap-#{$i} {
+      column-gap: nth($gaps, $i);
+    }
+
+  }
+
+  // Justify
+  @each $val in $justification {
+
+    .justify-items-#{$val} {
+      justify-items: $val; 
+    }
+
+    .justify-self-#{$val} {
+      justify-self: $val;
+    }
+
+    // * justify-content
+    // * align-content
+    // * align-items
+    // * align-self
+    // -> included in _flex.scss
+  }
+
+  // Responsive overrides
+  @if $include-grid-responsiveness {
+
+    @each $bp in $responsive-breakpoints {
+      @include mixin.viewport($bp) {
+
+        @for $col from 1 through $columns {
+
+          .g-column-#{$col}-#{$bp} {
+            grid-template-columns: repeat($col, minmax(0, 1fr));
+          }
+
+          .g-column-span-#{$col}-#{$bp} {
+            grid-column: span $col / span $col;
+          }
+
+          .g-column-start-#{$col}-#{$bp} {
+            grid-column-start: $col;
+          }
+
+          .g-column-end-#{$col}-#{$bp} {
+            grid-column-end: $col;
+          }
+
+          @if $col == $columns {
+            .g-column-end-#{$col + 1}-#{$bp} {
+              grid-column-end: $col + 1;
+            }
+          }
+        }
+        
+        @for $row from 1 through $rows {
+
+          .g-row-#{$row}-#{$bp} {
+            grid-template-rows: repeat($row, minmax(0, 1fr));
+          }
+
+          .g-row-span-#{$row}-#{$bp} {
+            grid-row: span $row / span $row;
+          }
+
+          .g-row-start-#{$row}-#{$bp} {
+            grid-row-start: $row;
+          }
+
+          .g-row-end-#{$row}-#{$bp} {
+            grid-row-end: $row;
+          }
+
+          @if $row == $rows {
+            .g-row-end-#{$row + 1}-#{$bp} {
+              grid-row-end: $row + 1;
+            }
+          }
+        }
+
+        @for $i from 1 through length($gaps) {
+
+          .gap-#{$i}-#{$bp} {
+            gap: nth($gaps, $i);
+          }
+
+          .row-gap-#{$i}-#{$bp} {
+            row-gap: nth($gaps, $i);
+          }
+
+          .column-gap-#{$i}-#{$bp} {
+            column-gap: nth($gaps, $i);
+          }
+
+        }
+      }
+    }
   }
 }

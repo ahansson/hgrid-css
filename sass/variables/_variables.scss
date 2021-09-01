@@ -134,6 +134,8 @@ $focus-border-weight: 0.3rem !default;
 
 // Grid
 $include-grid: true !default; // includes grid partial
+$include-grid-responsiveness: true !default; // includes grid media queries
+$grid-columns: 12 !default;
 $grid-rows: 6 !default;
 
 // Animations
