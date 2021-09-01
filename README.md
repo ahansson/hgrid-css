@@ -9,7 +9,7 @@
 
 ### Zero Config. Flat Learning Curve
 
-**Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides some sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
+**Hgrid** is a starting point intended to make HTML work out of the box. It's not a UI framework, but provides sensible defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
 
 </div>
 
@@ -19,7 +19,7 @@ Website: [https://hgrid.io](https://hgrid.io)
 
 ## Versions
 
-Latest: **0.5.4-beta**
+Latest: **0.6.0-beta**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
