@@ -131,27 +131,27 @@
 
     @each $bp in $responsive-breakpoints {
       @include mixin.viewport($bp) {
-      
+
         @for $col from 1 through $columns {
 
           .g-column-#{$col}-#{$bp} {
             grid-template-columns: repeat($col, minmax(0, 1fr));
           }
 
-          .g-column-span-#{$col}-#{bp} {
+          .g-column-span-#{$col}-#{$bp} {
             grid-column: span $col / span $col;
           }
 
-          .g-column-start-#{$col}-#{bp} {
+          .g-column-start-#{$col}-#{$bp} {
             grid-column-start: $col;
           }
 
-          .g-column-end-#{$col}-#{bp} {
+          .g-column-end-#{$col}-#{$bp} {
             grid-column-end: $col;
           }
 
           @if $col == $columns {
-            .g-column-end-#{$col + 1}-#{bp} {
+            .g-column-end-#{$col + 1}-#{$bp} {
               grid-column-end: $col + 1;
             }
           }
