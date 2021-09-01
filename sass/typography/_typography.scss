@@ -145,13 +145,12 @@ pre {
       text-decoration: none;
     }
   }
-}
+} 
 
-@else {
+@else if $use-global-link-underlines == false {
 
   // Are nicer underlines turned on only for links in 
-  // <article> and in containing elements with a '.text-content' class?
-  // ('$use-global-link-underlines' must be set to 'false')
+  // <article> and in elements with a '.text-content' class?
 
   article a,
   article ul li a,
