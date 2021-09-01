@@ -1,4 +1,4 @@
-/*! hgrid v0.6.0-beta | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.6.1-beta | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -1516,6 +1516,11 @@ input[type=reset]:not(.block):last-child {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .row.custom-stack {
+    display: flex;
+  }
+}
 @media (max-width: 600px) {
   .row.custom-stack {
     display: block;

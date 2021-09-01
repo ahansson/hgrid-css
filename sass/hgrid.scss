@@ -1,6 +1,6 @@
 @use 'base/version';
 
-@use 'variables/variables';
+@forward 'variables/variables';
 @use 'variables/custom-properties';
 
 @use 'mixins/mixins';
