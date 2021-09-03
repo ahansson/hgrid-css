@@ -78,17 +78,17 @@ For detailed information with step by step recipes on how to integrate **hgrid**
 
 _Requires Node.js installed on your system._
 
-Run `npm install`.
+Run `npm install` from the root of the **hgrid-css** folder.
 
-Start compiling **hgrid's** `.scss` files to `.css` with the command `npm run watch` from the root of the **hgrid** folder. Any changes you make to files in the `/sass` folder will result in css and map files being updated in the `/dist` folder.
+Start compiling **hgrid**'s `.scss` files to `.css` with the command `npm run watch`. Changes you make to files in the `/sass` folder will result in css files being updated in the `/dist` folder.
 
 To produce the compiled, prefixed and minified **hgrid** output, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
 
-See [hgrid.io/documentation/](https://hgrid.io/documentation/) for complete usage instructions.
+See [hgrid.io/documentation/installation](https://hgrid.io/documentation/installation/) for complete usage instructions.
 
 ## Author
 
-Atle Hansson @ https://kubo.no
+© Atle Hansson 2020-present
 
 ## License
 
