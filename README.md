@@ -13,16 +13,9 @@
 
 </div>
 
-## Documentation
+## How to use
 
-Website: [https://hgrid.io](https://hgrid.io)
-
-## Versions
-
-Latest: **0.6.2-beta**
-
-See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
-<br><br>
+Documentation: [https://hgrid.io](https://hgrid.io)
 
 ## How to install
 
@@ -85,6 +78,25 @@ Start compiling **hgrid**'s `.scss` files to `.css` with the command `npm run wa
 To produce the compiled, prefixed and minified **hgrid** output, use `npm run build`. It uses Autoprefixer to add some backwards compatibility before minifying the result as `hgrid.min.css`.
 
 See [hgrid.io/documentation/installation](https://hgrid.io/documentation/installation/) for complete usage instructions.
+
+## Versions
+
+Latest: **0.6.2-beta**
+
+See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
+<br><br>
+
+## Roadmap 
+
+See the [kanban board](https://github.com/ahansson/hgrid-css/projects/1).
+
+## Problems?
+
+Please don't hesitate to report [an issue ](https://github.com/ahansson/hgrid-css/issues).
+
+## Help us improve
+
+Please don't hesitate to open a [pull request](https://github.com/ahansson/hgrid-css/pulls).
 
 ## Author
 
