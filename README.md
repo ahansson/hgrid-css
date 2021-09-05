@@ -69,7 +69,7 @@ For detailed information with step by step recipes on how to integrate **hgrid**
 
 ## Local development
 
-_Requires Node.js installed on your system._
+_Requires Node.js installed on your system (or use an editor plugin such as [live-sass](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass))_
 
 Run `npm install` from the root of the **hgrid-css** folder.
 
