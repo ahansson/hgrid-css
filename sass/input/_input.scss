@@ -199,7 +199,7 @@ textarea {
 // Disabled and readonly states
 .disabled,
 .readonly,
-input:not([type=submit]):read-only {
+input[readonly] {
   color: $color-gray;
   cursor: not-allowed;
 }
