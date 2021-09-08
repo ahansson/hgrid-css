@@ -136,6 +136,7 @@ pre {
         text-decoration: underline;
       }
       &:hover {
+        color: $link-color-hover;
         text-decoration: none;
       }
     }
@@ -149,11 +150,16 @@ pre {
 
         &:hover {
           text-decoration: none;
+          color: $link-color-hover;
         }
       }
       @else {
         color: $link-color;
         text-decoration: none;
+      }
+
+      &:hover {
+        color: $link-color-hover;
       }
     }
   }
@@ -180,6 +186,7 @@ pre {
       @extend %nicer-link-styling;
 
       &:hover {
+        color: $link-color-hover;
         text-decoration: none;
       }
     }
