@@ -91,6 +91,16 @@
     }
   }
 
+  // Grid Auto Flow
+  // changes flow direction of grid children
+  .g-flow-row {
+    grid-auto-flow: row; // default
+  }
+
+  .g-flow-column {
+    grid-auto-flow: column;
+  }
+
   // Gaps
   @for $i from 1 through length($gaps) {
 
