@@ -1,6 +1,6 @@
 {
   "name": "hgrid-css",
-  "version": "0.6.2-beta",
+  "version": "0.6.3-beta",
   "description": "A Lightweight and Practical CSS Utility Kit.",
   "main": "sass/hgrid.scss",
   "style": "dist/hgrid.min.css",
@@ -37,9 +37,9 @@
     "build": "npm run prefix && npm run minify"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
-    "sass": "^1.35.1"
+    "sass": "^1.39.0"
   }
 }

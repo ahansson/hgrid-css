@@ -1,4 +1,4 @@
-/*! hgrid v0.6.2-beta | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.6.3-beta | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -371,11 +371,6 @@ q::after {
   left: 50%;
   transform: translate(-50%, -100%);
   transition: ease 0.6s;
-  color: #66008d;
-  -webkit-text-decoration: underline #c19ad1 solid;
-          text-decoration: underline #c19ad1 solid;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.12rem;
 }
 .jump-to-content:focus {
   transform: translate(-50%, 10%);
@@ -3308,6 +3303,14 @@ input[type=reset]:not(.block):last-child {
 
 .g-row-end-7 {
   grid-row-end: 7;
+}
+
+.g-flow-row {
+  grid-auto-flow: row;
+}
+
+.g-flow-column {
+  grid-auto-flow: column;
 }
 
 .gap-1 {
@@ -7121,7 +7124,7 @@ hr {
 }
 
 .border-right-none {
-  border-top: 0;
+  border-right: 0;
 }
 
 .border-left-lighter {
