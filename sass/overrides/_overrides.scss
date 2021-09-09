@@ -1,20 +1,8 @@
 @use '../variables/variables' as *;
 @use 'sass:math';
 
-// No hover effect
-.no-hover {
-  &:hover {
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
-  &:before {
-    height: 0 !important;
-  }
-}
-
 // Appearance
 // Remove platform-specific styling (input, select + +)
-
 .appearance-none {
   appearance: none;
 }
@@ -22,7 +10,6 @@
 // Remove vertical margin between
 // individual columns, or
 // between all columns in a row
-
 .column.no-gutter:not(:first-child, :last-child),
 [class^=column-].no-gutter:not(:first-child, :last-child),
 .row.no-gutter .column:not(:first-child, :last-child),
