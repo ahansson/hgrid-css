@@ -1,11 +1,6 @@
 @use '../variables/variables' as *;
 @use 'sass:math';
 
-// Manual override from display:block to flex
-.flex-force {
-  display: flex;
-}
-
 // No hover effect
 .no-hover {
   &:hover {

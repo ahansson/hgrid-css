@@ -196,12 +196,12 @@
   pointer-events: all;
 }
 
-@each $breakpoint in $breakpoints {
+@each $breakpoint in $responsive-breakpoints {
   @include mixin.viewport($breakpoint) {
 
-    // Hide element from a certain breakpoint and above (desktop-large)
-    // Hide element from a certain breakpoint and below (desktop, laptop, tablets)
-    // Hide element from a specific viewport only (phone)
+    // Hide element from 'desktop-large' and above
+    // Hide element from 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Hide element from 'phone' only
     .hide-#{$breakpoint} {
       display: none;
     }
@@ -209,31 +209,38 @@
       visibility: hidden;
     }
 
-    // Show element from a specific breakpoint and above (desktop-large)
-    // Show element from a specific breakpoint and below (desktop, laptop, tablets)
-    // Show element on a specific viewport only (phone)
+    // Show hidden element on 'desktop-large' and above
+    // Show hidden element on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Show hidden element on 'phone' only
     .visible-#{$breakpoint} {
       visibility: visible;
     }
-
-    .show-#{$breakpoint}, // Reveal hidden element from from specific viewports and above/below
-    .display-block-#{$breakpoint} { // Override 'display: flex/grid' from specific viewports and above/below;
+    .show-#{$breakpoint}, 
+    .block-#{$breakpoint} // Override for 'display:flex/grid/none/etc.' from a viewports and above/below;
+    {
       display: block;
     }
 
-    .flex-show-#{$breakpoint} { 
-    // Use with unstacked flex containers (e.g. '.row')
-    // which have been hidden with 'display:none;'
+    // Reveal hidden flex containers (including unstacked '.row')
+
+    // Reveal on 'desktop-large' and above
+    // Reveal on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Reveal on 'phone' only
+    .f-show-#{$breakpoint}, 
+
+    // General override for 'display: block/none/etc.' 
+    // on specific viewports and above/below
+    .flex-#{$breakpoint}
+    { 
       display: flex;
     }
   }
 }
 
 // Hide or show _only_ on a specific viewport
-// Phone and desktop-large excluded ('.hide-phone' 
-// etc. already have the same effect)
+// 'phone' and 'desktop-large' excluded because '.hide-phone' and '.hide-desktop-large' have the same effect)
 @each $viewport in $single-viewports {
-  @include mixin.onlyViewport($viewport) { 
+  @include mixin.onlyViewport($viewport) {
     .hide-#{$viewport}-only {
       display: none;
     }
@@ -243,13 +250,18 @@
     .visible-#{$viewport}-only {
       visibility: visible;
     }
-    .show-#{$viewport}-only { // Use with block elements
+    .show-#{$viewport}-only, 
+    .block-#{$viewport}-only // Override for 'display:flex/grid/none/etc.' on specific viewports
+    {
       display: block;
     }
-    .flex-show-#{$viewport}-only {
-      // Use with flex containers (like '.row')
-      // on non-stacking viewports, if they
-      // have been hidden with 'display:none;'
+
+    // Reveal hidden flex containers (including unstacked '.row'):
+    .f-show-#{$viewport}-only, 
+
+    // General override for 'display: block/none/etc.' on a specific viewport
+    .display-flex-#{$viewport}-only
+    { 
       display: flex;
     }
   }
