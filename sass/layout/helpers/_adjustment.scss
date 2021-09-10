@@ -139,16 +139,18 @@ $positions: static, absolute, fixed, relative, sticky, initial, inherit;
 
 // Specifies how the content of an external object such as an image should 
 // be fitted within its container
-$values: fill, contain, cover, scale-down;
+$values: fill, contain, cover, scale-down, none;
 
 @each $val in $values {
-  .#{$val} {
-    object-fit: $val;
+  @if $val != none {
+    .#{$val} {
+      object-fit: $val;
+    }
+  } @else {
+    .object-fit-#{$val} {
+      object-fit: $val;
+    }
   }
-}
-
-.object-fit-none {
-  object-fit: none;
 }
 
 // Alignment for 'inline', 'inline-block' 
