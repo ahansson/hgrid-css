@@ -3,59 +3,44 @@
 
 // Pixel Perfect Push & Pull Positioning
 
-// Push Down
 @for $px from 1 through 40 {
+
+  // Push Down
   .push#{$px}v {
     margin-top: math.div( $px, 10 ) + rem;
   }
-}
 
-// Push Left to Right (horizontally)
-@for $px from 1 through 40 {
-  .push#{$px}h {
-    margin-left: math.div( $px, 10 ) + rem;
-  }
-}
-
-// Pull Up (vertically)
-@for $px from 1 through 40 {
+  // Pull Up (vertically)
   .pull#{$px}v {
     margin-top: math.div( -$px, 10 ) + rem;
   }
-}
 
-// Pull Right to Left (horizontally)
-@for $px from 1 through 40 {
+  // Push Left to Right (horizontally)
+  .push#{$px}h {
+    margin-left: math.div( $px, 10 ) + rem;
+  }
+
+  // Pull Right to Left (horizontally)
   .pull#{$px}h {
     margin-left: math.div( -$px, 10 ) + rem;
   }
-}
 
-// Pixel Perfect Push & Pull Without Affecting Siblings
-
-// Move Downwards
-@for $px from 1 through 40 {
+  // Move Downwards Without Affecting Siblings
   .translate-push#{$px}v {
     transform: translate(0, (math.div( $px, 10 ) + rem));
   }
-}
-
-// Move Upwards
-@for $px from 1 through 40 {
+  
+  // Move Upwards Without Affecting Siblings
   .translate-pull#{$px}v {
     transform: translate(0, (math.div( -$px, 10 ) + rem));
   }
-}
 
-// Left to Right
-@for $px from 1 through 40 {
+  // Move Left to Right Without Affecting Siblings
   .translate-push#{$px}h {
     transform: translate(math.div( $px, 10 ) + rem);
   }
-}
 
-// Right to Left
-@for $px from 1 through 40 {
+  // Move Right to Left Without Affecting Siblings
   .translate-pull#{$px}h {
     transform: translate(math.div( -$px, 10 ) + rem);
   }
@@ -153,10 +138,9 @@ $values: fill, contain, cover, scale-down, none;
   }
 }
 
-// Alignment for 'inline', 'inline-block' 
-// and 'table-cell' elements
+// Alignment for 'inline', 'inline-block' and 'table-cell' elements
+// default: baseline (_base.scss)
 $vertical-align-values: top, middle, bottom, text-top, text-bottom, baseline;
-// default = baseline (_base.scss)
 
 @each $val in $vertical-align-values {
   .align-#{$val} {
