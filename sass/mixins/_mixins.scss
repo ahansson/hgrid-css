@@ -82,7 +82,6 @@
 // 1281 - 1680px    Desktop
 // 1681 - ∞         Desktop (large)
 
-// Styles apply by default to all viewports.
 // Hgrid follows the laptop first paradigm. 
 // We override styles for smaller and larger screens where needed.
 
@@ -119,7 +118,7 @@
 }
 
 // Allow specific styles for each viewport
-// (phone and desktop-large excluded, they are already "specific")
+// ('phone' and 'desktop-large' excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
   @if $viewport == phone-landscape {
     @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };

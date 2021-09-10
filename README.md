@@ -100,7 +100,7 @@ Please don't hesitate to open a [pull request](https://github.com/ahansson/hgrid
 
 ## Author
 
-© Atle Hansson 2020-present
+© Atle Hansson
 
 ## License
 

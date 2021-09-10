@@ -67,14 +67,15 @@ $fractions:
   10,
   5 !default;
 
-// Stack columns on viewports less than or equal to:
+// Stack columns vertically on 
+// viewports less than or equal to:
 $stack-point: $phone-landscape !default;
 $custom-stack-point: $phone !default; // used to override $stack-point
 
 // Misc
-$border-radius: 6px !default; // used for '.radius' class
+$border-radius: 6px !default; // used for '.radius' utility
 
-// Theme colors
+// Theme Colors
 $theme-color-primary: #66008d !default;
 $theme-color-secondary: #9139b4 !default;
 $theme-color-tertiary: #c19ad1 !default;
@@ -102,7 +103,7 @@ $inline-code-bg: #ffe4c9 !default;
 $pre-code-color: #fff !default;
 $pre-code-bg: #361c43 !default;
 
-// Background colors
+// Background Colors
 $body-bg: #fff !default;
 $transition-bg: $body-bg !default; // for page transition animation
 $bg-light: $color-light !default;
@@ -113,12 +114,12 @@ $bg-gray: $color-gray !default;
 $bg-gray-dark: $color-gray-dark !default;
 $bg-gray-darker: $color-gray-darker !default;
 
-// Link colors
+// Link Colors
 $link-color: $theme-color-primary !default;
 $link-color-hover: $theme-color-secondary !default;
 $link-underline-color: $theme-color-tertiary !default;
 
-// Link settings
+// Link Settings
 $turn-off-link-decoration: false !default; // regular link underlines
 $use-global-link-underlines: false !default; // nicer links everywhere
 $use-article-link-underlines: false !default; // nicer links only in 'article' or '.text-content'

@@ -64,7 +64,7 @@ section ol {
   list-style-type: decimal;
 }
 
-// Code formatting
+// Code Formatting
 p > code,
 em > code,
 i > code,
@@ -165,12 +165,11 @@ pre {
   }
 }
 
+// Are nicer links turned on only in
+// <article> and elements with a '.text-content' class?
 @else if 
   $use-global-link-underlines == false 
   and $use-article-link-underlines {
-
-  // Are nicer links turned on only in
-  // <article> and elements with a '.text-content' class?
 
     article a,
     article ul li a,
@@ -192,7 +191,7 @@ pre {
     }
 }
 
-// Text formatting
+// Text Formatting
 i,
 em,
 .italic {
@@ -312,7 +311,7 @@ $cursors: not-allowed, move, wait, text, pointer, default, auto;
   cursor: wait;
 }
 
-// Text columns
+// Text Columns
 .two-columns {
   @include mixin.col-format(2);
   @include mixin.viewport(phone) {
@@ -342,8 +341,8 @@ $cursors: not-allowed, move, wait, text, pointer, default, auto;
   }
 }
 
-// Text positioning
-$text-align-values: center, left, right, justify, inherit, initial, unset, start, end;
+// Text Positioning
+$text-align-values: center, left, right, justify, unset, start, end;
 
 @each $val in $text-align-values {
   .text-#{$val} {
@@ -351,7 +350,7 @@ $text-align-values: center, left, right, justify, inherit, initial, unset, start
   }
 }
 
-// Font weight
+// Font Weight
 $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 @each $weight in $weights {
   .font-weight-#{$weight} {
@@ -374,7 +373,7 @@ strong span {
   font-weight: normal;
 }
 
-// Letter spacing
+// Letter Spacing
 .spacing-neg-4 {
   letter-spacing: -0.3rem;
 }
@@ -411,7 +410,7 @@ strong span {
   letter-spacing: 0.3rem;
 }
 
-// Text color
+// Text Color
 .text-light {
   color: $color-light;
 }
@@ -464,7 +463,7 @@ strong span {
   color: $color-gray-darker;
 }
 
-// Text antialiasing 
+// Text Antialiasing 
 .subpixel-antialiased { 
 // Default setting on macOS, gives a stronger type
   -webkit-font-smoothing: auto;
@@ -472,7 +471,7 @@ strong span {
 }
 
 .antialiased { 
-// hgrid default setting in _base.scss
+  // hgrid default (_base.scss)
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

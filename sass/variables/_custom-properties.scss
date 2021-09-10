@@ -66,10 +66,10 @@
 
   --font-size: #{$font-size};
   --small-font-size: #{$small-font-size};
+  --paragraph-margin-bottom: #{$paragraph-margin-bottom};
 
   // Misc
   --container-max-width: #{$container-max-width};
   --gutter: #{$column-gutter-width};
   --group-margin-bottom: #{$group-margin-bottom};
-  --paragraph-margin-bottom: #{$paragraph-margin-bottom};
 }
