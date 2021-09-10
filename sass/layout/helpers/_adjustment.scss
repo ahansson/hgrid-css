@@ -62,20 +62,24 @@
 }
 
 // Positioning
-$positions: static, absolute, fixed, relative, sticky;
+$positions: static, absolute, fixed, relative, sticky, initial, inherit;
 
 @each $pos in $positions {
-  .#{$pos} {
-    position: $pos;
+  @if $pos != initial and $pos != inherit {
+    .#{$pos} {
+      position: $pos;
+    }
   }
-}
-
-.position-initial {
-  position: initial;
-}
-
-.position-inherit {
-  position: inherit;
+  @if $pos == initial {
+    .position-#{$pos} {
+      position: $pos;
+    }
+  }
+  @if $pos == inherit {
+    .position-#{$pos} {
+      position: $pos;
+    }
+  }
 }
 
 .absolute-center {
