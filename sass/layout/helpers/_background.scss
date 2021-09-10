@@ -10,45 +10,33 @@
 }
 
 // Background position
-.bg-pos-top {
-  background-position: top;
-}
+$positions: top, bottom, right, left, center;
 
-.bg-pos-bottom {
-  background-position: bottom;
-}
-
-.bg-pos-right {
-  background-position: right;
-}
-
-.bg-pos-left {
-  background-position: left;
-}
-
-.bg-pos-center {
-  background-position: center;
+@each $val in $positions {
+    .bg-pos-#{$val} {
+      background-position: $val;
+    }
 }
 
 // Background repeat
-.bg-repeat-x {
- background-repeat: repeat-x;
-}
+$repeats: x, y, space, round, no-repeat;
 
-.bg-repeat-y {
- background-repeat: repeat-y;
-}
-
-.bg-repeat-space {
- background-repeat: space;
-}
-
-.bg-repeat-round {
- background-repeat: round;
-}
-
-.bg-repeat-none {
- background-repeat: no-repeat;
+@each $param in $repeats {
+  @if $param == x or $param == y {
+    .bg-repeat-#{$param} {
+      background-repeat: repeat\-#{$param};
+    }
+  }
+  @else if $param == space or $param == round {
+    .bg-repeat-#{$param} {
+      background-repeat: $param;
+    }
+  }
+  @else {
+    .bg-repeat-none {
+      background-repeat: $param;
+    }
+  }
 }
 
 // Background size
