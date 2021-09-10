@@ -205,12 +205,12 @@ input[readonly] {
 }
 
 // Gap between horizontal input elements
-input:not(.block, [type=radio], [type=checkbox]),
-select:not(.block),
-label:not(.block),
-input[type=submit]:not(.block),
-button:not(.block),
-input[type=reset]:not(.block) {
+input:not(.block, .display-block, [type=radio], [type=checkbox]),
+select:not(.block, .display-block),
+label:not(.block, .display-block),
+input[type=submit]:not(.block, .display-block),
+button:not(.block, .display-block),
+input[type=reset]:not(.block, .display-block) {
   margin-right: 2rem;
 
   &:last-child {
