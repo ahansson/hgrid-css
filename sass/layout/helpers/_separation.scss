@@ -9,13 +9,21 @@ hr {
 }
 
 .hairline {
-  border-top: 0.5px solid $color-gray-light;
+  border-top: .5px solid $color-gray-light;
   margin-bottom: 3rem;
 }
 
 .hairline-darker {
   border-top: .5px solid $color-gray;
   margin-bottom: 3rem;
+}
+
+.border-light {
+  border: 1px solid $color-light;
+}
+
+.border-white {
+  border: 1px solid #fff;
 }
 
 .border-gray-lighter {
@@ -38,12 +46,16 @@ hr {
   border: 1px solid $color-gray-darker;
 }
 
-.border-transparent {
-  border: 1px solid transparent;
+.border-black {
+  border: 1px solid #000;
 }
 
-.border-none {
-  border: none;
+.border-dark {
+  border: 1px solid $color-dark;
+}
+
+.border-transparent {
+  border: 1px solid transparent;
 }
 
 // Individual borders
@@ -221,6 +233,10 @@ hr {
   border-left: 0;
 }
 
+.border-none {
+  border: none;
+}
+
 // Border styles
 .border-dotted {
   border-style: dotted;
@@ -290,7 +306,7 @@ hr {
 @each $bp in $breakpoints {
   @include mixin.viewport($bp) {
 
-    .#{$bp}-bn-0 {
+    .#{$bp}-b-0 {
       border: none;
     }
 
@@ -318,8 +334,8 @@ hr {
   column-rule: 1px solid $color-light;
 }
 
-.col-rule-dark {
-  column-rule: 1px solid $color-dark;
+.col-rule-white {
+  column-rule: 1px solid #fff;
 }
 
 .col-rule-gray-lighter {
@@ -340,6 +356,14 @@ hr {
 
 .col-rule-gray-darker {
   column-rule: 1px solid $color-gray-darker;
+}
+
+.col-rule-dark {
+  column-rule: 1px solid $color-dark;
+}
+
+.col-rule-black {
+  column-rule: 1px solid #000;
 }
 
 // Padding (general)
