@@ -1,8 +1,8 @@
 @use '../variables/variables' as *;
 
 // Scroll table (horizontally)
-// Apply to the parent element of a table 
-// that has a fixed width/min-width
+// Apply to a parent container 
+// of a table with a fixed width/min-width
 .scrollable-x {
   overflow-y: hidden;
   overflow-x: scroll;

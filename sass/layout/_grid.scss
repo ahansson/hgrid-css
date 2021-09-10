@@ -136,7 +136,7 @@
     // -> included in _flex.scss
   }
 
-  // Responsive overrides
+  // Responsive Overrides
   @if $include-grid-responsiveness {
 
     @each $bp in $responsive-breakpoints {

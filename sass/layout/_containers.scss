@@ -4,6 +4,14 @@
 
 // Containers
 
+.container { // Full width
+  width: 100%;
+}
+
+.container-max { // Limited width
+  max-width: $container-max-width;
+}
+
 .container,
 .container-max {
 
@@ -23,16 +31,6 @@
   }
 }
 
-// Full width
-.container {
-  width: 100%;
-}
-
-// Limited width
-.container-max {
-  max-width: $container-max-width;
-}
-
 // Groups and separates rows/content sections
 .group {
   margin: $group-margin-bottom;
@@ -43,7 +41,6 @@
 // Required wrapper for '.column' and '.column-{x}'
 // Stacks columns on viewport setting '$stack-point' and '$custom-stack-point'
 
-// .row-block is used for block elements, without columns
 .row,
 .row-block {
   @include mixin.row-margins;
@@ -54,8 +51,7 @@
   margin-bottom: $column-gutter-width;
 }
 
-// For use without columns
-// (full width text and other block elements)
+// For full width block elements without columns
 .row-block {
   @include mixin.row-block-padding;
   display: block;

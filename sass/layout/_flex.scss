@@ -2,7 +2,11 @@
 @use '../variables/variables' as *;
 @use '../mixins/mixins' as mixin;
 
-// Flex for parent containers
+// Note: See additional utilities that are relevant for flex 
+// under 'Display and Visibility' in 'flex/_flex.scss'
+
+
+// Flex for Parent Elements
 
 .flex {
   display: flex;
@@ -102,8 +106,8 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
   }
 }
 
-// Responsive overrides for parent elements
-@each $breakpoint in $breakpoints {
+// Responsive Overrides for Parent Elements
+@each $breakpoint in $responsive-breakpoints {
   @include mixin.viewport($breakpoint) {
 
     // Unset flex container 
@@ -111,25 +115,17 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
       display: unset;
     }
 
-    // Flex wrap reverse:
+    // Flex wrap reverse
     .f-wrap-reverse-#{$breakpoint} {
       flex-wrap: wrap-reverse;
     }
 
-    // Don't flex-wrap:
+    // Don't flex-wrap
     .f-wrap-unset-#{$breakpoint} {
       flex-wrap: unset;
     }
 
-    // Change flex-direction:
-    .f-direction-column-#{$breakpoint} {
-      flex-direction: column;
-    }
-
-    .f-direction-column-reverse-#{$breakpoint} {
-      flex-direction: column-reverse;
-    }
-
+    // Change flex-direction
     .f-direction-row-#{$breakpoint} {
       flex-direction: row;
     }
@@ -137,10 +133,19 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
     .f-direction-row-reverse-#{$breakpoint} {
       flex-direction: row-reverse;
     }
+
+    .f-direction-column-#{$breakpoint} {
+      flex-direction: column;
+    }
+
+    .f-direction-column-reverse-#{$breakpoint} {
+      flex-direction: column-reverse;
+    }
   }
 }
 
-// Flex for child elements
+// Flex for Child Elements
+
 .f-grow-1 {
   flex-grow: 1;
 }
@@ -183,36 +188,28 @@ $aligns: center, flex-start, flex-end, baseline, stretch, unset;
   }
 }
 
-// Shorthand for
-//    'flex-grow'
-//    'flex-shrink'
-//    'flex-basis'
-// Used with a single digit, it equals 1 1 0%, 
-// used to set internal element proportions. 
-// .f-2 is always twice the size of .f-1, etc.
 @for $i from 1 through 24 {
   .f-#{$i} {
+    // Shorthand for
+    //    'flex-grow'
+    //    'flex-shrink'
+    //    'flex-basis'
+    // Used with a single digit, it equals 1 1 0%, 
+    // Determines internal element proportions. 
+    // '.f-2' is always twice the size of '.f-1' (etc.)
     flex: $i;
   }
-}
-
-.f-auto {
-  flex: auto;
-}
-
-.f-initial {
-  flex: initial;
 }
 
 .f-none {
   flex: none;
 }
 
-// Responsive overrides for flex children:
-@each $breakpoint in $breakpoints {
+// Responsive Overrides for Child Elements:
+@each $breakpoint in $responsive-breakpoints {
   @include mixin.viewport($breakpoint) {
-    // Set item min-width per breakpoint with flex-basis 
-    // to determine behavior with flex-wrap
+    // Sets min-width for items, per breakpoint 
+    // Determines behavior with '.f-wrap'
     @each $fraction in $fractions {
       .f-#{$breakpoint}-#{math.floor($fraction)} {
         flex: 1 0 ($fraction * 1%)

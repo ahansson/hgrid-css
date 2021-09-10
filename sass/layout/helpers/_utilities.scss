@@ -80,7 +80,7 @@
  box-shadow: 0px 0px 64px 0px #00000036;
 }
 
-// Widths and heights
+// Widths and Heights
 @each $fraction in $fractions {
   .width-#{math.floor($fraction)}pct {
     width: $fraction * 1% ;
@@ -151,7 +151,7 @@
   max-width: fit-content;
 }
 
-// Display and visibility
+// Display and Visibility
 .hide,
 .display-none {
   display: none;
@@ -221,11 +221,11 @@
       display: block;
     }
 
-    // Reveal hidden flex containers (including unstacked '.row')
+    // Show hidden flex containers (including unstacked '.row')
 
-    // Reveal on 'desktop-large' and above
-    // Reveal on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
-    // Reveal on 'phone' only
+    // Show on 'desktop-large' and above
+    // Show on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Show on 'phone' only
     .f-show-#{$breakpoint}, 
 
     // General override for 'display: block/none/etc.' 
@@ -237,10 +237,12 @@
   }
 }
 
-// Hide or show _only_ on a specific viewport
-// 'phone' and 'desktop-large' excluded because '.hide-phone' and '.hide-desktop-large' have the same effect)
 @each $viewport in $single-viewports {
   @include mixin.onlyViewport($viewport) {
+
+    // Hide or show _only_ on a specific viewport
+    // ('phone' and 'desktop-large' excluded because '.hide-phone' 
+    // and '.hide-desktop-large' have the same effect)
     .hide-#{$viewport}-only {
       display: none;
     }
@@ -321,7 +323,7 @@
   overflow-y: auto;
 }
 
-$overflow-values: inherit, initial, visible, unset;
+$overflow-values: visible, unset;
 
 @each $val in $overflow-values {
   .overflow-#{$val} {
