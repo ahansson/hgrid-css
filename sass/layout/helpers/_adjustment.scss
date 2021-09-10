@@ -131,12 +131,8 @@ $positions: static, absolute, fixed, relative, sticky, initial, inherit;
   z-index: 999;
 }
 
-$z-values: auto, inherit, initial, unset;
-
-@each $z in $z-values {
-  .z-index-#{$z} {
-    z-index: $z;
-  }
+.z-index-unset {
+  z-index: unset;
 }
 
 // Object fit
