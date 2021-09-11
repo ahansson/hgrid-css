@@ -81,7 +81,7 @@ See [hgrid.io/documentation/installation](https://hgrid.io/documentation/install
 
 ## Versions
 
-Latest: **0.6.3-beta**
+Latest: **0.7.0-beta**
 
 See [releases](https://github.com/ahansson/hgrid-css/releases) on GitHub.
 <br><br>
