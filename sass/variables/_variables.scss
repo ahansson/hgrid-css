@@ -16,13 +16,14 @@ $phone:             600px !default;
 $phone-landscape:   768px !default;
 $tablet-portrait:   900px !default;
 $tablet-landscape:  1024px !default;
-$laptop:            1280px !default;
-$desktop:           1680px !default;
+$laptop:            1280px !default; // default viewport
 
-// For the largest viewport we use @media (min-width: )
+// For the largest viewports we use @media (min-width: )
+$desktop:           1281px !default;
 $desktop-large:     1681px !default;
 
-$breakpoints: // for viewport @mixin
+$breakpoints:
+  // for viewport @mixin
   'desktop-large',
   'desktop',
   'laptop',
@@ -33,24 +34,24 @@ $breakpoints: // for viewport @mixin
 
 $responsive-breakpoints:
   // default viewport 'laptop' excluded
-  'desktop-large',
-  'desktop',
-  'tablet-landscape',
-  'tablet-portrait',
+  'phone',
   'phone-landscape',
-  'phone';
+  'tablet-portrait',
+  'tablet-landscape',
+  'desktop',
+  'desktop-large';
 
 $single-viewports: 
-  // Array used to generate overrides for specific viewports
-  // phone and desktop-large excluded, they're "specific" by default
-  phone-landscape,
-  tablet-portrait,
-  tablet-landscape,
-  laptop,
-  desktop !default;
+  // Used for overrides for specific viewports
+  // 'phone' and 'desktop-large' excluded, they're "specific" by default
+  'phone-landscape',
+  'tablet-portrait',
+  'tablet-landscape',
+  'laptop',
+  'desktop' !default;
 
 $fractions:
-  // Array used to generate width and heights
+  // Used to generate width and heights
   100,
   90,
   80,
@@ -114,12 +115,12 @@ $bg-gray: $color-gray !default;
 $bg-gray-dark: $color-gray-dark !default;
 $bg-gray-darker: $color-gray-darker !default;
 
-// Link Colors
+// Hyperlink Colors
 $link-color: $theme-color-primary !default;
 $link-color-hover: $theme-color-secondary !default;
 $link-underline-color: $theme-color-tertiary !default;
 
-// Link Settings
+// Hyperlink Settings
 $turn-off-link-decoration: false !default; // regular link underlines
 $use-global-link-underlines: false !default; // nicer links everywhere
 $use-article-link-underlines: false !default; // nicer links only in 'article' or '.text-content'

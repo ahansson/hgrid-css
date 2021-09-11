@@ -75,36 +75,36 @@
 // Media Queries / Viewports
 // ---------------------------
 // 0 - 600px        Phone
-// 601 - 768px      Phone (landscape)
+// 601 - 768px      Phone Landscape
 // 769 - 900px      Tablet
-// 901 - 1024px     Tablet (landscape)
-// 1025 - 1280px    Laptop
+// 901 - 1024px     Tablet Landscape
+// 1025 - 1280px    Laptop (default)
 // 1281 - 1680px    Desktop
-// 1681 - ∞         Desktop (large)
+// 1681 - ∞         Desktop Large
 
-// Hgrid follows the laptop first paradigm. 
-// We override styles for smaller and larger screens where needed.
+// Hgrid follows the laptop first paradigm.
+// We override styles for screens smaller or larger than laptop, if needed.
 
 @mixin viewport($breakpoint) { 
-  @if $breakpoint == phone {
+  @if $breakpoint == 'phone' {
     @media (max-width: $phone) { @content };
   }
-  @if $breakpoint == phone-landscape {
+  @if $breakpoint == 'phone-landscape' {
     @media (max-width: $phone-landscape) { @content };
   }
-  @if $breakpoint == tablet-portrait {
+  @if $breakpoint == 'tablet-portrait' {
     @media (max-width: $tablet-portrait) { @content };
   }
-  @if $breakpoint == tablet-landscape {
+  @if $breakpoint == 'tablet-landscape' {
     @media (max-width: $tablet-landscape) { @content };
   }
-  @if $breakpoint == laptop {
+  @if $breakpoint == 'laptop' {
     @media (max-width: $laptop) { @content };
   }
-  @if $breakpoint == desktop {
-    @media (max-width: $desktop) { @content };
+  @if $breakpoint == 'desktop' {
+    @media (min-width: $desktop) { @content };
   }
-  @if $breakpoint == desktop-large {
+  @if $breakpoint == 'desktop-large' {
     @media (min-width: $desktop-large) { @content };
   }
   // Default breakpoint for content stacking
@@ -120,19 +120,19 @@
 // Allow specific styles for each viewport
 // ('phone' and 'desktop-large' excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
-  @if $viewport == phone-landscape {
+  @if $viewport == 'phone-landscape' {
     @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };
   }
-  @if $viewport == tablet-portrait {
+  @if $viewport == 'tablet-portrait' {
     @media (min-width: $phone-landscape + 1px) and (max-width: $tablet-portrait) { @content };
   }
-  @if $viewport == tablet-landscape {
+  @if $viewport == 'tablet-landscape' {
     @media (min-width: $tablet-portrait + 1px) and (max-width: $tablet-landscape) { @content };
   }
-  @if $viewport == laptop {
+  @if $viewport == 'laptop' {
     @media (min-width: $tablet-landscape + 1px) and (max-width: $laptop) { @content };
   }
-  @if $viewport == desktop {
-    @media (min-width: $laptop + 1px) and (max-width: $desktop) { @content };
+  @if $viewport == 'desktop' {
+    @media (min-width: $desktop) and (max-width: $desktop-large - 1px) { @content };
   }
 }

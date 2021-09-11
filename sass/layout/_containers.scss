@@ -39,7 +39,7 @@
 // Rows
 
 // Required wrapper for '.column' and '.column-{x}'
-// Stacks columns on viewport setting '$stack-point' and '$custom-stack-point'
+// Stacks columns on viewport settings '$stack-point' and '$custom-stack-point'
 
 .row,
 .row-block {
@@ -95,7 +95,7 @@
   }
 }
 
-// Remove margin for .row with flex-wrap
+// Remove margin for '.row' with flex-wrap
 .row.f-wrap {
   margin-bottom: 0;
 

@@ -200,7 +200,8 @@
   @include mixin.viewport($breakpoint) {
 
     // Hide element from 'desktop-large' and above
-    // Hide element from 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Hide element from 'desktop' and above
+    // Hide element from 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
     // Hide element from 'phone' only
     .hide-#{$breakpoint} {
       display: none;
@@ -210,13 +211,14 @@
     }
 
     // Show hidden element on 'desktop-large' and above
-    // Show hidden element on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Show hidden element on 'desktop' and above
+    // Show hidden element on 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
     // Show hidden element on 'phone' only
     .visible-#{$breakpoint} {
       visibility: visible;
     }
     .show-#{$breakpoint}, 
-    .block-#{$breakpoint} // Override for 'display:flex/grid/none/etc.' from a viewports and above/below;
+    .block-#{$breakpoint} // Override for 'display:flex/grid/none/etc.'
     {
       display: block;
     }
@@ -224,7 +226,8 @@
     // Show hidden flex containers (including unstacked '.row')
 
     // Show on 'desktop-large' and above
-    // Show on 'desktop', 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
+    // Show on 'desktop' and above
+    // Show on 'tablet-landscape', 'tablet-portrait', 'phone-landscape' and below
     // Show on 'phone' only
     .f-show-#{$breakpoint}, 
 
@@ -241,8 +244,8 @@
   @include mixin.onlyViewport($viewport) {
 
     // Hide or show _only_ on a specific viewport
-    // ('phone' and 'desktop-large' excluded because '.hide-phone' 
-    // and '.hide-desktop-large' have the same effect)
+    // 'phone' and 'desktop-large' excluded because 
+    // '.hide-phone','.visible-desktop-large' etc. have the same effect
     .hide-#{$viewport}-only {
       display: none;
     }
@@ -253,7 +256,7 @@
       visibility: visible;
     }
     .show-#{$viewport}-only, 
-    .block-#{$viewport}-only // Override for 'display:flex/grid/none/etc.' on specific viewports
+    .block-#{$viewport}-only // Override for 'display:flex/grid/none/etc.'
     {
       display: block;
     }
@@ -261,7 +264,7 @@
     // Reveal hidden flex containers (including unstacked '.row'):
     .f-show-#{$viewport}-only, 
 
-    // General override for 'display: block/none/etc.' on a specific viewport
+    // General override for 'display: block/none/etc.'
     .display-flex-#{$viewport}-only
     { 
       display: flex;
