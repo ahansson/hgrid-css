@@ -373,7 +373,7 @@ hr {
     .padding-#{$value * 5} {
       // Adjust visual diff 
       // top/bottom/sides
-      padding: ($value * .44)+rem ($value * .5)+rem;
+      padding: ($value * .4)+rem ($value * .5)+rem;
     }
     
     .p-#{$value * 10},
@@ -398,7 +398,7 @@ hr {
   @if $value == 1 {
     .pt-#{$value * 5},
     .padding-top-#{$value * 5} {
-      padding-top: ($value * .44) + rem;
+      padding-top: ($value * .4) + rem;
     }
 
     .pt-#{$value * 10},
@@ -440,7 +440,7 @@ hr {
   @if $value == 1 {
     .pb-#{$value * 5},
     .padding-bottom-#{$value * 5} {
-      padding-bottom: ($value * .44) + rem;
+      padding-bottom: ($value * .4) + rem;
     }
 
     .pb-#{$value * 10},
@@ -608,7 +608,7 @@ hr {
 
         // Padding (general)
         .#{$bp}-p-#{$value * 5} {
-          padding: ($value * .44)+rem ($value * .5)+rem;
+          padding: ($value * .4)+rem ($value * .5)+rem;
         }
         
         .#{$bp}-p-#{$value * 10} {
@@ -617,7 +617,7 @@ hr {
 
         // Top
         .#{$bp}-pt-#{$value * 5} {
-          padding-top: ($value * .44) + rem;
+          padding-top: ($value * .4) + rem;
         }
 
         .#{$bp}-pt-#{$value * 10} {
@@ -635,7 +635,7 @@ hr {
 
         // Bottom
         .#{$bp}-pb-#{$value * 5} {
-          padding-bottom: ($value * .44) + rem;
+          padding-bottom: ($value * .4) + rem;
         }
 
         .#{$bp}-pb-#{$value * 10} {
