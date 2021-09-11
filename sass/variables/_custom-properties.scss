@@ -9,13 +9,11 @@
   // as custom properties:
 
   // Theme Colors
-
   --theme-color-primary: #{$theme-color-primary};
   --theme-color-secondary: #{$theme-color-secondary};
   --theme-color-tertiary: #{$theme-color-tertiary};
 
   // Generic Colors
-
   --color-light: #{$color-light};
   --color-dark: #{$color-dark};
   --color-red: #{$color-red};
@@ -29,7 +27,6 @@
   --color-gray-darker: #{$color-gray-darker};
 
   // Text Colors
-  
   --text-color-primary: #{$text-color-primary};
   --text-color-secondary: #{$text-color-secondary};
   --text-color-tertiary: #{$text-color-tertiary};
@@ -39,8 +36,7 @@
   --pre-code-color: #{$pre-code-color};
   --pre-code-bg: #{$pre-code-bg};
 
-  // Background colors
-
+  // Background Colors
   --body-bg: #{$body-bg};
   --transition-bg: #{$transition-bg};
   --bg-light: #{$bg-light};
@@ -51,24 +47,30 @@
   --bg-gray-dark: #{$bg-gray-dark};
   --bg-gray-darker: #{$bg-gray-darker};
 
-  // Link colors
-
+  // Hyperlink Style
   --link-color: #{$link-color};
   --link-color-hover: #{$link-color-hover};
   --link-underline-color: #{$link-underline-color};
+  --link-underline-style: #{$link-underline-style};
+  --link-underline-thickness: #{$link-underline-thickness};
+  --link-underline-offset: #{$link-underline-offset};
 
-  // Focus style (':focus')
-
+  // Accessibility
   --focus-border-color: #{$focus-border-color};
   --focus-border-weight: #{$focus-border-weight};
 
   // Typography
-
+  --font-family: #{$font-family};
   --font-size: #{$font-size};
+  --font-strong: #{$font-strong};
   --small-font-size: #{$small-font-size};
+  --pre-code-size: #{$pre-code-size};
+  --inline-code-size: #{$inline-code-size};
+  --headline-weight: #{$headline-weight};
   --paragraph-margin-bottom: #{$paragraph-margin-bottom};
 
   // Misc
+  --general-radius: #{$border-radius};
   --container-max-width: #{$container-max-width};
   --gutter: #{$column-gutter-width};
   --group-margin-bottom: #{$group-margin-bottom};
