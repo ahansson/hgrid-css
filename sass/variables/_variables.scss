@@ -34,20 +34,21 @@ $breakpoints:
 
 $responsive-breakpoints:
   // default viewport 'laptop' excluded
-  'phone',
-  'phone-landscape',
-  'tablet-portrait',
-  'tablet-landscape',
+  'desktop-large',
   'desktop',
-  'desktop-large';
+  'tablet-landscape',
+  'tablet-portrait',
+  'phone-landscape',
+  'phone' !default;
 
-$single-viewports: 
+$single-viewports:
   // Used for overrides for specific viewports
   // 'phone' and 'desktop-large' excluded, they're "specific" by default
-  'phone-landscape',
-  'tablet-portrait',
-  'tablet-landscape',
+  'desktop',
   'laptop',
+  'tablet-landscape',
+  'tablet-portrait',
+  'phone-landscape',
   'desktop' !default;
 
 $fractions:
