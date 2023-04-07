@@ -1,4 +1,5 @@
 @use '../variables/variables' as *;
+@use '../mixins/mixins' as mixin;
 @use 'sass:math';
 
 // Appearance
@@ -10,12 +11,20 @@
 // Remove vertical margin between
 // individual columns, or
 // between all columns in a row
+// (except in stacked layouts)
 .column.no-gutter:not(:first-child, :last-child),
 [class^=column-].no-gutter:not(:first-child, :last-child),
 .row.no-gutter .column:not(:first-child, :last-child),
 .row.no-gutter [class^=column-]:not(:first-child, :last-child) {
   margin-left: 0;
   margin-right: 0;
+
+  @media (max-width: $stack-point) {
+    @include mixin.column-padding;
+  }
+  @media (max-width: $custom-stack-point) {
+    @include mixin.column-padding;
+  }
 }
 
 @for $fraction from 1 through 24 {
@@ -30,6 +39,13 @@
 .column.no-gutter:first-child,
 [class^=column-].no-gutter:first-child {
   margin-right: 0;
+
+  @media (max-width: $stack-point) {
+    margin-right: math.div($column-gutter-width, 2);
+  }
+  @media (max-width: $custom-stack-point) {
+    margin-right: math.div($column-gutter-width, 2);
+  }
 }
 
 .row.no-gutter .column:last-child,
@@ -37,4 +53,11 @@
 .column.no-gutter:last-child,
 [class^=column-].no-gutter:last-child {
   margin-left: 0;
+
+  @media (max-width: $stack-point) {
+    margin-left: math.div($column-gutter-width, 2);
+  }
+  @media (max-width: $custom-stack-point) {
+    margin-left: math.div($column-gutter-width, 2);
+  }
 }

@@ -9808,6 +9808,7 @@ hr {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -11012,6 +11013,26 @@ figure img {
   margin-left: 0;
   margin-right: 0;
 }
+@media (max-width: 768px) {
+  .column.no-gutter:not(:first-child, :last-child),
+[class^=column-].no-gutter:not(:first-child, :last-child),
+.row.no-gutter .column:not(:first-child, :last-child),
+.row.no-gutter [class^=column-]:not(:first-child, :last-child) {
+    margin-left: 0.8%;
+    margin-right: 0.8%;
+    min-height: 1px;
+  }
+}
+@media (max-width: 600px) {
+  .column.no-gutter:not(:first-child, :last-child),
+[class^=column-].no-gutter:not(:first-child, :last-child),
+.row.no-gutter .column:not(:first-child, :last-child),
+.row.no-gutter [class^=column-]:not(:first-child, :last-child) {
+    margin-left: 0.8%;
+    margin-right: 0.8%;
+    min-height: 1px;
+  }
+}
 
 .row.no-gutter .column-1,
 .column-1.no-gutter {
@@ -11139,10 +11160,42 @@ figure img {
 [class^=column-].no-gutter:first-child {
   margin-right: 0;
 }
+@media (max-width: 768px) {
+  .row.no-gutter .column:first-child,
+.row.no-gutter [class^=column-]:first-child,
+.column.no-gutter:first-child,
+[class^=column-].no-gutter:first-child {
+    margin-right: 0.8%;
+  }
+}
+@media (max-width: 600px) {
+  .row.no-gutter .column:first-child,
+.row.no-gutter [class^=column-]:first-child,
+.column.no-gutter:first-child,
+[class^=column-].no-gutter:first-child {
+    margin-right: 0.8%;
+  }
+}
 
 .row.no-gutter .column:last-child,
 .row.no-gutter [class^=column-]:last-child,
 .column.no-gutter:last-child,
 [class^=column-].no-gutter:last-child {
   margin-left: 0;
+}
+@media (max-width: 768px) {
+  .row.no-gutter .column:last-child,
+.row.no-gutter [class^=column-]:last-child,
+.column.no-gutter:last-child,
+[class^=column-].no-gutter:last-child {
+    margin-left: 0.8%;
+  }
+}
+@media (max-width: 600px) {
+  .row.no-gutter .column:last-child,
+.row.no-gutter [class^=column-]:last-child,
+.column.no-gutter:last-child,
+[class^=column-].no-gutter:last-child {
+    margin-left: 0.8%;
+  }
 }
