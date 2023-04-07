@@ -87,7 +87,7 @@
   }
 
   .max-width-#{math.floor($fraction)}pct {
-    width: $fraction * 1% ;
+    max-width: $fraction * 1% ;
   }
 }
 
